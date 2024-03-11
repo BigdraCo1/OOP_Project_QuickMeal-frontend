@@ -39,7 +39,7 @@ function Menu(){
   useEffect(() => {ShowMenus(resId)}, []);
 
     return (
-      <div className=''>
+      <div className='flex justify-center items-center p-[1rem]'>
         { isLoading && <div>.....Loading.....</div> }
         { !isLoading &&
         <div>
