@@ -1,7 +1,7 @@
 .basket-button {
   position: fixed;
   top: 20px; 
-  right: 20px; 
+  right: 150px; 
   background-color: #ffffff; 
   border: none;
   color: rgb(0, 0, 0);
@@ -13,4 +13,8 @@
   margin: 4px 2px;
   cursor: pointer;
   border-radius: 8px;
+}
+
+.basket-button:hover{
+  background-color: #cacbcc;
 }

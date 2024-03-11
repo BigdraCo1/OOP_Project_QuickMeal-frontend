@@ -8,6 +8,7 @@ import Reviews from './showreview/review.jsx'
 import FoodDetail from './fooddetail/fooddetail.jsx'
 import Basket from './Basket/Basket.jsx'
 import ChooseAddress from './chooseaddress/ChooseAddress.jsx'
+import CustomerProfile from './Profile/CustomerProfile.jsx'
 
 import {
   createBrowserRouter,
@@ -18,12 +19,10 @@ const router = createBrowserRouter([
   {
     path: "/restaurants",
     element: <Restaurants />,
-  },
-  {
+  },{
     path: "/show/:id/menu",
     element: <Menu />,
-  },
-  {
+  },{
     path: "/review/show/:id",
     element: <Reviews />,
   },{
@@ -35,6 +34,9 @@ const router = createBrowserRouter([
   },{
     path: "/basket/choose_address/:id",
     element: <ChooseAddress />,
+  },{
+    path: "/Profile/:id",
+    element: <CustomerProfile />,
   },
 ]);
 

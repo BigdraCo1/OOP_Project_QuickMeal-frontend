@@ -12,12 +12,12 @@
     border-radius: 8px;
     margin: 10px;
 }
+
 .confirm:hover {
     background-color: #000000;
     color: #01b14e;
     font-size: 20px;
   }
-
 
   .addAddress{
     padding: 8px 16px;

@@ -5,6 +5,7 @@ import axios from 'axios';
 import RestaurantCard from '../components/RestaurantCard';
 import BasketButton from '../components/BasketButton';
 import HomeButton from '../components/HomeButton';
+import ProfileButton from '../components/ProfileButton'
 
 const BASE_URL = 'http://127.0.0.1:8000'
 
@@ -31,6 +32,7 @@ function Restaurants(){
     <div>
       <HomeButton/>
       <BasketButton/>
+      <ProfileButton/>
       <div class="midText">
         <h1>List of Restaurants</h1>
       </div>

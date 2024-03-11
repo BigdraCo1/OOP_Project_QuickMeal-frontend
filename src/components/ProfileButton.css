@@ -1,7 +1,7 @@
-.home-button {
+.profile-button {
     position: fixed;
     top: 20px; 
-    left: 20px; 
+    right: 20px; 
     background-color: #ffffff; 
     border: none;
     color: rgb(0, 0, 0);
@@ -15,6 +15,6 @@
     border-radius: 8px;
   }
 
-  .home-button:hover{
+  .profile-button:hover{
     background-color: #cacbcc;
   }

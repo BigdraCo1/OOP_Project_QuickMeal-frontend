@@ -26,7 +26,8 @@ function Basket(){
   async function Comfirm() {
     try {
       console.log("confirm")
-      const response = await axios.get(`${BASE_URL}/order/confirm/${id}`)
+      await axios.put(`${BASE_URL}/order/confirm/${id}`)
+      window.location.reload();
     } catch (error) {
       console.log("error",error)
     }
@@ -60,7 +61,9 @@ function Basket(){
           <div className='midText'> <h3>Your Order Address : {basket.address}</h3> </div>
           <div className='midText'> <Link to = {`/basket/choose_address/${id}`}> 
             <button className='addAddress'>Add Address</button> </Link> </div>
-          <div className='midText'> <button className='confirm' onClick={() => Comfirm()}>Confirm Order</button> </div>
+          {(basket.address !== null) &&
+            <div className='midText'> <button className='confirm' onClick={() => Comfirm()}>Confirm Order</button> </div>
+          } 
           </div>
         }
       </div>} 
