@@ -11,7 +11,7 @@ function ApproveRider(){
     async function fetchApproveRider(){
         try{
             setIsLoading(true);
-            const response = await api.get(`${BASE_URL}/admin/rider_approval_list`)
+            const response = await api.get(`${BASE_URL}/admin/rider/approval_list`)
             setRiders(response.data)
         }
         catch (error){

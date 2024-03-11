@@ -44,20 +44,22 @@ const LoginForm = () => {
         const payload = JSON.parse(atob(tokenParts[1])); // Decode Base64 URL
         const role = payload.role;
         const id = payload.id
-        
-        //switch (role) {
-          //case "rider":
-            //window.location.href = "rider_page.html";
-            //break;
-          //case "restaurant":
-            //window.location.href = "restaurant_page.html";
-            //break;
-          //case "admin":
-            //window.location.href = "admin_page.html";
-            //break;
-          //default:
-            //window.location.href = "customer_page.html";
-        //}
+        switch (role) {
+        case "customer":
+            window.location.href = `/${id}/restaurants`;
+            break;
+          case "rider":
+            window.location.href = `/rider_account/${id}`;
+            break;
+          case "restaurant":
+            window.location.href = `/restaurant_account/${id}`;
+            break;
+          case "admin":
+            window.location.href = `/admin/main`;
+            break;
+          default:
+            window.location.href = "/";
+        }
       } else {
         console.log("Login failed");
       }

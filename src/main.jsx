@@ -13,6 +13,7 @@ import {
   RouterProvider,
 } from "react-router-dom"
 import AddMenu from './restaurant_account/restaurant/AddMenu.jsx'
+import AddRestaurant from './restaurant_account/AddRestaurant.jsx'
 
 const router = createBrowserRouter([
   {
@@ -50,6 +51,10 @@ const router = createBrowserRouter([
   {
     path: "/:restaurant/add",
     element: <AddMenu />,
+  },
+  {
+    path: "/restaurant_account/:id/add",
+    element: <AddRestaurant />,
   },
 ]);
 

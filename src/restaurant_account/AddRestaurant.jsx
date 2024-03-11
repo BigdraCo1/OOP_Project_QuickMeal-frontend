@@ -1,43 +1,26 @@
 import React, { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
-import api from "../../api/access_api.jsx";
+import api from "../api/access_api.jsx";
 
 const BASE_URL = "http://127.0.0.1:8000";
 const ROUTE_URL = "http://localhost:5173";
 
 function AddRestaurant() {
-  const { restaurant} = useParams();
-  const [menuData, setMenuData] = useState({});
+  const { id } = useParams();
+  const [nameRestaurant, setNameRestaurant] = useState('')
+  const [location, setLocation] = useState('')
   const [isLoading, setIsLoading] = useState(false);
-
-  const handleChange = (event) => {
-    const { name, value } = event.target;
-    setMenuData((prevState) => ({
-      ...prevState,
-      [`_Food__${name}`]: value,
-    }));
-  };
-
-  const handleSize = (event) => {
-  const { name, value } = event.target;
-  const parsedValue = name === "size" ? JSON.parse(value) : value;
-  setMenuData((prevState) => ({
-    ...prevState,
-    [`_Food__${name}`]: parsedValue,
-  }));
-};
-
 
   const handleSubmit = async () => {
     try {
       setIsLoading(true);
-      const newMenuData = {
-        name: menuData._Food__name,
-        type: menuData._Food__type,
-        size: menuData._Food__size,
-        price: menuData._Food__price,
+      const newRestaurantData = {
+        name_restaurant: nameRestaurant,
+        restaurant_location: location,
+        food: [],
       };
-      await api.post(`${BASE_URL}/restaurant`, newMenuData);
+      console.log(newRestaurantData);
+      await api.post(`${BASE_URL}/restaurant/`, newRestaurantData);
     } catch (error) {
       console.log("Error updating menu:", error);
     } finally {
@@ -59,51 +42,29 @@ function AddRestaurant() {
             className="border border-gray-300 rounded-md p-2 w-full"
             type="text"
             name="name"
-            value={menuData._Food__name}
-            onChange={handleChange}
+            value={nameRestaurant}
+            onChange={(e) => setNameRestaurant(e.target.value)}
           />
         </div>
         <div className="mb-4">
-          <label htmlFor="type" className="block text-gray-700 font-bold mb-2">Type:</label>
+          <label htmlFor="location" className="block text-gray-700 font-bold mb-2">Location:</label>
           <input
-            id="type"
+            id="location"
             className="border border-gray-300 rounded-md p-2 w-full"
             type="text"
-            name="type"
-            value={menuData._Food__type}
-            onChange={handleChange}
+            name="location"
+            value={location}
+            onChange={(e) => setLocation(e.target.value)}
           />
-        </div>
-        <div className="mb-4">
-        <label htmlFor="size" className="block text-gray-700 font-bold mb-2">Size:</label>
-        <input
-          id="size"
-          className="border border-gray-300 rounded-md p-2 w-full"
-          type="text"
-          name="size"
-          value={JSON.stringify(menuData._Food__size)}
-          onChange={handleSize}
-        />
-      </div>
-        <div className="mb-4">
-          <label htmlFor="price" className="block text-gray-700 font-bold mb-2">Price:</label>
-          <input
-            id="price"
-            className="border border-gray-300 rounded-md p-2 w-full"
-            type="number"
-            name="price"
-            value={menuData._Food__price}
-            onChange={handleChange}
-          />
-        </div>
-        <Link to={`${ROUTE_URL}/${restaurant}/menu`}>
+        </div>   
+      
           <button className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded" onClick={handleSubmit}>
             Add
           </button>
           <button className="bg-red-500 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded" >
             Back
           </button>
-        </Link>
+      
       </div>
     </>
   )}

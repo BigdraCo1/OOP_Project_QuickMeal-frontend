@@ -12,7 +12,7 @@ function ApproveRestaurant() {
     try {
       setIsLoading(true);
       const response = await api.get(
-        `${BASE_URL}/admin/restaurant_approval_list`
+        `${BASE_URL}/admin/restaurant/approval_list`
       );
       setRestaurants(response.data);
     } catch (error) {
@@ -98,27 +98,7 @@ function ApproveRestaurant() {
               >
                 <div className=" justify-center">
                     <h1 className="text-4xl font-bold mb-2 justify-center"> {restaurant.name}</h1>
-                    <h1 className="text-2xl font-bold mb-2"> Menu list</h1>
-                </div>
-                <div>
-                  {restaurant.menu.map((m) => {
-                    return (
-                      <div className="mb-5">
-                        <div> food name : {m._Food__name}</div>
-                        <div>food type : {m._Food__type}</div>
-                        <div>
-                            <h1 className="text-xl font-bold mb-2"> Size</h1>
-                          {Object.entries(m._Food__size).map(([key, value]) => (
-                            <div className="table-row" key={key}>
-                              <div>
-                                {key} {value}
-                              </div>
-                            </div>
-                          ))}
-                        </div>
-                      </div>
-                    );
-                  })}
+                    <h1 className="text-2xl font-bold mb-2">{restaurant.location} </h1>
                 </div>
                 <button
                   class="bg-green-600 text-white px-4 py-2 rounded mb-2"
