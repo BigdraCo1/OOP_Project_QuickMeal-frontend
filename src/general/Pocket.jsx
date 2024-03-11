@@ -41,13 +41,13 @@ function Pocket() {
         <div className='flex mx-[10rem] px-[10rem] border-2 shadow-2xl 
         bg-slate-100 justify-start items-start h-screen'>
             <div className='p-[1rem] h-screen w-full'>
-                <h1 className='text-[2rem] font-bold'>Pocket</h1>
-                <div className='text-[1.2rem]'>
+                <h1 className='text-[2rem] font-bold '>Pocket</h1>
+                <div className='text-[1.2rem] border-2 border-slate-300 rounded-md shadow-md my-[0.5rem] px-[1rem] py-[0.5rem]'>
                     <p>Balance : {pocket.Balance}</p>
                 </div>
-                <div className='text-[1.2rem] pl-[1rem]'>
-                    <h2>Payments</h2>
-                    <ul>
+                <div className='text-[1.2rem] border-2 border-slate-300 rounded-md shadow-md px-[1rem] pb-[1rem]'>
+                    <h2 className='py-[0.5rem]'>Payments</h2>
+                    <ul className='border-2 border-slate-300 rounded-md p-[1rem] mb-[0.2rem]'>
                         {Object.keys(payment).map((paymentId) => (
                             <li key={paymentId}>
                                 <p>Order ID: {payment[paymentId][0]}</p>
