@@ -37,10 +37,10 @@ function Basket(){
       <>
       { isLoading && <div>.....Loading.....</div> }
       { !isLoading &&
-      <div>
+      <div className='bg-slate-100 border-2 border-slate-300 mx-[10rem] shadow-2xl h-screen'>
         <HomeButton id={id}/>
         <div className='midText'>
-          <h1>Basket</h1>
+          <h1 className='text-[1.5rem] font-bold'>Basket</h1>
         </div>
         {(Object.keys(basket).length === 0) && <div>
             <div className='midText'> <h2>There's No Order In Your Basket Yet! </h2> </div>
