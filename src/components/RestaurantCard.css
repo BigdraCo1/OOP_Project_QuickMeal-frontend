@@ -1,11 +1,20 @@
-   .restaurant-card {
+.restaurant-card {
+    font-size: 1.2rem;
+    font-weight: 500;
     margin: 10px;
-    border: 5px solid #000000;
+    /* border: 5px solid #000000; */
     border-radius: 5px;
     padding: 20px;
     width: 350px;
     box-shadow: 5px 5px rgba(0, 0, 0, 0.1);
     background-color: white;
+    transition: all 0.3s ease-in-out;
+  }
+
+.restaurant-card:hover {
+    color: #FFFFFF;
+    background-color: #3d3d3d;
+    scale: 1.05;
   }
   
   .restaurant-card h2 {

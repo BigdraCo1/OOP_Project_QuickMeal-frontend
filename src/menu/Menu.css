@@ -7,8 +7,10 @@
     box-shadow: 5px 5px rgba(0, 0, 0, 0.1);
     background-color: white;
     font-size: 30px;
+    transition: all 0.3s ease-in-out;
   }
 
   .review-button:hover, .review-button:focus, .review-button:active{
-    background-color: #cacbcc;
+    background-color: #959595;
+    color: white;
   }

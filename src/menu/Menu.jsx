@@ -39,32 +39,36 @@ function Menu(){
   useEffect(() => {ShowMenus(resId)}, []);
 
     return (
-      <div>
-      { isLoading && <div>.....Loading.....</div> }
-      { !isLoading &&
-      <div>
-        <HomeButton id={id}/>
-        <BasketButton id={id}/>
-        <div className='container'>
-          <RestaurantTab name = {restaurant.Restaurant_Name} rating = {restaurant.Rate} 
+      <div className=''>
+        { isLoading && <div>.....Loading.....</div> }
+        { !isLoading &&
+        <div>
+          <HomeButton id={id}/>
+          <BasketButton id={id}/>
+          <div className='container'>
+            <RestaurantTab 
+            name = {restaurant.Restaurant_Name} 
+            rating = {restaurant.Rate} 
             location = {restaurant.Restaurant_Location}  />
-        </div>
-        <div className='container'>
-          <Link to = {`/${id}/review/show/${resId}`}>
-            <button className='review-button'>Review</button>
-          </Link>
-        </div>
-        <h1 style={{textAlign:"center", color:"white"}}>Menu</h1>
-        <div className='container'>
-          {Object.entries(menus).map(([key, [name, price]]) => (
-            <div key={key}>
-              <Link to = {`/${id}/show/${key}/detail`}>
-                <FoodCard className='food-container' name = {name} price = {price} />
-              </Link>
-            </div>
-          ))}
-        </div>
-      </div>} 
+          </div>
+          <div className='container'>
+            <Link to = {`/${id}/review/show/${resId}`}>
+              <button className='review-button font-bold text-[1.1rem]'>Review</button>
+            </Link>
+          </div>
+          <h1 className='text-[1.5rem] font-bold'
+          style={{textAlign:"center", color:"white"}}
+          >Menu</h1>
+          <div className='container'>
+            {Object.entries(menus).map(([key, [name, price]]) => (
+              <div key={key}>
+                <Link to = {`/${id}/show/${key}/detail`}>
+                  <FoodCard className='food-container' name = {name} price = {price} />
+                </Link>
+              </div>
+            ))}
+          </div>
+        </div>} 
       </div>  
     ) 
   };

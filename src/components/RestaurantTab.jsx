@@ -4,9 +4,9 @@ function RestaurantTab({name, rating, location}){
     return (
       <>
         <button className="restaurant-tab">
-              <h2>{name}</h2>
-              <p>Rating: {rating}</p>
-              <p>Location: {location}</p>
+              <h2 className='font-medium'>{name}</h2>
+              <p className='text-[1.2rem] font-medium'>Rating : {rating}</p>
+              <p className='text-[1.2rem] font-medium'>Location : {location}</p>
         </button>
       </>
     );
