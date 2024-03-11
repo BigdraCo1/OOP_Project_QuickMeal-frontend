@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
 import './BasketFood.css';
-import axios from 'axios';
-import { global_customer_id } from '/src/global.jsx'
+import api from '../Header/API'
 
 const BASE_URL = 'http://127.0.0.1:8000'
 
-const BasketFood = ({foodID, lst}) => {
+const BasketFood = ({foodID, lst ,id}) => {
   const amount = lst[0];
   const [newAmount, setnewAmount] = useState(lst[0]);
 
@@ -16,14 +15,14 @@ const BasketFood = ({foodID, lst}) => {
     if (newAmount != amount){
       try {
         const addData = {
-          customer_id: global_customer_id,
+          customer_id: id,
           food_id: lst[1],
           quantity: amount,
           size: lst[4],
           new_quantity: newAmount
         }
 
-        const response = await axios.put(`${BASE_URL}/basket/food/quantity`, addData)
+        const response = await api.put(`${BASE_URL}/basket/food/quantity`, addData)
         alert(response.data)
         window.location.reload();
         setIsLoading(false)
@@ -36,14 +35,14 @@ const BasketFood = ({foodID, lst}) => {
   async function confirmDelete() {
     try {
       const addData = {
-        customer_id: global_customer_id,
+        customer_id: id,
         food_id: lst[1],
         quantity: amount,
         size: lst[4],
         new_quantity: 0
       }
 
-      const response = await axios.put(`${BASE_URL}/basket/food/quantity`, addData)
+      const response = await api.put(`${BASE_URL}/basket/food/quantity`, addData)
       alert(response.data)
       window.location.reload();
       setIsLoading(false)

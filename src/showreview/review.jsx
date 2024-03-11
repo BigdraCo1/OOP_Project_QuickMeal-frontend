@@ -1,16 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import './review.css'
-import { Link, useParams } from 'react-router-dom'
-import axios from 'axios';
+import { useParams } from 'react-router-dom'
 import RestaurantTab from '../components/RestaurantTab';
 import ReviewCard from '../components/ReviewCard';
-import { global_customer_id } from '/src/global.jsx'
 import HomeButton from '../components/HomeButton';
+import api from '../Header/API'
 
 const BASE_URL = 'http://127.0.0.1:8000'
 
 function Reviews(){
-  const { id } = useParams()
+  const { id, resId } = useParams()
 
   const [reviews, setReviews] = useState({});
   const [restaurant, setRestaurant] = useState({});
@@ -18,7 +17,7 @@ function Reviews(){
 
   async function ShowResDetail() {
     try {
-      const response = await axios.get(`${BASE_URL}/show_restaurant_detail_by_id/${id}`)
+      const response = await api.get(`${BASE_URL}/restaurant/show_restaurant_detail_by_id/${resId}`)
       setRestaurant(response.data)
       setIsLoading(false)
     } catch (error) {
@@ -29,7 +28,7 @@ function Reviews(){
 
   async function ShowReviews() {
     try {
-      const response = await axios.get(`${BASE_URL}/review/show/${id}`)
+      const response = await api.get(`${BASE_URL}/review/show/${resId}`)
       setReviews(response.data)
       setIsLoading(false)
     } catch (error) {
@@ -53,7 +52,7 @@ function Reviews(){
   };
 
   async function postReview() {
-    const customerID = global_customer_id;
+    const customerID = customerID;
     const comment = document.getElementById("comment").value;
     const rating = parseInt(document.getElementById("rating").value);
   
@@ -63,14 +62,14 @@ function Reviews(){
     }
 
     const reviewData = {
-      customer_id: customerID,
+      customer_id: id,
       rating: rating,
       comment: comment,
       restaurant_id: id
     };
   
     try {
-      const response = await axios.post(`${BASE_URL}/review/add`, reviewData)
+      const response = await api.post(`${BASE_URL}/review/add`, reviewData)
       alert(response.data)
       window.location.reload();
     } catch (error) {
@@ -83,7 +82,7 @@ function Reviews(){
     { isLoading && <div>.....Loading.....</div> }
     { !isLoading && 
     <div>
-      <HomeButton/>
+      <HomeButton id={id}/>
       <div className='container'>
           <RestaurantTab name = {restaurant.Restaurant_Name} rating = {restaurant.Rate} 
             location = {restaurant.Restaurant_Location} />

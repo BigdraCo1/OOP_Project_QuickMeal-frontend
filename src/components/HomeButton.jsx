@@ -1,12 +1,10 @@
 import './HomeButton.css'
 import { Link } from "react-router-dom";
-import { global_customer_id } from '/src/global.jsx'
 
-function HomeButton(){
-    const id = global_customer_id
+function HomeButton({id}){
     return (
       <>
-        <Link to = {`/restaurants`}>
+        <Link to = {`/${id}/restaurants`}>
           <button className="home-button">
               Home
           </button>

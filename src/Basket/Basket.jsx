@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './Basket.css'
 import { Link, useParams } from "react-router-dom";
-import axios from 'axios';
+import api from '../Header/API'
 import BasketFood from './BasketFood';
 import HomeButton from '../components/HomeButton';
 
@@ -14,7 +14,7 @@ function Basket(){
 
   async function ShowFoodDetail(id) {
     try {
-      const response = await axios.get(`${BASE_URL}/basket/${id}`)
+      const response = await api.get(`${BASE_URL}/basket/custom/${id}`)
       setbasket(response.data)
       setIsLoading(false)
     } catch (error) {
@@ -26,7 +26,7 @@ function Basket(){
   async function Comfirm() {
     try {
       console.log("confirm")
-      await axios.put(`${BASE_URL}/order/confirm/${id}`)
+      await api.put(`${BASE_URL}/order/confirm/${id}`)
       window.location.reload();
     } catch (error) {
       console.log("error",error)
@@ -38,7 +38,7 @@ function Basket(){
       { isLoading && <div>.....Loading.....</div> }
       { !isLoading &&
       <div>
-        <HomeButton/>
+        <HomeButton id={id}/>
         <div className='midText'>
           <h1>Basket</h1>
         </div>
@@ -52,14 +52,14 @@ function Basket(){
                 <div key = {key}>
                   <div className='midText'>
                     {((key !== "total") && (key !== "address")) &&
-                        <BasketFood foodID = {key} lst = {value}/>
+                        <BasketFood foodID = {key} lst = {value} id = {id}/>
                     }
                   </div>
                 </div>
           ))}
           <div className='midText'> <h3>Total Amount : {basket.total} ฿</h3> </div>
           <div className='midText'> <h3>Your Order Address : {basket.address}</h3> </div>
-          <div className='midText'> <Link to = {`/basket/choose_address/${id}`}> 
+          <div className='midText'> <Link to = {`/${id}/basket/choose_address`}> 
             <button className='addAddress'>Add Address</button> </Link> </div>
           {(basket.address !== null) &&
             <div className='midText'> <button className='confirm' onClick={() => Comfirm()}>Confirm Order</button> </div>

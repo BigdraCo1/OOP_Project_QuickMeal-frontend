@@ -1,31 +1,30 @@
 import React, { useState, useEffect } from 'react';
 import './fooddetail.css'
 import { Link, useParams } from "react-router-dom";
-import axios from 'axios';
+import api from '../Header/API'
 import BasketButton from '../components/BasketButton';
 import HomeButton from '../components/HomeButton';
-import { global_customer_id } from '/src/global.jsx'
 
 const BASE_URL = 'http://127.0.0.1:8000'
 
 function FoodDetail(){
-  const { id } = useParams()
+  const { id,foodId } = useParams()
 
   const [fooddetail, setFooddetail] = useState({});
   const [quantity, setQuantity] = useState(1);
   const [selectedSize, setSelectedSize] = useState("Small");
   const [isLoading, setIsLoading]= useState(true)
 
-  async function ShowFoodDetail(id) {
+  async function ShowFoodDetail(foodId) {
     try {
-      const response = await axios.get(`${BASE_URL}/show/${id}/detail`)
+      const response = await api.get(`${BASE_URL}/show/${foodId}/detail`)
       setFooddetail(response.data) 
       setIsLoading(false)
     } catch (error) {
       console.log("error",error)
     }
   }
-  useEffect(() => {ShowFoodDetail(id)}, []);
+  useEffect(() => {ShowFoodDetail(foodId)}, []);
 
   function handleQuantityChange(change){
     setQuantity(prevQuantity => Math.max(prevQuantity + change, 1));
@@ -39,14 +38,14 @@ function FoodDetail(){
     setQuantity(1)
 
     const AddData = {
-      customer_id: global_customer_id,
-      food_id: id,
+      customer_id: id,
+      food_id: foodId,
       size: selectedSize,
       quantity: quantity
     }
 
     try {
-      const response = await axios.post(`${BASE_URL}/basket/add/food`, AddData)
+      const response = await api.post(`${BASE_URL}/basket/add/food`, AddData)
       alert(response.data) 
       setIsLoading(false)
     } catch (error) {
@@ -58,8 +57,8 @@ function FoodDetail(){
       <>
       { isLoading && <div>.....Loading.....</div> }
       { !isLoading && <div className='midText'>
-        <HomeButton/>
-        <BasketButton/>
+        <HomeButton id = {id}/>
+        <BasketButton id = {id}/>
         <div className='detailbox'>
         <h2>{fooddetail.food_name}</h2>
         <h3>{fooddetail.food_type}</h3>

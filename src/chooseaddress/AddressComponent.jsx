@@ -1,20 +1,18 @@
 import React from 'react';
 import './AddressComponent.css';
-import axios from 'axios';
+import api from '../Header/API'
 import { Link } from 'react-router-dom';
-import { global_customer_id } from '/src/global.jsx'
 
 const BASE_URL = 'http://127.0.0.1:8000'
-const customer_id = global_customer_id
 
-function AddressComponent({ address }) {
+function AddressComponent({ address , id}) {
     async function ChooseAddress() {
         try {
           const addressData = {
-            customer_id: customer_id,
+            customer_id: id,
             address: address
           }
-          const response = await axios.post(`${BASE_URL}/basket/add/address`, addressData)
+          const response = await api.post(`${BASE_URL}/basket/add/address`, addressData)
           alert(response.data)
         } catch (error) {
           console.log("error",error)
@@ -23,7 +21,7 @@ function AddressComponent({ address }) {
 
       async function DeleteAddress() {
         try {
-          const response = await axios.delete(`${BASE_URL}/basket/address/${customer_id}/${address}`)
+          const response = await api.delete(`${BASE_URL}/basket/address/${id}/${address}`)
           alert(response.data)
           window.location.reload();
         } catch (error) {
@@ -33,7 +31,7 @@ function AddressComponent({ address }) {
 
   return (
     <div className="address">
-        <Link to = {`/basket/${customer_id}`}>
+        <Link to = {`/${customer_id}/basket`}>
           <button style={{margin:"10px"}}onClick={ChooseAddress}>Choose</button>
         </Link>
         <h3>{address}</h3>

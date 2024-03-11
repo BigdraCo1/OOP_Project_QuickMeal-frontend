@@ -1,13 +1,10 @@
 import './ProfileButton.css'
 import { Link } from "react-router-dom";
-import { global_customer_id } from '/src/global.jsx'
 
-const id = global_customer_id
-
-function ProfileButton(){
+function ProfileButton({id}){
     return (
       <>
-        <Link to = {`/Profile/${id}`}>
+        <Link to = {`/${id}/Profile`}>
           <button className="profile-button">
             Profile
           </button>

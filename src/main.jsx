@@ -9,6 +9,7 @@ import FoodDetail from './fooddetail/fooddetail.jsx'
 import Basket from './Basket/Basket.jsx'
 import ChooseAddress from './chooseaddress/ChooseAddress.jsx'
 import CustomerProfile from './Profile/CustomerProfile.jsx'
+import LoginForm from './authen/Auth.jsx'
 
 import {
   createBrowserRouter,
@@ -17,25 +18,28 @@ import {
 
 const router = createBrowserRouter([
   {
-    path: "/restaurants",
+    path: "/login",
+    element: <LoginForm />,
+  },{
+    path: "/:id/restaurants",
     element: <Restaurants />,
   },{
-    path: "/show/:id/menu",
+    path: "/:id/show/:resId/menu",
     element: <Menu />,
   },{
-    path: "/review/show/:id",
+    path: "/:id/review/show/:resId",
     element: <Reviews />,
   },{
-    path: "/show/:id/detail",
+    path: "/:id/show/:foodId/detail",
     element: <FoodDetail />,
   },{
-    path: "/basket/:id",
+    path: "/:id/basket",
     element: <Basket />,
   },{
-    path: "/basket/choose_address/:id",
+    path: "/:id/basket/choose_address",
     element: <ChooseAddress />,
   },{
-    path: "/Profile/:id",
+    path: "/:id/Profile",
     element: <CustomerProfile />,
   },
 ]);

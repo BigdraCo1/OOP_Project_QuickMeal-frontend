@@ -1,12 +1,10 @@
 import './BasketButton.css'
 import { Link } from "react-router-dom";
-import { global_customer_id } from '/src/global.jsx'
 
-function BasketButton(){
-    const id = global_customer_id
+function BasketButton({id}){
     return (
       <>
-        <Link to = {`/basket/${id}`}>
+        <Link to = {`/${id}/basket`}>
           <button className="basket-button">
               Basket
           </button>
