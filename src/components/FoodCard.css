@@ -1,10 +1,10 @@
   .food-card {
     margin: 10px;
-    border: 5px solid #000000;
+    /* border: 5px solid #000000; */
     border-radius: 5px;
     padding: 20px;
     width: 350px;
-    box-shadow: 5px 5px rgba(0, 0, 0, 0.1);
+    /* box-shadow: 5px 5px rgba(0, 0, 0, 0.1); */
     background-color: white;
     
   }
