@@ -18,6 +18,7 @@ function CurrentOrder(){
     try {
       const response = await api.get(`${BASE_URL}/show/order_list/${id}`)
       setOrder(response.data)
+      console.log(response.data)
       setIsLoading(false)
     } catch (error) {
       console.log("error",error)
@@ -33,19 +34,14 @@ function CurrentOrder(){
       <HomeButton id={id}/>
       <BasketButton id={id}/>
       <ProfileButton id={id}/>
-      {(orders.data === "No current order") &&
       <div>
-        <h1 className='midText'>...No Current Order...</h1>
-      </div>
-      }{!(orders.data === "No current order") &&
-      <div>
+        <h1 className='midText'>Current Order</h1>
         {orders.data.map((item, index) => (
         <div key={index}>
           <OrderCard orderID = {item.Order_ID} state = {item.Order_State} />
         </div>
         ))}
-      </div>
-      } 
+      </div> 
     </div>}
     </>
   )

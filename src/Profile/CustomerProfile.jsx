@@ -39,7 +39,7 @@ function CustomerProfile(){
                 <button >Pocket</button>
               </Link>
               <Link to = {`/${id}/current_order`}>
-                <button style={{margin:"10px"}}>On-going Order</button>
+                <button style={{margin:"10px"}}>Current Order</button>
               </Link>
               <Link to = {`/${id}/order_History`}>
                 <button >Order History</button>
