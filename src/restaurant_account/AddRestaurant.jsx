@@ -5,7 +5,7 @@ import api from "../../api/access_api.jsx";
 const BASE_URL = "http://127.0.0.1:8000";
 const ROUTE_URL = "http://localhost:5173";
 
-function AddMenu() {
+function AddRestaurant() {
   const { restaurant} = useParams();
   const [menuData, setMenuData] = useState({});
   const [isLoading, setIsLoading] = useState(false);
@@ -37,7 +37,7 @@ function AddMenu() {
         size: menuData._Food__size,
         price: menuData._Food__price,
       };
-      await api.post(`${BASE_URL}/${restaurant}`, newMenuData);
+      await api.post(`${BASE_URL}/restaurant`, newMenuData);
     } catch (error) {
       console.log("Error updating menu:", error);
     } finally {
@@ -113,4 +113,4 @@ function AddMenu() {
   );
 }
 
-export default AddMenu;
+export default AddRestaurant;

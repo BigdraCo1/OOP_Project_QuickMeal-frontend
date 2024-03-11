@@ -89,7 +89,7 @@ function Menu() {
                   ))}
                 </div>
                 <p className="font-bold mb-1">Price : {menu._Food__price}</p>
-                <Link to={`/${restaurant}/${menu._Food__name}`}>
+                <Link to={`/${restaurant}/edit/${menu._Food__name}`}>
                 <button class="bg-green-600 text-white px-4 py-2 rounded mb-2">
                   Edit
                 </button>
@@ -104,7 +104,7 @@ function Menu() {
                 </button>
               </div>
             ))}
-            <Link className="text-blue-500 hover:text-blue-700">
+            <Link to={`/${restaurant}`} className="text-blue-500 hover:text-blue-700">
             <button class="mb-4 group relative h-12 w-48 overflow-hidden rounded-lg bg-white text-lg shadow">
                 <div class="absolute inset-0 w-3 bg-amber-400 transition-all duration-[250ms] ease-out group-hover:w-full"></div>
                 <span class="relative text-black group-hover:text-white">

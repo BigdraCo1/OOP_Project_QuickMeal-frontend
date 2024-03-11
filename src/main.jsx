@@ -20,7 +20,7 @@ const router = createBrowserRouter([
     element: <App />,
   },
   {
-    path: "/:restaurant",
+    path: "/:restaurant/menu",
     element: <Menu />,
   },
   {
@@ -44,7 +44,7 @@ const router = createBrowserRouter([
     element: <AdminPanel />,
   },
   {
-    path: "/:restaurant/:menu",
+    path: "/:restaurant/edit/:menu",
     element: <EditMenu />,
   },
   {

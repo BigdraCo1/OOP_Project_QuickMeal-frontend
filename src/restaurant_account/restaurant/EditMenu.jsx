@@ -120,7 +120,7 @@ function EditMenu() {
           Save Changes
         </button>
         <br />
-        <Link to={`${ROUTE_URL}/${restaurant}`} className="text-blue-500 hover:text-blue-700">
+        <Link to={`${ROUTE_URL}/${restaurant}/menu`} className="text-blue-500 hover:text-blue-700">
           Back
         </Link>
       </div>
