@@ -37,7 +37,7 @@ function CustomerCurrentOrder(){
         <h1 className='midText'>Current Order</h1>
         {orders.data.map((item, index) => (
         <div key={index}>
-          <OrderCard orderID = {item.Order_ID} state = {item.Order_State} />
+          <OrderCard orderID = {item.Order_ID} state = {item.Order_State} id = {id} />
         </div>
         ))}
       </div> 

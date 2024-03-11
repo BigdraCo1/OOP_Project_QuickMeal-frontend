@@ -37,7 +37,7 @@ function CustomerOrderHistory(){
         <h1 className='midText'>Order History</h1>
         {orders.data.map((item, index) => (
         <div key={index}>
-          <FinishOrderCard orderID = {item.Order_ID} state = {item.Order_State} />
+          <FinishOrderCard orderID = {item.Order_ID} state = {item.Order_State} id = {id} />
         </div>
         ))}
       </div>

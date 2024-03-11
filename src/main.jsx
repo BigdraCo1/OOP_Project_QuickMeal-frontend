@@ -12,6 +12,8 @@ import CustomerProfile from './Profile/CustomerProfile.jsx'
 import LoginForm from './authen/Auth.jsx'
 import CustomerCurrentOrder from './currentorder/CurrentOrder.jsx'
 import CustomerOrderHistory from './orderhistory/OrderHistory.jsx'
+import CustomerCurrentOrderDetail from './orderdetail/CustomerCurrentOrderDetail.jsx'
+import CustomerFinishOrderDetail from './orderdetail/CustomerFinishOrderDetail.jsx'
 
 import {
   createBrowserRouter,
@@ -49,6 +51,12 @@ const router = createBrowserRouter([
   },{
     path: "/:id/order_History",
     element: <CustomerOrderHistory />,
+  },{
+    path: "/:id/current_order/detail/:orderId",
+    element: <CustomerCurrentOrderDetail />,
+  },{
+    path: "/:id/order_History/detail/:orderId",
+    element: <CustomerFinishOrderDetail />,
   },
 ]);
 
