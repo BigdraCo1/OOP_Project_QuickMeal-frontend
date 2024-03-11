@@ -38,22 +38,25 @@ function Pocket() {
 
     console.log(payment);
     return (
-        <div>
-            <h1>Pocket</h1>
-            <div>
-                <p>Balance: {pocket.Balance}</p>
-            </div>
-            <div>
-                <h2>Payments</h2>
-                <ul>
-                    {Object.keys(payment).map((paymentId) => (
-                        <li key={paymentId}>
-                            <p>Order ID: {payment[paymentId][0]}</p>
-                            <p>Status: {payment[paymentId][1]}</p>
-                            <p>Amount: {payment[paymentId][2]}</p>
-                        </li>
-                    ))}
-                </ul>
+        <div className='flex mx-[10rem] px-[10rem] border-2 shadow-2xl 
+        bg-slate-100 justify-start items-start h-screen'>
+            <div className='p-[1rem] h-screen w-full'>
+                <h1 className='text-[2rem] font-bold'>Pocket</h1>
+                <div className='text-[1.2rem]'>
+                    <p>Balance : {pocket.Balance}</p>
+                </div>
+                <div className='text-[1.2rem] pl-[1rem]'>
+                    <h2>Payments</h2>
+                    <ul>
+                        {Object.keys(payment).map((paymentId) => (
+                            <li key={paymentId}>
+                                <p>Order ID: {payment[paymentId][0]}</p>
+                                <p>Status: {payment[paymentId][1]}</p>
+                                <p>Amount: {payment[paymentId][2]}</p>
+                            </li>
+                        ))}
+                    </ul>
+                </div>
             </div>
         </div>
     );
