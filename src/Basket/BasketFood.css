@@ -1,0 +1,43 @@
+.food-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    background-color: #d5c6b1;
+    margin: 10px;
+    padding: 8px;
+    border-radius: 8px;
+    width: fit-content
+  }
+  
+  .food-name {
+    margin-right: 10px;
+  }
+  
+  .amount-control {
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+  }
+  
+  .btn {
+    cursor: pointer;
+    border: none;
+    background-color: #f0f0f0;
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin: 5px;
+  }
+  
+  .amount {
+    margin: 0 10px;
+  }
+  
+  .size-label {
+    display: flex;
+    align-items: center;
+  }
+  
+  .size-label input[type="checkbox"] {
+    margin-right: 5px;
+  }
+  

@@ -1,7 +1,14 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import App from './customer/App.jsx'
-import Menu from './restaurant_account/restaurant/Menu.jsx';
+import './index.css'
+
+import Restaurants from './showres/restaurants.jsx'
+import Menu from './menu/Menu.jsx'
+import Reviews from './showreview/review.jsx'
+import FoodDetail from './fooddetail/fooddetail.jsx'
+import Basket from './Basket/Basket.jsx'
+import ChooseAddress from './chooseaddress/ChooseAddress.jsx'
+
 import {
   createBrowserRouter,
   RouterProvider,
@@ -9,12 +16,25 @@ import {
 
 const router = createBrowserRouter([
   {
-    path: "/",
-    element: <App />,
+    path: "/restaurants",
+    element: <Restaurants />,
   },
   {
-    path: "/:restaurant",
+    path: "/show/:id/menu",
     element: <Menu />,
+  },
+  {
+    path: "/review/show/:id",
+    element: <Reviews />,
+  },{
+    path: "/show/:id/detail",
+    element: <FoodDetail />,
+  },{
+    path: "/basket/:id",
+    element: <Basket />,
+  },{
+    path: "/basket/choose_address/:id",
+    element: <ChooseAddress />,
   },
 ]);
 
