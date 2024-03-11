@@ -10,6 +10,8 @@ import Basket from './Basket/Basket.jsx'
 import ChooseAddress from './chooseaddress/ChooseAddress.jsx'
 import CustomerProfile from './Profile/CustomerProfile.jsx'
 import LoginForm from './authen/Auth.jsx'
+import CurrentOrder from './currentorder/CurrentOrder.jsx'
+import OrderHistory from './orderhistory/OrderHistory.jsx'
 
 import {
   createBrowserRouter,
@@ -41,6 +43,12 @@ const router = createBrowserRouter([
   },{
     path: "/:id/Profile",
     element: <CustomerProfile />,
+  },{
+    path: "/:id/current_order",
+    element: <CurrentOrder />,
+  },{
+    path: "/:id/order_History",
+    element: <OrderHistory />,
   },
 ]);
 

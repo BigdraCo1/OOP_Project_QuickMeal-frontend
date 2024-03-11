@@ -35,13 +35,13 @@ function CustomerProfile(){
             <h2 className='midText'>Email : {profileData.Email}</h2>
             <h2 className='midText'>Phone : {profileData.Phone}</h2>
             <div className='midText'>
-              <Link>
+              <Link to = {`/${id}/pocket`}>
                 <button >Pocket</button>
               </Link>
-              <Link>
+              <Link to = {`/${id}/current_order`}>
                 <button style={{margin:"10px"}}>On-going Order</button>
               </Link>
-              <Link>
+              <Link to = {`/${id}/order_History`}>
                 <button >Order History</button>
               </Link>
             </div>
