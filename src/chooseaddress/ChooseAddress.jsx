@@ -31,7 +31,7 @@ function ChooseAddress(){
       return;
     }
 
-    try {
+    try { 
       const addAddressData = {
         customer_id: id,
         address: newAddress
@@ -58,7 +58,7 @@ function ChooseAddress(){
             </div>
           ))}
           <div className='midText'> <textarea id="newAddress" name="newAddress" rows="1" cols="50"></textarea><br/> </div>
-          <div className='midText'> <button onClick={() => addAddress(id)}>Add address</button> </div>
+          <div className='midText'> <button onClick={() => addAddress()}>Add address</button> </div>
         </div> 
           }
       </>

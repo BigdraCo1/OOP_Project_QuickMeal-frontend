@@ -31,7 +31,7 @@ function AddressComponent({ address , id}) {
 
   return (
     <div className="address">
-        <Link to = {`/${customer_id}/basket`}>
+        <Link to = {`/${id}/basket`}>
           <button style={{margin:"10px"}}onClick={ChooseAddress}>Choose</button>
         </Link>
         <h3>{address}</h3>
