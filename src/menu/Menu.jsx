@@ -39,7 +39,7 @@ function Menu(){
   useEffect(() => {ShowMenus(resId)}, []);
 
     return (
-      <>
+      <div>
       { isLoading && <div>.....Loading.....</div> }
       { !isLoading &&
       <div>
@@ -65,8 +65,10 @@ function Menu(){
           ))}
         </div>
       </div>} 
-      </>  
+      </div>  
     ) 
   };
   
   export default Menu;
+
+  
