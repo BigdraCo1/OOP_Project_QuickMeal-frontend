@@ -52,7 +52,6 @@ function Reviews(){
   };
 
   async function postReview() {
-    const customerID = customerID;
     const comment = document.getElementById("comment").value;
     const rating = parseInt(document.getElementById("rating").value);
   
@@ -65,7 +64,7 @@ function Reviews(){
       customer_id: id,
       rating: rating,
       comment: comment,
-      restaurant_id: id
+      restaurant_id: resId
     };
   
     try {
@@ -93,7 +92,7 @@ function Reviews(){
       <div className='container'>
         {Object.entries(reviews).map(([key, [rate, comment]]) => (
             <div key = {key} style={{marginBottom:"20px"}}>
-                <ReviewCard className='food-container' name = {key} comment = {renderStars(Math.floor(rate), comment)}/>
+                <ReviewCard name = {key} comment = {renderStars(Math.floor(rate), comment)}/>
             </div>
         ))}
       </div>

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './CustomerProfile.css'
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import api from '../Header/API'
 import HomeButton from '../components/HomeButton';
 
@@ -35,9 +35,15 @@ function CustomerProfile(){
             <h2 className='midText'>Email : {profileData.Email}</h2>
             <h2 className='midText'>Phone : {profileData.Phone}</h2>
             <div className='midText'>
-              <button >Pocket</button>
-              <button style={{margin:"10px"}}>On-going Order</button>
-              <button >Order History</button>
+              <Link>
+                <button >Pocket</button>
+              </Link>
+              <Link>
+                <button style={{margin:"10px"}}>On-going Order</button>
+              </Link>
+              <Link>
+                <button >Order History</button>
+              </Link>
             </div>
         </div> 
           }

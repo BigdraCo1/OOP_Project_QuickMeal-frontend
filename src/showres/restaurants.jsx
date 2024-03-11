@@ -34,7 +34,7 @@ function Restaurants(){
       <HomeButton id={id}/>
       <BasketButton id={id}/>
       <ProfileButton id={id}/>
-      <div class="midText">
+      <div className="midText">
         <h1>List of Restaurants</h1>
       </div>
       <div className='container'>
