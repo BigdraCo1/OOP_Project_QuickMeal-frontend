@@ -12,6 +12,7 @@ import RequestOrderDetail from './restaurant_account/restaurant/RequestOrder/Req
 import RequestedOrderDetail from './restaurant_account/restaurant/RequestedOrder/RequestedOrderDetail.jsx'
 import FinishedOrderDetail from './restaurant_account/restaurant/FinishedOrder/FinishedOrderDetail.jsx'
 import LoginForm from './Authen.jsx'
+import Register from './Register/Register.jsx'
 //import Authen from './wwe.jsx'
 
 import {
@@ -21,6 +22,10 @@ import {
 } from "react-router-dom"
 
 const router = createBrowserRouter([
+  {
+    path: "/register",
+    element: <Register />,
+  },
   {
     path: "/login",
     element: <LoginForm />,
