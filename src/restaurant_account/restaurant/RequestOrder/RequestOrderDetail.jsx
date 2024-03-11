@@ -78,7 +78,7 @@ function RestaurantRequestOrderDetail() {
                         <p>Payment: {orderDetail.Payment}</p>
                     </div>
                 )}
-                {orderDetail && orderDetail.Order_State === 'get_res' && (
+                {orderDetail && (
                     <Link to={`/${restaurant_name}`}>
                         <button
                             onClick={async () => {

@@ -39,11 +39,10 @@ function RiderRequestOrder() {
     }
 
     useEffect(() => {
-        setIsLoading(true);
         fetchRiderProfile(rider_id);
         fetchRiderRequestOrder(rider_id);
-        setIsLoading(false);
     }, [rider_id]);
+
 
     console.log(riderRequestOrder);
     return (
@@ -66,15 +65,17 @@ function RiderRequestOrder() {
             </div>
             {riderRequestOrder.data.map(order => (
                 <div key={order.Order_ID}>
-                    <button className='order-button' key={order.Order_ID}>
-                        <p>Order ID: {order.Order_ID}</p>
-                        <p>Customer: {order.Customer}</p>
-                        <p>Rider: {order.Rider}</p>
-                        <p>Restaurant: {order.Restaurant}</p>
-                        <p>Food: {order.Food.join(', ')}</p>
-                        <p>Order State: {order.Order_State}</p>
-                        <p>Payment: {order.Payment}</p>
-                    </button>
+                    <Link to={`/rider_account/${rider_id}/request_order/${order.Order_ID}`}>
+                        <button className='order-button' key={order.Order_ID}>
+                            <p>Order ID: {order.Order_ID}</p>
+                            <p>Customer: {order.Customer}</p>
+                            <p>Rider: {order.Rider}</p>
+                            <p>Restaurant: {order.Restaurant}</p>
+                            <p>Food: {order.Food.join(', ')}</p>
+                            <p>Order State: {order.Order_State}</p>
+                            <p>Payment: {order.Payment}</p>
+                        </button>
+                    </Link>
                 </div>
             ))}
         </>

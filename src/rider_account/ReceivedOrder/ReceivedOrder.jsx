@@ -7,7 +7,7 @@ const BASE_URL = 'http://127.0.0.1:8000';
 function RiderReceivedOrder() {
     const { rider_id } = useParams();
     const [riderProfile, setRiderProfile] = useState(null);
-    const [riderRecieveOrder, setRiderRecieveOrder] = useState({ data: [] });
+    const [riderRecievedOrder, setRiderRecievedOrder] = useState({ data: [] });
     const [isLoading, setIsLoading] = useState(false);
 
 
@@ -27,7 +27,7 @@ function RiderReceivedOrder() {
             setIsLoading(true);
             const requested_order_response = await api.get(`${BASE_URL}/rider/${rider_id}/show/requested_order_list`);
             if (requested_order_response.data) {
-                setRiderRecieveOrder(requested_order_response.data);
+                setRiderRecievedOrder(requested_order_response.data);
             }
         } catch (error) {
             console.log('error', error);
@@ -65,8 +65,9 @@ function RiderReceivedOrder() {
             <div>
                 <h1>Received Order</h1>
             </div>
-            {riderRecieveOrder.data.map(order => (
-                    <div key={order.Order_ID}>
+            {riderRecievedOrder.data.map(order => (
+                <div key={order.Order_ID}>
+                    <Link to={`/rider_account/${rider_id}/recieved_order/${order.Order_ID}`}>
                         <button className='order-button' key={order.Order_ID}>
                             <p>Order ID: {order.Order_ID}</p>
                             <p>Customer: {order.Customer}</p>
@@ -76,8 +77,9 @@ function RiderReceivedOrder() {
                             <p>Order State: {order.Order_State}</p>
                             <p>Payment: {order.Payment}</p>
                         </button>
-                    </div>
-                ))}
+                    </Link>
+                </div>
+            ))}
         </>
     )
 }

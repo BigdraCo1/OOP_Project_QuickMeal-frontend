@@ -13,9 +13,12 @@ import RestaurantRequestedOrderDetail from './restaurant_account/restaurant/Requ
 import RestaurantFinishedOrderDetail from './restaurant_account/restaurant/FinishedOrder/FinishedOrderDetail.jsx'
 import LoginForm from './Authen/Authen.jsx'
 import RiderAccount from './rider_account/RiderAccount.jsx'
-import RiderRequestOrder from './rider_account/Request Order/RequestOrder.jsx'
+import RiderRequestOrder from './rider_account/RequestOrder/RequestOrder.jsx'
 import RiderReceivedOrder from './rider_account/ReceivedOrder/ReceivedOrder.jsx'
 import RiderFinishedOrder from './rider_account/FinishedOrder/FinishedOrder.jsx'
+import RiderRequestOrderDetail from './rider_account/RequestOrder/RequestOrder.detail.jsx'
+import RiderReceivedOrderDetail from './rider_account/ReceivedOrder/ReceivedOrderDetail.jsx'
+import RiderFinishedOrderDetail from './rider_account/FinishedOrder/FinishedOrderDetail.jsx'
 
 import {
   createBrowserRouter,
@@ -87,7 +90,19 @@ const router = createBrowserRouter([
   {
     path: "/rider_account/:rider_id/finished_order",
     element: <RiderFinishedOrder />,
-  }
+  },
+  {
+    path: "/rider_account/:rider_id/request_order/:order_id",
+    element: <RiderRequestOrderDetail />,
+  },
+  {
+    path: "/rider_account/:rider_id/recieved_order/:order_id",
+    element: <RiderReceivedOrderDetail />,
+  },
+  {
+    path: "/rider_account/:rider_id/finished_order/:order_id",
+    element: <RiderFinishedOrderDetail />,
+  },
 ]);
 
 ReactDOM.createRoot(document.getElementById('root')).render(
