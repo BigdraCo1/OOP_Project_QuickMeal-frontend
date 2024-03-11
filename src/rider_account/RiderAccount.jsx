@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import api from '../api/api';
+import './RiderAccount.css';
 
 const BASE_URL = 'http://127.0.0.1:8000';
 
@@ -28,15 +29,27 @@ function RiderAccount() {
     }, [rider_id]);
 
     return (
-        <>
+        <div>
             <div className='profile-container'>
                 {riderProfile && (
                     <div>
-                        <h2>Profile Information</h2>
-                        <p>Username: {riderProfile.Username}</p>
-                        <p>Fullname: {riderProfile.Fullname}</p>
-                        <p>Email: {riderProfile.Email}</p>
-                        <p>Phone: {riderProfile.Phone}</p>
+                        <h2 className='text-[1.6rem] font-bold'>Profile Information</h2>
+                        <p>
+                            <p className='text-[1.1rem] inline-block font-medium mr-2'>Username :</p>
+                            <p className='text-[1.1rem] inline-block'>{riderProfile.Username}</p>
+                        </p>
+                        <p>
+                            <p className='text-[1.1rem] inline-block font-medium mr-2'>Fullname :</p>
+                            <p className='text-[1.1rem] inline-block'>{riderProfile.Fullname}</p>
+                        </p>
+                        <p>
+                            <p className='text-[1.1rem] inline-block font-medium mr-2'>Email :</p>
+                            <p className='text-[1.1rem] inline-block'>{riderProfile.Email}</p>
+                        </p>
+                        <p>
+                            <p className='text-[1.1rem] inline-block font-medium mr-2'>Phone :</p>
+                            <p className='text-[1.1rem] inline-block'>{riderProfile.Phone}</p>
+                        </p>
                         <Link to={`/${rider_id}/pocket`}>
                             <button className="button">
                                 Pocket
@@ -65,7 +78,7 @@ function RiderAccount() {
                 </Link>
 
             </div>
-        </>
+        </div>
     )
 }
 
