@@ -1,0 +1,20 @@
+.address {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    background-color: #d5c6b1;
+    margin: 10px;
+    padding: 8px;
+    border-radius: 8px;
+    width: fit-content
+  }
+
+  .midText {
+    display: flex;
+    justify-content: center; 
+    align-items: center;  
+  }
+  
+  .midText-text {
+    text-align: center; 
+  }

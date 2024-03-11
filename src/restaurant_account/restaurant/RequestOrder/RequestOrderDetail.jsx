@@ -3,9 +3,9 @@ import { Link, useParams } from 'react-router-dom';
 import axios from 'axios';
 import './RequestOrderDetail.css'; // นำเข้าไฟล์ CSS
 const BASE_URL = 'http://127.0.0.1:8000';
-import api from '../../../api';
+import api from '../../../api/api'
 
-function RequestOrderDetail() {
+function RestaurantRequestOrderDetail() {
     const { restaurant_name, order_id } = useParams();
     const [restaurantDetail, setRestaurantDetail] = useState(null);
     const [orderDetail, setOrderDetail] = useState(null);
@@ -78,7 +78,7 @@ function RequestOrderDetail() {
                         <p>Payment: {orderDetail.Payment}</p>
                     </div>
                 )}
-                {orderDetail && orderDetail.Order_State === 'get_res' && (
+                {orderDetail && (
                     <Link to={`/${restaurant_name}`}>
                         <button
                             onClick={async () => {
@@ -106,4 +106,4 @@ function RequestOrderDetail() {
     );
 }
 
-export default RequestOrderDetail;
+export default RestaurantRequestOrderDetail;

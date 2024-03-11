@@ -2,11 +2,11 @@ import React, { useState, useEffect } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import axios from 'axios';
 import './RequestedOrder.css';
-import api from '../../../api';
+import api from '../../../api/api';
 
 const BASE_URL = 'http://127.0.0.1:8000';
 
-function RequestedOrder() {
+function RestaurantRequestedOrder() {
     const { restaurant_name } = useParams();
     const [restaurantDetail, setRestaurantDetail] = useState(null); // กำหนดค่าเริ่มต้นเป็น null
     const [requestedOrderList, setRequestedOrderList] = useState([]);
@@ -80,4 +80,4 @@ function RequestedOrder() {
     )
 }
 
-export default RequestedOrder;
+export default RestaurantRequestedOrder;

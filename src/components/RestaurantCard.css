@@ -1,0 +1,21 @@
+   .restaurant-card {
+    margin: 10px;
+    border: 5px solid #000000;
+    border-radius: 5px;
+    padding: 20px;
+    width: 350px;
+    box-shadow: 5px 5px rgba(0, 0, 0, 0.1);
+    background-color: white;
+  }
+  
+  .restaurant-card h2 {
+    margin-top: 0;
+  }
+  
+  .restaurant-card p {
+    margin: 5px 0;
+  }
+
+  .restaurant-card:hover, .restaurant-card:focus, .restaurant-card:active{
+    background-color: #cacbcc;
+  }

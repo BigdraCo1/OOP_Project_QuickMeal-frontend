@@ -1,0 +1,9 @@
+.midText {
+    display: flex;
+    justify-content: center; 
+    align-items: center;  
+  }
+  
+  .midText-text {
+    text-align: center; 
+  }

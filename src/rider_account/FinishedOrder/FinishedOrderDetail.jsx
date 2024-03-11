@@ -1,24 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useParams } from 'react-router-dom';
-import axios from 'axios';
 const BASE_URL = 'http://127.0.0.1:8000';
-import api from '../../../api/api';
+import api from '../../api/api'
 
-function RestaurantFinishedOrderDetail() {
-    const { restaurant_name, order_id } = useParams();
-    const [restaurantDetail, setRestaurantDetail] = useState(null);
+function FinishedOrderDetail() {
+
+    const { order_id } = useParams();
     const [orderDetail, setOrderDetail] = useState(null);
-
-    async function fetchRestaurant(restaurant_name) {
-        try {
-            const restaurant_response = await api.get(`${BASE_URL}/restaurant/show_restaurant_detail_by_name/${restaurant_name}`);
-            if (restaurant_response.data) {
-                setRestaurantDetail(restaurant_response.data);
-            }
-        } catch (error) {
-            console.log('error', error);
-        }
-    }
 
     async function fetchOrderDetail(order_id) {
         try {
@@ -29,11 +17,6 @@ function RestaurantFinishedOrderDetail() {
         }
     }
 
-
-    useEffect(() => {
-        fetchRestaurant(restaurant_name);
-    }, [restaurant_name]);
-
     useEffect(() => {
         fetchOrderDetail(order_id);
     }, [order_id]);
@@ -41,9 +24,9 @@ function RestaurantFinishedOrderDetail() {
     return (
         <>
         <div>
-        <h1>RequestedOrderDetail</h1>
+        <h1>Finish order detail</h1>
                 {orderDetail && (
-                    <div className="OrderDetail"> {/* ใช้ className เพื่อเรียกใช้งาน CSS */}
+                    <div className="OrderDetail">
                         <p>Order ID: {order_id}</p>
                         <p>Customer: {orderDetail.Customer}</p>
                         <p>Rider: {orderDetail.Rider}</p>
@@ -59,4 +42,4 @@ function RestaurantFinishedOrderDetail() {
 
 }
 
-export default RestaurantFinishedOrderDetail;
+export default FinishedOrderDetail;
