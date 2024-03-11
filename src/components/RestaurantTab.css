@@ -1,0 +1,18 @@
+.restaurant-tab {
+    margin: 10px;
+    border: 2px solid #000000;
+    border-radius: 5px;
+    padding: 20px;
+    min-width: 350px;
+    box-shadow: 5px 5px rgba(0, 0, 0, 0.1);
+    background-color: white;
+  }
+  
+  .restaurant-tab h2 {
+    margin-top: 0;
+    font-size: 40px;
+  }
+  
+  .restaurant-tab p {
+    margin: 5px 0;
+  }

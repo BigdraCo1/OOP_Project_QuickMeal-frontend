@@ -1,0 +1,19 @@
+.midText {
+    display: flex;
+    justify-content: center; 
+    align-items: center;  
+  }
+  
+  .midText-text {
+    text-align: center; 
+  }
+
+  .button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
