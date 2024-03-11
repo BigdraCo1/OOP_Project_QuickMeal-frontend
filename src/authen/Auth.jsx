@@ -51,9 +51,9 @@ const LoginForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <input
-        type="text"
+            <form onSubmit={handleSubmit}>
+                <input
+                type="text"
         name="username"
         value={formData.username}
         onChange={handleChange}
@@ -68,6 +68,7 @@ const LoginForm = () => {
       />
       <button type="submit">Login</button>
     </form>
+    
   );
 };
 

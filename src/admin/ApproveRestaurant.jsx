@@ -1,19 +1,20 @@
 import { useState, useEffect } from "react";
-import { useParams, Link } from "react-router-dom";
-import api from "../../api/access_api.jsx";
+import { Link } from "react-router-dom";
+import api from "../api/access_api.jsx";
 
 const BASE_URL = "http://127.0.0.1:8000";
 
-function Menu() {
-  const { restaurant } = useParams();
-  const [menues, setMenues] = useState([]);
+function ApproveRestaurant() {
+  const [restaurants, setRestaurants] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
 
-  async function fetchMenu(restaurant) {
+  async function fetchApproveRestaurant() {
     try {
       setIsLoading(true);
-      const response = await api.get(`${BASE_URL}/${restaurant}`);
-      setMenues(response.data);
+      const response = await api.get(
+        `${BASE_URL}/admin/restaurant_approval_list`
+      );
+      setRestaurants(response.data);
     } catch (error) {
       console.log("error", error);
     } finally {
@@ -21,11 +22,27 @@ function Menu() {
     }
   }
 
-  async function deleteMenu(name_menu) {
+  async function denyRestaurant(name_restaurant) {
     try {
       setIsLoading(true);
-      await api.delete(`${BASE_URL}/${restaurant}/${name_menu}`);
-      await fetchMenu(restaurant);
+      await api.delete(
+        `${BASE_URL}/admin/restaurant_approval_list/${name_restaurant}/deny?restaurant_name=${name_restaurant}`
+      );
+      await fetchApproveRestaurant();
+    } catch (error) {
+      console.log("error", error);
+    } finally {
+      setIsLoading(false);
+    }
+  }
+
+  async function acceptRestaurant(name_restaurant) {
+    try {
+      setIsLoading(true);
+      await api.delete(
+        `${BASE_URL}/admin/restaurant_approval_list/${name_restaurant}/accept?restaurant_name=${name_restaurant}`
+      );
+      await fetchApproveRestaurant();
     } catch (error) {
       console.log("error", error);
     } finally {
@@ -34,7 +51,7 @@ function Menu() {
   }
 
   useEffect(() => {
-    fetchMenu(restaurant);
+    fetchApproveRestaurant();
   }, []);
 
   return (
@@ -64,54 +81,63 @@ function Menu() {
         )}
         {!isLoading && (
           <>
-            <Link to={`/${restaurant}/add`} className="text-blue-500 hover:text-blue-700">
-            <button class="mb-4 group relative h-12 w-48 overflow-hidden rounded-lg bg-white text-lg shadow">
+            <div className="mb-4">
+              <Link to='/admin/main'>
+              <button class="group relative h-12 w-48 overflow-hidden rounded-lg bg-white text-lg shadow">
                 <div class="absolute inset-0 w-3 bg-amber-400 transition-all duration-[250ms] ease-out group-hover:w-full"></div>
                 <span class="relative text-black group-hover:text-white">
-                  Add menu
+                  Back to Main
                 </span>
               </button>
               </Link>
-            {menues.map((menu, index) => (
+            </div>
+            {restaurants.map((restaurant, index) => (
               <div
                 key={index}
                 className="border border-gray-200 p-10 mb-4 rounded-md bg-white flex flex-col justify-center items-center"
               >
-                <h2 className="text-2xl font-bold mb-2">{menu._Food__name}</h2>
-                <p className="font-bold mb-1">Type : {menu._Food__type}</p>
-                <div>
-                  {Object.entries(menu._Food__size).map(([key, value]) => (
-                    <div className="table-row" key={key}>
-                      <div>
-                        {key} +{value}
-                      </div>
-                    </div>
-                  ))}
+                <div className=" justify-center">
+                    <h1 className="text-4xl font-bold mb-2 justify-center"> {restaurant.name}</h1>
+                    <h1 className="text-2xl font-bold mb-2"> Menu list</h1>
                 </div>
-                <p className="font-bold mb-1">Price : {menu._Food__price}</p>
-                <Link to={`/${restaurant}/${menu._Food__name}`}>
-                <button class="bg-green-600 text-white px-4 py-2 rounded mb-2">
-                  Edit
+                <div>
+                  {restaurant.menu.map((m) => {
+                    return (
+                      <div className="mb-5">
+                        <div> food name : {m._Food__name}</div>
+                        <div>food type : {m._Food__type}</div>
+                        <div>
+                            <h1 className="text-xl font-bold mb-2"> Size</h1>
+                          {Object.entries(m._Food__size).map(([key, value]) => (
+                            <div className="table-row" key={key}>
+                              <div>
+                                {key} {value}
+                              </div>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    );
+                  })}
+                </div>
+                <button
+                  class="bg-green-600 text-white px-4 py-2 rounded mb-2"
+                  onClick={async () => {
+                    await acceptRestaurant(restaurant.name);
+                  }}
+                >
+                  Accept
                 </button>
-                </Link>
                 <button
                   class="bg-red-600 text-white px-4 py-2 rounded"
                   onClick={async () => {
-                    await deleteMenu(menu._Food__name);
+                    await denyRestaurant(restaurant.name);
                   }}
                 >
-                  Delete
+                  Deny
                 </button>
               </div>
             ))}
-            <Link className="text-blue-500 hover:text-blue-700">
-            <button class="mb-4 group relative h-12 w-48 overflow-hidden rounded-lg bg-white text-lg shadow">
-                <div class="absolute inset-0 w-3 bg-amber-400 transition-all duration-[250ms] ease-out group-hover:w-full"></div>
-                <span class="relative text-black group-hover:text-white">
-                  Back
-                </span>
-              </button>
-              </Link>
           </>
         )}
       </section>
@@ -119,4 +145,4 @@ function Menu() {
   );
 }
 
-export default Menu;
+export default ApproveRestaurant;
