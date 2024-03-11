@@ -51,23 +51,43 @@ const LoginForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <input
-        type="text"
-        name="username"
-        value={formData.username}
-        onChange={handleChange}
-        placeholder="Username"
-      />
-      <input
-        type="password"
-        name="password"
-        value={formData.password}
-        onChange={handleChange}
-        placeholder="Password"
-      />
-      <button type="submit">Login</button>
-    </form>
+    <div className='flex justify-center items-center h-screen bg-emerald-600'>
+      <form className='border border-gray-300 rounded-md p-6 
+      flex flex-col items-center bg-white shadow-md' 
+      onSubmit={handleSubmit}>
+        <div className='mb-4 w-full'>
+          <label htmlFor="username" className='text-gray-700'>Username :</label>
+          <input
+            type="text"
+            name="username"
+            value={formData.username}
+            onChange={handleChange}
+            placeholder="Username"
+            className='w-full border border-gray-300 rounded px-3 py-2 mt-1'
+          />
+        </div>
+        <div className='mb-4 w-full'>
+          <label htmlFor="password" className='text-gray-700'>Password :</label>
+          <input
+            type="password"
+            name="password"
+            value={formData.password}
+            onChange={handleChange}
+            placeholder="Password"
+            className='w-full border border-gray-300 rounded px-3 py-2 mt-1'
+          />
+        </div>
+        <div className='justify-start w-full'>
+          <button 
+            type="submit" 
+            className='bg-emerald-600 hover:bg-slate-100 border-[3px] border-emerald-600
+            text-white hover:text-emerald-600 font-bold py-[0.4rem] px-[1.2rem] rounded 
+            transition-all duration-300'
+          >Login
+          </button>
+        </div>
+      </form>
+    </div>
   );
 };
 
