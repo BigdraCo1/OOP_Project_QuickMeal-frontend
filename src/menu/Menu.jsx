@@ -9,7 +9,7 @@ import api from '../Header/API'
 
 const BASE_URL = 'http://127.0.0.1:8000'
 
-function Menu(){
+function CustomerMenu(){
   const { id, resId } = useParams()
 
   const [restaurant, setRestaurant] = useState({});
@@ -69,4 +69,4 @@ function Menu(){
     ) 
   };
   
-  export default Menu;
+  export default CustomerMenu;

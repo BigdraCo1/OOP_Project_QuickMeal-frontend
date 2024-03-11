@@ -9,7 +9,7 @@ import FinishOrderCard from '../components/FinishOrderCard'
 
 const BASE_URL = 'http://127.0.0.1:8000'
 
-function OrderHistory(){
+function CustomerOrderHistory(){
   const {id} = useParams()
   const [orders, setOrder]= useState(true)
   const [isLoading, setIsLoading]= useState(true)
@@ -37,7 +37,7 @@ function OrderHistory(){
         <h1 className='midText'>Order History</h1>
         {orders.data.map((item, index) => (
         <div key={index}>
-          <FinishOrderCard lst = {item.Food} state = {item.Order_State} />
+          <FinishOrderCard orderID = {item.Order_ID} state = {item.Order_State} />
         </div>
         ))}
       </div>
@@ -46,4 +46,4 @@ function OrderHistory(){
   )
 };
 
-export default OrderHistory;
+export default CustomerOrderHistory;

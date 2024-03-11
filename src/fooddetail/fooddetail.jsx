@@ -7,7 +7,7 @@ import HomeButton from '../components/HomeButton';
 
 const BASE_URL = 'http://127.0.0.1:8000'
 
-function FoodDetail(){
+function CustomerFoodDetail(){
   const { id,foodId } = useParams()
 
   const [fooddetail, setFooddetail] = useState({});
@@ -85,4 +85,4 @@ function FoodDetail(){
     ) 
   };
   
-  export default FoodDetail;
+  export default CustomerFoodDetail;

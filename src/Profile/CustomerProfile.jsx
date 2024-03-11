@@ -15,7 +15,6 @@ function CustomerProfile(){
     try {
       const response = await api.get(`${BASE_URL}/show/profile/${id}`)
       setProfileData(response.data) 
-      console.log(response.data)
       setIsLoading(false)
     } catch (error) {
       console.log("error",error)

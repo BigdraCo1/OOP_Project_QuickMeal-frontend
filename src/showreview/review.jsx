@@ -8,7 +8,7 @@ import api from '../Header/API'
 
 const BASE_URL = 'http://127.0.0.1:8000'
 
-function Reviews(){
+function CustomerReviews(){
   const { id, resId } = useParams()
 
   const [reviews, setReviews] = useState({});
@@ -107,4 +107,4 @@ function Reviews(){
   )
 };
 
-export default Reviews;
+export default CustomerReviews;

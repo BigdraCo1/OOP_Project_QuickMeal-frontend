@@ -9,7 +9,7 @@ import OrderCard from '../components/OrderCard'
 
 const BASE_URL = 'http://127.0.0.1:8000'
 
-function CurrentOrder(){
+function CustomerCurrentOrder(){
   const {id} = useParams()
   const [orders, setOrder]= useState(true)
   const [isLoading, setIsLoading]= useState(true)
@@ -18,7 +18,6 @@ function CurrentOrder(){
     try {
       const response = await api.get(`${BASE_URL}/show/order_list/${id}`)
       setOrder(response.data)
-      console.log(response.data)
       setIsLoading(false)
     } catch (error) {
       console.log("error",error)
@@ -47,4 +46,4 @@ function CurrentOrder(){
   )
 };
 
-export default CurrentOrder;
+export default CustomerCurrentOrder;
