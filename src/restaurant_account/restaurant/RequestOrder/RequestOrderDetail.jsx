@@ -5,7 +5,7 @@ import './RequestOrderDetail.css'; // นำเข้าไฟล์ CSS
 const BASE_URL = 'http://127.0.0.1:8000';
 import api from '../../../api/api'
 
-function RequestOrderDetail() {
+function RestaurantRequestOrderDetail() {
     const { restaurant_name, order_id } = useParams();
     const [restaurantDetail, setRestaurantDetail] = useState(null);
     const [orderDetail, setOrderDetail] = useState(null);
@@ -106,4 +106,4 @@ function RequestOrderDetail() {
     );
 }
 
-export default RequestOrderDetail;
+export default RestaurantRequestOrderDetail;

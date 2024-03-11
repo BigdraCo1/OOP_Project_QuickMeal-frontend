@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useParams } from 'react-router-dom';
-import axios, { AxiosHeaders } from 'axios';
 import './Main.css';
 import api from '../api/api';
 

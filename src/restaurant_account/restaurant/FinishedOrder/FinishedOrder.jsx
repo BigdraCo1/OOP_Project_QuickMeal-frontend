@@ -5,7 +5,7 @@ import api from '../../../api/api';
 
 const BASE_URL = 'http://127.0.0.1:8000';
 
-function FinishedOrder() {
+function RestaurantFinishedOrder() {
     const { restaurant_name } = useParams();
     const [restaurantDetail, setRestaurantDetail] = useState(null); // กำหนดค่าเริ่มต้นเป็น null
     const [finishedOrderList, setFinishedOrderList] = useState([]);
@@ -76,4 +76,4 @@ function FinishedOrder() {
     )
 }
 
-export default FinishedOrder;
+export default RestaurantFinishedOrder;

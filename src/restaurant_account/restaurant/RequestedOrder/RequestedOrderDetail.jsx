@@ -5,7 +5,7 @@ import api from '../../../api/api';
 
 const BASE_URL = 'http://127.0.0.1:8000';
 
-function RequestedOrderDetail() {
+function RestaurantRequestedOrderDetail() {
     const { restaurant_name, order_id } = useParams();
     const [restaurantDetail, setRestaurantDetail] = useState(null);
     const [orderDetail, setOrderDetail] = useState(null);
@@ -115,4 +115,4 @@ function RequestedOrderDetail() {
     }
 }
 
-export default RequestedOrderDetail;
+export default RestaurantRequestedOrderDetail;

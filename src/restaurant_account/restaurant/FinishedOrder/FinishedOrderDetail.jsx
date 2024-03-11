@@ -4,7 +4,7 @@ import axios from 'axios';
 const BASE_URL = 'http://127.0.0.1:8000';
 import api from '../../../api/api';
 
-function FinishedOrderDetail() {
+function RestaurantFinishedOrderDetail() {
     const { restaurant_name, order_id } = useParams();
     const [restaurantDetail, setRestaurantDetail] = useState(null);
     const [orderDetail, setOrderDetail] = useState(null);
@@ -59,4 +59,4 @@ function FinishedOrderDetail() {
 
 }
 
-export default FinishedOrderDetail;
+export default RestaurantFinishedOrderDetail;
