@@ -44,19 +44,19 @@ function CustomerProfile(){
             </div>
             <div className='flex flex-col justify-center mt-6 space-x-4'>
               <div className="flex justify-center pl-[1rem]">
-                <Link to={`/${id}/pocket}`}>
+                <Link to={`/${id}/pocket`}>
                   <button className='bg-emerald-600 text-white px-4 py-2 rounded-md 
                   hover:bg-emerald-700 w-[12rem] m-[0.2rem]'>Pocket</button>
                 </Link>
               </div>
               <div className="flex justify-center">
-                <Link to={`/${id}/current_order}`}>
+                <Link to={`/${id}/current_order`}>
                   <button className='bg-blue-600 text-white px-4 py-2 rounded-md 
                   hover:bg-blue-700 w-[12rem] m-[0.2rem]'>Current Order</button>
                 </Link>
               </div>
               <div className="flex justify-center">
-                <Link to={`/${id}/order_history}`}>
+                <Link to={`/${id}/order_history`}>
                   <button className='bg-gray-600 text-white px-4 py-2 rounded-md 
                   hover:bg-gray-700 w-[12rem] m-[0.2rem]'>Order History</button>
                 </Link>
