@@ -49,9 +49,9 @@ const LoginForm = () => {
         case "customer":
           window.location.href = `/${id}/restaurants`;
           break;
-         // case "rider":
-           // window.location.href = `/rider_account/${id}`;
-           // break;
+         case "rider":
+           window.location.href = `/rider_account/${id}`;
+           break;
         case "restaurant":
           window.location.href = `/restaurant_account/${id}`;
           break;
