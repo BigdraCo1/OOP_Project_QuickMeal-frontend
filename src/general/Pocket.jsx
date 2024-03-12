@@ -31,6 +31,23 @@ function Pocket() {
         }
     }
 
+    async function TopUp() {
+        const money = document.getElementById("money").value;
+
+        if (!money) {
+          alert("Please enter amount of money");
+          return;
+        }
+
+        try { 
+          const response = await api.post(`${BASE_URL}/show/pocket/topup/${account_id}/${money}`)
+          alert(response.data)
+          window.location.reload();
+        } catch (error) {
+          console.log("error",error)
+        }
+      };
+
     useEffect(() => {
         fetchPocket(account_id);
         fetchPayment(account_id);
@@ -54,6 +71,8 @@ function Pocket() {
                         </li>
                     ))}
                 </ul>
+                <div> <textarea id="money" name="money" rows="1" cols="20"></textarea><br/> </div>
+                <div> <button onClick={() => TopUp()}>TopUp</button> </div>
             </div>
         </div>
     );
