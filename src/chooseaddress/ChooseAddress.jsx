@@ -46,22 +46,30 @@ function ChooseAddress(){
   }
 
     return (
-      <>
+      <div className='mx-[8rem] py-[4rem] bg-slate-300 shadow-2xl h-screen'>
         { isLoading && <div>.....Loading.....</div> }
         { !isLoading &&
         <div>
           <BasketButton id={id}/>
-          <div className='midText'> <h1>Address</h1> </div>
+          <div className='midText'>
+            <h1 className='text-[2rem] text-emerald-600 font-bold'>Address</h1>
+          </div>
           {address.map((item, index) => (
             <div key = {index}>
               <div className='midText'> <AddressComponent address={item} id = {id}/> </div>
             </div>
           ))}
-          <div className='midText'> <textarea id="newAddress" name="newAddress" rows="1" cols="50"></textarea><br/> </div>
-          <div className='midText'> <button onClick={() => addAddress()}>Add address</button> </div>
+          <div className='midText p-[0.2rem] border-none'>
+            <textarea id="newAddress" name="newAddress" rows="2" cols="36"></textarea><br/>
+          </div>
+          <div className='midText'>
+            <button className='bg-emerald-500 hover:bg-emerald-700 text-slate-100 hover:text-slate-50
+            font-bold my-[1rem] py-[0.5rem] px-[6rem] rounded-md transition-all duration-300 ease-in-out'
+            onClick={() => addAddress()}>Add address</button>
+          </div>
         </div> 
-          }
-      </>
+        }
+      </div>
     )
   };
   

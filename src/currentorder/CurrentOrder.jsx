@@ -26,7 +26,7 @@ function CustomerCurrentOrder(){
   useEffect(() => {ShowOrder()}, []);
 
   return (
-    <>
+    <div className='flex justify-center'>
     { isLoading && <div>.....Loading.....</div> }
     { !isLoading && 
     <div>
@@ -42,7 +42,7 @@ function CustomerCurrentOrder(){
         ))}
       </div> 
     </div>}
-    </>
+    </div>
   )
 };
 

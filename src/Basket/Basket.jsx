@@ -37,15 +37,16 @@ function Basket(){
       <>
       { isLoading && <div>.....Loading.....</div> }
       { !isLoading &&
-      <div>
+      <div className='bg-slate-100 border-2 border-slate-300 mx-[10rem] shadow-2xl h-screen'>
         <HomeButton id={id}/>
         <div className='midText'>
-          <h1>Basket</h1>
+          <h1 className='text-slate-100 bg-emerald-600 text-[2rem] rounded-md shadow-xl font-bold px-[6rem] mt-[1rem]'>Basket</h1>
         </div>
-        {(Object.keys(basket).length === 0) && <div>
+        {(Object.keys(basket).length === 0) && 
+        <div className='rounded-lg border-2 border-slate-600 mx-[27rem] my-[1rem] p-[1rem]'>
             <div className='midText'> <h2>There's No Order In Your Basket Yet! </h2> </div>
             <div className='midText'> <h2>Add Something!</h2> </div>
-          </div>
+        </div>
         }
         {!(Object.keys(basket).length === 0) && <div>
           {Object.entries(basket).map( ([key, value])  => (
@@ -57,10 +58,13 @@ function Basket(){
                   </div>
                 </div>
           ))}
-          <div className='midText'> <h3>Total Amount : {basket.total} ฿</h3> </div>
-          <div className='midText'> <h3>Your Order Address : {basket.address}</h3> </div>
+          <div className='text-slate-50 bg-slate-600 mx-[27rem] py-[1rem] rounded-md'>
+          <div className='midText text-[1.2rem] font-medium'> <h3>Total Amount : {basket.total} ฿</h3> </div>
+          <div className='midText text-[1.2rem] font-medium'> <h3>Your Order Address : {basket.address}</h3> </div>
+          </div>
           <div className='midText'> <Link to = {`/${id}/basket/choose_address`}> 
-            <button className='addAddress'>Add Address</button> </Link> </div>
+            <button className='addAddress my-[1rem] text-[1.2rem] font-medium w-[19rem]'
+            >Add Address</button> </Link> </div>
           {(basket.address !== null) &&
             <div className='midText'> <button className='confirm' onClick={() => Comfirm()}>Confirm Order</button> </div>
           } 

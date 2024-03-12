@@ -77,16 +77,16 @@ function CustomerReviews(){
   }
 
   return (
-    <>
+    <div className='flex justify-center'>
     { isLoading && <div>.....Loading.....</div> }
     { !isLoading && 
-    <div>
+    <div className='p-[1rem] bg-slate-300 shadow-xl rounded-md'>
       <HomeButton id={id}/>
       <div className='container'>
           <RestaurantTab name = {restaurant.Restaurant_Name} rating = {restaurant.Rate} 
             location = {restaurant.Restaurant_Location} />
       </div>
-      <div className='container'>
+      <div className='container pl-[2rem]'>
         <h1> {renderStars(Math.floor(restaurant.Rate), "")} </h1>
       </div>
       <div className='container'>
@@ -98,12 +98,17 @@ function CustomerReviews(){
       </div>
       <div className="container">
         <label for="rating" >Rating:</label><br/>
-        <input type="number" id="rating" name="rating" min="1" max="5"/><br/>
-        <textarea id="comment" name="comment" rows="1" cols="50"></textarea><br/>
-        <button onClick={() => postReview()}>Submit Review</button>
+        <input
+        className='border-2 border-slate-300 px-[1.1rem] py-[0.5rem] my-[0.5rem] rounded-md bg-slate-100 text-slate-700 font-bold hover:bg-slate-200 hover:text-slate-800 transition-all duration-300 ease-in-out'
+        type="number" id="rating" name="rating" min="1" max="5"/><br/>
+        <textarea className='border-2 border-slate-300 px-[1.1rem] py-[0.5rem] my-[0.5rem] rounded-md bg-slate-100 text-slate-700 font-bold hover:bg-slate-200 hover:text-slate-800 transition-all duration-300 ease-in-out'
+        id="comment" name="comment" rows="1" cols="50"></textarea><br/>
+        <button onClick={() => postReview()}
+        className='border-2 border-emerald-600 px-[1.1rem] py-[0.5rem] my-[0.5rem] rounded-md bg-emerald-600 text-slate-100 font-bold hover:bg-emerald-700 hover:text-slate-50 transition-all duration-300 ease-in-out'
+        >Submit Review</button>
       </div>
     </div>}
-    </>
+    </div>
   )
 };
 

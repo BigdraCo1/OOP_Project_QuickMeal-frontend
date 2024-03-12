@@ -1,11 +1,12 @@
    .restaurant-card {
     margin: 10px;
-    border: 5px solid #000000;
+    border: 0px solid #000000;
     border-radius: 5px;
     padding: 20px;
     width: 350px;
-    box-shadow: 5px 5px rgba(0, 0, 0, 0.1);
+    /* box-shadow: 5px 5px rgba(0, 0, 0, 0.1); */
     background-color: white;
+    transition: all 0.3s ease-in-out;
   }
   
   .restaurant-card h2 {
@@ -17,5 +18,6 @@
   }
 
   .restaurant-card:hover, .restaurant-card:focus, .restaurant-card:active{
-    background-color: #cacbcc;
+    color: white;
+    background-color: #474747;
   }

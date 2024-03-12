@@ -27,29 +27,31 @@ function CustomerRestaurants(){
   useEffect(() => {ShowAllRes()}, []);
 
   return (
-    <>
-    { isLoading && <div>.....Loading.....</div> }
-    { !isLoading && 
-    <div>
-      <HomeButton id={id}/>
-      <BasketButton id={id}/>
-      <ProfileButton id={id}/>
-      <div className="midText">
-        <h1>List of Restaurants</h1>
+    <div className='flex justify-center overflow-y-auto'>
+      <div className='justify-center'>
+      { isLoading && <div>.....Loading.....</div> }
+      { !isLoading && 
+      <div>
+        <HomeButton id={id}/>
+        <BasketButton id={id}/>
+        <ProfileButton id={id}/>
+        <div className="midText">
+          <h1 className='text-[1.2rem] text-emerald-600 font-bold text-center m-[0.5rem] w-full bg-slate-100 rounded-md'>List of Restaurants</h1>
+        </div>
+        <div className='container'>
+          {restaurants.map( (restaurant, index) => (
+            <div key={index}>
+              <Link to = {`/${id}/show/${restaurant._Restaurant__restaurant_id}/menu`}>
+                <RestaurantCard name = {restaurant._Restaurant__name_restaurant}
+                rating = {restaurant._Restaurant__rate}
+                location = {restaurant._Restaurant__restaurant_location} />
+              </Link>
+            </div>
+          ))}
+        </div>
+      </div>}
       </div>
-      <div className='container'>
-        {restaurants.map( (restaurant, index) => (
-          <div key={index}>
-            <Link to = {`/${id}/show/${restaurant._Restaurant__restaurant_id}/menu`}>
-              <RestaurantCard name = {restaurant._Restaurant__name_restaurant}
-              rating = {restaurant._Restaurant__rate}
-              location = {restaurant._Restaurant__restaurant_location} />
-            </Link>
-          </div>
-        ))}
-      </div>
-    </div>}
-    </>
+    </div>
   )
 };
 
