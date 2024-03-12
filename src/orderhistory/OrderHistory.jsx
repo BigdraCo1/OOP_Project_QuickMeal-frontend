@@ -35,11 +35,15 @@ function CustomerOrderHistory(){
       <ProfileButton id={id}/>
       <div>
         <h1 className='midText'>Order History</h1>
-        {orders.data.map((item, index) => (
-        <div key={index}>
-          <FinishOrderCard orderID = {item.Order_ID} state = {item.Order_State} id = {id} />
-        </div>
-        ))}
+        { !(orders.data === "No current order") &&
+          <div>
+            {orders.data.map((item, index) => (
+            <div key={index}>
+              <FinishOrderCard orderID = {item.Order_ID} state = {item.Order_State} id = {id} />
+            </div>
+            ))}
+          </div>
+        }
       </div>
     </div>}
     </>

@@ -7,3 +7,9 @@
   .midText-text {
     text-align: center; 
   }
+
+  .fixedPosBar{
+    position: absolute;
+    top: 30px;
+    left: 500px;
+  }

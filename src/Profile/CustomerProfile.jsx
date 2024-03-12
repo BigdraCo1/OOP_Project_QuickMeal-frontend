@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import './CustomerProfile.css'
 import { Link, useParams } from "react-router-dom";
 import api from '../Header/API'
-import HomeButton from '../components/HomeButton';
 
 const BASE_URL = 'http://127.0.0.1:8000'
 
@@ -27,7 +26,6 @@ function CustomerProfile(){
         {isLoading && <div className="text-center mt-8">Loading...</div>}
         {!isLoading && (
           <div className='flex flex-col'>
-            <HomeButton id={id}/>
             <h2 className='text-center text-3xl font-bold mb-4'>Profile</h2>
             <div className="grid grid-cols-2 gap-y-2">
               <div className='text-right pr-4'>Username :</div>

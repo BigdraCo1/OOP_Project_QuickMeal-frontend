@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './CustomerCurrentOrderDetail.css'
-import { useParams } from "react-router-dom";
+import { Link , useParams } from "react-router-dom";
 import api from '../Header/API'
 import HomeButton from '../components/HomeButton';
 import ProfileButton from '../components/ProfileButton'
@@ -48,7 +48,11 @@ function CustomerCurrentOrderDetail(){
             {detail.Food.map((item) => (
                 <h3 className='midText'>{item}</h3>
             ))}
-            <div className='midText' onClick={handleCancel} > <button>Cancel</button> </div>
+              <div className='midText' onClick={handleCancel} > 
+                <Link to={`/${id}/Profile`}>
+                  <button>Cancel</button> 
+                </Link>
+              </div>
         </div> 
           }
       </>

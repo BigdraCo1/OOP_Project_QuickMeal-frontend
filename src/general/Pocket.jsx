@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import api from '../api/api';
+import ProfileButton from '../components/ProfileButton'
 
 const BASE_URL = 'http://127.0.0.1:8000';
 
@@ -31,6 +32,23 @@ function Pocket() {
         }
     }
 
+    async function TopUp() {
+        const money = document.getElementById("money").value;
+
+        if (!money) {
+          alert("Please enter amount of money");
+          return;
+        }
+
+        try { 
+          const response = await api.post(`${BASE_URL}/show/pocket/topup/${account_id}/${money}`)
+          alert(response.data);
+          window.location.reload();
+        } catch (error) {
+          console.log("error",error)
+        }
+      }
+
     useEffect(() => {
         fetchPocket(account_id);
         fetchPayment(account_id);
@@ -40,6 +58,7 @@ function Pocket() {
     return (
         <div className='flex mx-[10rem] px-[10rem] border-2 shadow-2xl 
         bg-slate-100 justify-start items-start h-screen'>
+            <ProfileButton id={account_id}/>
             <div className='p-[1rem] h-screen w-full'>
                 <h1 className='text-[2rem] font-bold '>Pocket</h1>
                 <div className='text-[1.2rem] border-2 border-slate-300 rounded-md shadow-md my-[0.5rem] px-[1rem] py-[0.5rem]'>
@@ -57,6 +76,8 @@ function Pocket() {
                         ))}
                     </ul>
                 </div>
+                <div>  <textarea id="money" name="money" rows="1" cols="20"></textarea><br/>  </div>
+                <div>  <button onClick={() => TopUp()}>TopUp</button>  </div>
             </div>
         </div>
     );
