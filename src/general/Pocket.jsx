@@ -36,6 +36,24 @@ function Pocket() {
         fetchPayment(account_id);
     }, [account_id]);
 
+    async function TopUp() {
+        const money = document.getElementById("money").value;
+
+        if (!money) {
+          alert("Please enter amount of money");
+          return;
+        }
+
+        try { 
+          const response = await api.post(`${BASE_URL}/show/pocket/topup/${account_id}/${money}`)
+          alert(response.data)
+          window.location.reload();
+        } catch (error) {
+          console.log("error",error)
+        }
+      };
+
+
     console.log(payment);
     return (
         <div className='flex mx-[10rem] px-[10rem] border-2 shadow-2xl 
@@ -57,6 +75,8 @@ function Pocket() {
                         ))}
                     </ul>
                 </div>
+                <div> <textarea id="money" name="money" rows="1" cols="20"></textarea><br/> </div>
+                <div> <button onClick={() => TopUp()}>TopUp</button> </div>
             </div>
         </div>
     );
