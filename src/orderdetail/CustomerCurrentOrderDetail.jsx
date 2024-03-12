@@ -32,13 +32,15 @@ function CustomerCurrentOrderDetail(){
   }
 
     return (
-      <>
+      <div className='flex justify-center'>
         { isLoading && <div>.....Loading.....</div> }
         { !isLoading &&
-        <div className='border-slate-800'>
+        <div className='bg-slate-200 rounded-lg w-[500px] my-[2rem] p-[0.5rem] shadow-xl'>
             <HomeButton id={id}/>
             <ProfileButton id={id}/>
-            <h1 className='midText'>Order Detail</h1>
+            <h1 className='midText text-slate-100 text-[1.2rem] font-bold 
+            bg-emerald-600 rounded-md px-[0.8rem] py-[0.6rem]'
+            >Order Detail</h1>
             <h2 className='midText'>Order ID : {detail.Order_ID}</h2>
             <h2 className='midText'>Rider : {detail.Rider}</h2>
             <h2 className='midText'>Restaurant : {detail.Restaurant}</h2>
@@ -51,7 +53,7 @@ function CustomerCurrentOrderDetail(){
             <div className='midText' onClick={handleCancel} > <button>Cancel</button> </div>
         </div> 
           }
-      </>
+      </div>
     )
   };
   

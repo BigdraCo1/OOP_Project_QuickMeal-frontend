@@ -30,7 +30,7 @@ function CustomerCurrentOrder(){
     { isLoading && <div>.....Loading.....</div> }
     { !isLoading && 
     <div
-    className='text-emerald-600 border-2 border-slate-400 bg-slate-200 my-[1rem] px-[1rem] py-[0.4rem] rounded-lg'
+    className='text-emerald-600 border-2 border-slate-200 bg-slate-200 my-[1rem] px-[1rem] py-[0.4rem] rounded-lg'
     >
       <HomeButton id={id}/>
       <BasketButton id={id}/>
