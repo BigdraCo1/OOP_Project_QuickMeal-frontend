@@ -14,7 +14,7 @@ function CustomerFinishOrderDetail(){
 
   async function ShowOrder() {
     try {
-      const response = await api.get(`${BASE_URL}/show_order_detail/${orderId}`)
+      const response = await api.get(`${BASE_URL}/show/order/detail/${orderId}`)
       setDetail(response.data) 
       setIsLoading(false)
     } catch (error) {
@@ -22,6 +22,8 @@ function CustomerFinishOrderDetail(){
     }
   }
   useEffect(() => {ShowOrder()}, []);
+
+  
 
     return (
       <>

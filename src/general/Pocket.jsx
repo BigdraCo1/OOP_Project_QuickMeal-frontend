@@ -11,7 +11,7 @@ function Pocket() {
 
     async function fetchPocket(account_id) {
         try {
-            const pocket_response = await api.get(`${BASE_URL}/show_pocket/${account_id}`);
+            const pocket_response = await api.get(`${BASE_URL}/show/pocket/${account_id}`);
             if (pocket_response.data) {
                 setPocket(pocket_response.data);
             }
@@ -22,7 +22,7 @@ function Pocket() {
 
     async function fetchPayment(account_id) {
         try {
-            const payment_response = await api.get(`${BASE_URL}/show_payment/${account_id}`);
+            const payment_response = await api.get(`${BASE_URL}/show/payment/${account_id}`);
             if (payment_response.data) {
                 setPayment(payment_response.data);
             }

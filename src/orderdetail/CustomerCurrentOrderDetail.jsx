@@ -14,7 +14,7 @@ function CustomerCurrentOrderDetail(){
 
   async function ShowOrder() {
     try {
-      const response = await api.get(`${BASE_URL}/show_order_detail/${orderId}`)
+      const response = await api.get(`${BASE_URL}/show/order/detail/${orderId}`)
       setDetail(response.data) 
       setIsLoading(false)
     } catch (error) {
@@ -22,6 +22,14 @@ function CustomerCurrentOrderDetail(){
     }
   }
   useEffect(() => {ShowOrder()}, []);
+
+  async function handleCancel(){
+    try {
+      await api.post(`${BASE_URL}/cancel_by_customer/${id}/${orderId}`)
+    } catch (error){
+      console.log("error",error)
+    }
+  }
 
     return (
       <>
@@ -40,7 +48,7 @@ function CustomerCurrentOrderDetail(){
             {detail.Food.map((item) => (
                 <h3 className='midText'>{item}</h3>
             ))}
-            <div className='midText'> <button>Cancel</button> </div>
+            <div className='midText' onClick={handleCancel} > <button>Cancel</button> </div>
         </div> 
           }
       </>

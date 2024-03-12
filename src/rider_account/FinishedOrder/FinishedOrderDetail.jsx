@@ -10,7 +10,7 @@ function FinishedOrderDetail() {
 
     async function fetchOrderDetail(order_id) {
         try {
-            const order_response = await api.get(`${BASE_URL}/show_order_detail/${order_id}`);
+            const order_response = await api.get(`${BASE_URL}/show/order/detail//${order_id}`);
             setOrderDetail(order_response.data);
         } catch (error) {
             console.log('error', error);

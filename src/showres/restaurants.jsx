@@ -16,7 +16,7 @@ function CustomerRestaurants(){
 
   async function ShowAllRes() {
     try {
-      const response = await api.get(`${BASE_URL}/show/restaurant`)
+      const response = await api.get(`${BASE_URL}/show/restaurant/mainpage`)
       setRestaurants(response.data)
       setIsLoading(false)
     } catch (error) {

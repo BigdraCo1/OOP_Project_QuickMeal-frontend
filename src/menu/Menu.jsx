@@ -29,7 +29,7 @@ function CustomerMenu(){
 
   async function ShowMenus(resId) {
     try {
-      const response = await api.get(`${BASE_URL}/show/${resId}/menu`)
+      const response = await api.get(`${BASE_URL}/main/${resId}/menu`)
       setMenus(response.data)
       setIsLoading(false)
     } catch (error) {

@@ -30,7 +30,13 @@ import CustomerCurrentOrder from './currentorder/CurrentOrder.jsx'
 import CustomerOrderHistory from './orderhistory/OrderHistory.jsx'
 import CustomerCurrentOrderDetail from './orderdetail/CustomerCurrentOrderDetail.jsx'
 import CustomerFinishOrderDetail from './orderdetail/CustomerFinishOrderDetail.jsx'
-
+import Register from './Authen/Register.jsx'
+import EditMenu from './restaurant_account/restaurant/Menu/EditMenu.jsx'
+import AddMenu from './restaurant_account/restaurant/Menu/AddMenu.jsx'
+import AddRestaurant from './restaurant_account/AddRestaurant.jsx'
+import ApproveRestaurant from './admin/ApproveRestaurant.jsx'
+import ApproveRider from './admin/ApproveRider.jsx'
+import AdminPanel from './admin/AdminMain.jsx'
 import {
   createBrowserRouter,
   RouterProvider,
@@ -41,6 +47,10 @@ const router = createBrowserRouter([
   {
     path: "/login",
     element: <LoginForm />,
+  },
+  {
+    path: "/Register",
+    element: <Register />,
   },
   {
     path: "/restaurant_account/:account_id",
@@ -55,8 +65,20 @@ const router = createBrowserRouter([
     element: <Restaurant />,
   },
   {
+    path: "/:restaurant/add",
+    element: <AddMenu />,
+  },
+  {
     path: "/:restaurant_name/menu",
     element: <Menu />,
+  },
+  {
+    path: "/:restaurant/edit/:menu",
+    element: <EditMenu />,
+  },
+  {
+    path: "/restaurant_account/:id/add",
+    element: <AddRestaurant />,
   },
   {
     path: "/:restaurant_name/request_order",
@@ -144,6 +166,18 @@ const router = createBrowserRouter([
   path: "/:id/order_History/detail/:orderId",
   element: <CustomerFinishOrderDetail />,
 },
+{
+    path: "/admin/approve/rider",
+    element: <ApproveRider />,
+  },
+  {
+    path: "/admin/approve/restaurant",
+    element: <ApproveRestaurant />,
+  },
+  {
+    path: "/admin/main",
+    element: <AdminPanel />,
+  },
 ]);
 
 ReactDOM.createRoot(document.getElementById('root')).render(
