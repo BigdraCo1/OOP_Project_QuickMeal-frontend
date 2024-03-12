@@ -43,16 +43,18 @@ function Pocket() {
             <div className='p-[1rem] h-screen w-full'>
                 <h1 className='text-[2rem] font-bold '>Pocket</h1>
                 <div className='text-[1.2rem] border-2 border-slate-300 rounded-md shadow-md my-[0.5rem] px-[1rem] py-[0.5rem]'>
-                    <p>Balance : {pocket.Balance}</p>
+                    <p className='font-bold'>Balance : {pocket.Balance}</p>
                 </div>
                 <div className='text-[1.2rem] border-2 border-slate-300 rounded-md shadow-md px-[1rem] pb-[1rem]'>
-                    <h2 className='py-[0.5rem]'>Payments</h2>
-                    <ul className='border-2 border-slate-300 rounded-md p-[1rem] mb-[0.2rem]'>
+                    <h2 className='py-[0.5rem] font-bold'>Payments</h2>
+                    <ul className='rounded-md px-[1rem] py-[0.5rem] mb-[0.2rem] border-slate-600 border-2'>
                         {Object.keys(payment).map((paymentId) => (
-                            <li key={paymentId}>
-                                <p>Order ID: {payment[paymentId][0]}</p>
-                                <p>Status: {payment[paymentId][1]}</p>
-                                <p>Amount: {payment[paymentId][2]}</p>
+                            <li 
+                            className='rounded-md shadow-md mx-[0rem] my-[0.5rem] px-[1rem] py-[0.5rem] bg-slate-200 hover:bg-slate-300 transition-all duration-300 ease-in-out'
+                            key={paymentId}>
+                                <p className='font-bold'>Order ID: {payment[paymentId][0]}</p>
+                                <p className='font-medium'>Status: {payment[paymentId][1]}</p>
+                                <p className='font-medium'>Amount: {payment[paymentId][2]}</p>
                             </li>
                         ))}
                     </ul>

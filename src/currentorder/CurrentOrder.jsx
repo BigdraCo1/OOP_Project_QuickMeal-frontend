@@ -29,16 +29,22 @@ function CustomerCurrentOrder(){
     <div className='flex justify-center'>
     { isLoading && <div>.....Loading.....</div> }
     { !isLoading && 
-    <div>
+    <div
+    className='text-emerald-600 border-2 border-slate-400 bg-slate-200 my-[1rem] px-[1rem] py-[0.4rem] rounded-lg'
+    >
       <HomeButton id={id}/>
       <BasketButton id={id}/>
       <ProfileButton id={id}/>
       <div>
-        <h1 className='midText'>Current Order</h1>
+        <h1 className='midText text-[1.5rem] font-bold'>Current Order</h1>
         { !(orders.data === "No current order") &&
-          <div>
+          <div
+          className='border-2 border-slate-500 rounded-md'
+          >
             {orders.data.map((item, index) => (
-            <div key={index}>
+            <div key={index}
+            className=''
+            >
               <OrderCard orderID = {item.Order_ID} state = {item.Order_State} id = {id} />
             </div>
             ))}

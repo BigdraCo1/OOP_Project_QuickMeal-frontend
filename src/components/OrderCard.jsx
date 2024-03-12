@@ -7,9 +7,10 @@ function OrderCard({orderID, state, id}){
         {(state === "pending" || state === "get_res" || state === "get_ri" || state === "delivering") &&
         <div className='midText'>
           <Link to = {`/${id}/current_order/detail/${orderID}`}>
-          <button className="order-card">
-            <h2>Order ID : {orderID}</h2>
-            <h2>state : {state}</h2>
+          <button className="mx-[1rem] my-[0.6rem] py-[0.8rem] border-none shadow-xl w-[360px]
+           border-black rounded-lg p-10 min-w-200 h-auto bg-slate-400 hover:">
+            <h2 className='text-emerald-700 font-bold text-[1.1rem]'>Order ID : {orderID}</h2>
+            <h2 className='text-emerald-700 font-bold text-[1.1rem]'>state : {state}</h2>
           </button>
           </Link>
         </div>

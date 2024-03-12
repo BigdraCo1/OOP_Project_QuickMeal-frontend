@@ -35,7 +35,7 @@ function CustomerCurrentOrderDetail(){
       <>
         { isLoading && <div>.....Loading.....</div> }
         { !isLoading &&
-        <div>
+        <div className='border-slate-800'>
             <HomeButton id={id}/>
             <ProfileButton id={id}/>
             <h1 className='midText'>Order Detail</h1>
