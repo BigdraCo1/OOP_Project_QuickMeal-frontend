@@ -58,15 +58,17 @@ function Basket(){
                   </div>
                 </div>
           ))}
-          <div className='text-slate-50 bg-slate-600 mx-[27rem] py-[1rem] rounded-md'>
-          <div className='midText text-[1.2rem] font-medium'> <h3>Total Amount : {basket.total} ฿</h3> </div>
-          <div className='midText text-[1.2rem] font-medium'> <h3>Your Order Address : {basket.address}</h3> </div>
+          <div className='text-slate-50 bg-slate-600 mx-[20rem] py-[1rem] rounded-md'>
+          <div className='midText text-[1.05rem] font-medium text-center pb-[0.5rem]'> <h3>Total Amount : {basket.total} ฿</h3> </div>
+          <div className='midText text-[1.05rem] font-medium text-center pt-[0.5rem] border-t-2 border-slate-300'> <h3>Your Order Address : {basket.address}</h3> </div>
           </div>
           <div className='midText'> <Link to = {`/${id}/basket/choose_address`}> 
             <button className='addAddress my-[1rem] text-[1.2rem] font-medium w-[19rem]'
             >Add Address</button> </Link> </div>
           {(basket.address !== null) &&
-            <div className='midText'> <button className='confirm' onClick={() => Comfirm()}>Confirm Order</button> </div>
+            <div className='midText font-bold text-[1.05rem]'>
+              <button className='confirm' onClick={() => Comfirm()}>Confirm Order</button>
+            </div>
           } 
           </div>
         }

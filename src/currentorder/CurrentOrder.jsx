@@ -11,7 +11,7 @@ const BASE_URL = 'http://127.0.0.1:8000'
 
 function CustomerCurrentOrder(){
   const {id} = useParams()
-  const [orders, setOrder]= useState(true)
+  const [orders, setOrder]= useState({})
   const [isLoading, setIsLoading]= useState(true)
 
   async function ShowOrder() {
@@ -35,11 +35,15 @@ function CustomerCurrentOrder(){
       <ProfileButton id={id}/>
       <div>
         <h1 className='midText'>Current Order</h1>
-        {orders.data.map((item, index) => (
-        <div key={index}>
-          <OrderCard orderID = {item.Order_ID} state = {item.Order_State} id = {id} />
-        </div>
-        ))}
+        { !(orders.data === "No current order") &&
+          <div>
+            {orders.data.map((item, index) => (
+            <div key={index}>
+              <OrderCard orderID = {item.Order_ID} state = {item.Order_State} id = {id} />
+            </div>
+            ))}
+          </div>
+        }
       </div> 
     </div>}
     </div>
