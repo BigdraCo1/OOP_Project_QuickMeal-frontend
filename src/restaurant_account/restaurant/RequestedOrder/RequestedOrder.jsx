@@ -38,11 +38,11 @@ function RestaurantRequestedOrder() {
             setIsLoading(false);
         }
     }
-    
+
     useEffect(() => {
         fetchRestaurant(restaurant_name);
     }, [restaurant_name]);
-    
+
     useEffect(() => {
         if (restaurantDetail) {
             fetchRequestedOrderList(restaurantDetail);
@@ -64,15 +64,10 @@ function RestaurantRequestedOrder() {
                 <h2>Requested Orders:</h2>
                 {requestedOrderList[restaurant_name] && requestedOrderList[restaurant_name].map(order => (
                     <Link to={`/${restaurant_name}/requested_order/${order.Order_ID}`} key={order.Order_ID}>
-                    <button className='order-button' key={order.Order_ID}>
-                        <p>Order ID: {order.Order_ID}</p>
-                        <p>Customer: {order.Customer}</p>
-                        <p>Rider: {order.Rider}</p>
-                        <p>Restaurant: {order.Restaurant}</p>
-                        <p>Food: {order.Food.join(', ')}</p>
-                        <p>Order State: {order.Order_State}</p>
-                        <p>Payment: {order.Payment}</p>
-                    </button>
+                        <button className='order-button' key={order.Order_ID}>
+                            <p>Order ID: {order_id}</p>
+                            <p>Order State: {orderDetail.Order_State}</p>
+                        </button>
                     </Link>
                 ))}
             </div>
