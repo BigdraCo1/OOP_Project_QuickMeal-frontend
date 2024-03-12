@@ -28,19 +28,21 @@ function CustomerProfile(){
         {!isLoading && (
           <div className='flex flex-col'>
             <HomeButton id={id}/>
-            <h2 className='text-center text-3xl font-bold mb-4'>Profile</h2>
-            <div className="grid grid-cols-2 gap-y-2">
-              <div className='text-right pr-4'>Username :</div>
-              <div className='text-left pl-1'>{profileData.Username}</div>
-              
-              <div className='text-right pr-4'>Fullname :</div>
-              <div className='text-left pl-1'>{profileData.Fullname}</div>
-              
-              <div className='text-right pr-4'>Email :</div>
-              <div className='text-left pl-1'>{profileData.Email}</div>
-              
-              <div className='text-right pr-4'>Phone :</div>
-              <div className='text-left pl-1'>{profileData.Phone}</div>
+            <div className='text-[1.1rem] font-medium'>
+              <h2 className='text-center text-3xl font-bold mb-4'>Profile</h2>
+              <div className="grid grid-cols-2 gap-y-2">
+                <div className='text-right pr-4'>Username :</div>
+                <div className='text-left pl-1'>{profileData.Username}</div>
+                
+                <div className='text-right pr-4'>Fullname :</div>
+                <div className='text-left pl-1'>{profileData.Fullname}</div>
+                
+                <div className='text-right pr-4'>Email :</div>
+                <div className='text-left pl-1'>{profileData.Email}</div>
+                
+                <div className='text-right pr-4'>Phone :</div>
+                <div className='text-left pl-1'>{profileData.Phone}</div>
+              </div>
             </div>
             <div className='flex flex-col justify-center mt-6 space-x-4'>
               <div className="flex justify-center pl-[1rem]">
