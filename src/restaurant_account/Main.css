@@ -34,14 +34,13 @@ body {
     padding: 100px;
     margin: 20px;
     width: 1000px;
-    height: 400px;
+    height: 200px;
     text-align: center;
     align-items: center;
     display: flex;
     flex-direction: column;
     margin: auto; /* จัดให้อยู่กึ่งกลางในแนวนอน */
 }
-
 
 .profile-container h2 {
     margin-bottom: 20px;
