@@ -39,6 +39,9 @@ import ApproveRider from './admin/ApproveRider.jsx'
 import AdminPanel from './admin/AdminMain.jsx'
 import RestaurantProfile from './restaurant_account/Profile/Profile.jsx'
 import RestaurantPocket from './restaurant_account/Pocket/Pocket.jsx'
+import RiderPocket from './rider_account/Pocket/Pocket.jsx'
+import RiderProfile from './rider_account/Profile/Profile.jsx'
+
 import {
   createBrowserRouter,
   RouterProvider,
@@ -187,6 +190,14 @@ const router = createBrowserRouter([
   {
     path: "/restaurant_account/:account_id/pocket",
     element: <RestaurantPocket />,
+  },
+  {
+    path: "/rider_account/:account_id/profile",
+    element: <RiderProfile />,
+  },
+  {
+    path: "/rider_account/:account_id/pocket",
+    element: <RiderPocket />,
   },
 ]);
 
