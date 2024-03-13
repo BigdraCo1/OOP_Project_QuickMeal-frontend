@@ -2,13 +2,14 @@ import React, { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import "./Main.css";
 import api from "../api/api";
+import ResAccHomeButton from "./RestaurantAccComponents/ResAccHomeButton";
+import ResAccProfileButton from "./RestaurantAccComponents/ResAccProfileButton";
 
 const BASE_URL = "http://127.0.0.1:8000";
 
 function RestaurantAccount() {
   const { account_id } = useParams();
   const [restaurants, setRestaurants] = useState([]);
-  const [profile, setProfile] = useState();
   const [isLoading, setIsLoading] = useState(true);
 
   async function fetchData() {
@@ -19,12 +20,6 @@ function RestaurantAccount() {
       );
       if (restaurant_response.data[account_id]) {
         setRestaurants(restaurant_response.data[account_id]);
-      }
-      const profile_response = await api.get(
-        `${BASE_URL}/show/profile/${account_id}`
-      );
-      if (profile_response.data) {
-        setProfile(profile_response.data);
       }
     } catch (error) {
       console.log("error", error);
@@ -53,21 +48,20 @@ function RestaurantAccount() {
     <>
       <div>
         <div className="profile-container">
-          {profile && (
+
+          <div>
+            <div className="flex justify-between items-center">
+              <ResAccHomeButton id={account_id} />
+              <ResAccProfileButton id={account_id} />
+            </div>
             <div>
-              <h2>Profile Information</h2>
-              <p>Username: {profile.Username}</p>
-              <p>Fullname: {profile.Fullname}</p>
-              <p>Email: {profile.Email}</p>
-              <p>Phone: {profile.Phone}</p>
-              <Link to={`/${account_id}/pocket`}>
-                <button className="button">Pocket</button>
-              </Link>
+              <h1>Welcome to Restaurant owner page!!</h1>
               <Link to={`/restaurant_account/${account_id}/add`}>
-              <button className="button">Add Restaurant</button>
+                <button className="button">Add Restaurant</button>
               </Link>
             </div>
-          )}
+          </div>
+
         </div>
         <div className="button-container">
           {restaurants.length > 0 && (

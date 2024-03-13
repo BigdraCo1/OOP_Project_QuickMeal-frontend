@@ -1,27 +1,34 @@
 .confirm{
   padding: 8px 16px;
-  border: 1px solid #000;
-  background-color: white;
-  color: #000;
+  border: 2px solid rgb(67, 220, 70);
+  background-color: rgb(67, 220, 70);
+  color: #ffffff;
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 16px;
+  /* font-size: 16px; */
   cursor: pointer;
-  transition: background-color 0.3s, color 0.3s;
+  transition: all 0.3s ease-in-out;
   border-radius: 8px;
-  margin: 10px;
+  /* margin: 10px; */
+
+  font-size: 1.1rem;
+  font-weight: 600;
+  width: 200px;
+  margin-bottom: 0.5rem;
 }
 
 .confirm:hover {
   background-color: #000000;
   color: #01b14e;
-  font-size: 20px;
+  /* font-size: 20px; */
+
+  font-size: 1.2rem;
 }
 
 .addAddress{
   padding: 8px 16px;
-  border: 1px solid #000;
+  border: 2px solid #000;
   background-color: white;
   color: #000;
   text-align: center;
@@ -29,13 +36,17 @@
   display: inline-block;
   font-size: 16px;
   cursor: pointer;
-  transition: background-color 0.3s, color 0.3s;
+  transition: all 0.3s ease-in-out;
   border-radius: 8px;
+
+  font-size: 1.1rem;
 }
 
 .addAddress:hover {
-background-color: #000000;
-color: #ffffff;
+  background-color: #000000;
+  color: #ffffff;
+
+  font-size: 1.2rem;
 }
 
 .midText {
