@@ -1,7 +1,7 @@
-import './ResHomeButton.css';
+import './ResAccHomeButton.css';
 import { Link } from "react-router-dom";
 
-function ResProfileButton({id}){
+function ResAccProfileButton({id}){
     return (
       <div>
         <Link to = {`/restaurant_account/${id}/profile`}>
@@ -13,4 +13,4 @@ function ResProfileButton({id}){
     );
 };
   
-  export default ResProfileButton;
+  export default ResAccProfileButton;

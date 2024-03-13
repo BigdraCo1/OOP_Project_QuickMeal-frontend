@@ -2,8 +2,8 @@ import React, { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import "./Main.css";
 import api from "../api/api";
-import ResHomeButton from "./RestaurantComponents/ResHomeButton";
-import ResProfileButton from "./RestaurantComponents/ResProfileButton";
+import ResAccHomeButton from "./RestaurantAccComponents/ResAccHomeButton";
+import ResAccProfileButton from "./RestaurantAccComponents/ResAccProfileButton";
 
 const BASE_URL = "http://127.0.0.1:8000";
 
@@ -51,8 +51,8 @@ function RestaurantAccount() {
 
           <div>
             <div className="flex justify-between items-center">
-              <ResHomeButton id={account_id} />
-              <ResProfileButton id={account_id} />
+              <ResAccHomeButton id={account_id} />
+              <ResAccProfileButton id={account_id} />
             </div>
             <div>
               <h1>Welcome to Restaurant owner page!!</h1>
