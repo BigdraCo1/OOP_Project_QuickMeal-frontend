@@ -78,17 +78,6 @@ function RestaurantRequestOrderDetail() {
                         <p>Payment: {orderDetail.Payment}</p>
                     </div>
                 )}
-                {orderDetail && (
-                    <Link to={`/${restaurant_name}`}>
-                        <button
-                            onClick={async () => {
-                                await fetchDeny(order_id);
-                            }}
-                        >
-                            Deny
-                        </button>
-                    </Link>
-                )}
                 {orderDetail && orderDetail.Order_State !== 'get_res' && (
                     <Link to={`/${restaurant_name}`}>
                         <button
@@ -97,6 +86,17 @@ function RestaurantRequestOrderDetail() {
                             }}
                         >
                             Accept
+                        </button>
+                    </Link>
+                )}
+                {orderDetail && (
+                    <Link to={`/${restaurant_name}`}>
+                        <button
+                            onClick={async () => {
+                                await fetchDeny(order_id);
+                            }}
+                        >
+                            Deny
                         </button>
                     </Link>
                 )}

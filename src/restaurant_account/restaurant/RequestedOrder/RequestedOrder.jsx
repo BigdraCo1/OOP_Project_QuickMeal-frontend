@@ -66,12 +66,7 @@ function RestaurantRequestedOrder() {
                     <Link to={`/${restaurant_name}/requested_order/${order.Order_ID}`} key={order.Order_ID}>
                     <button className='order-button' key={order.Order_ID}>
                         <p>Order ID: {order.Order_ID}</p>
-                        <p>Customer: {order.Customer}</p>
-                        <p>Rider: {order.Rider}</p>
-                        <p>Restaurant: {order.Restaurant}</p>
-                        <p>Food: {order.Food.join(', ')}</p>
                         <p>Order State: {order.Order_State}</p>
-                        <p>Payment: {order.Payment}</p>
                     </button>
                     </Link>
                 ))}
