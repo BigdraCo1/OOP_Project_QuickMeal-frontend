@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import api from '../../api/api';
+import RiderHomeButton from '../RiderComponent/RiderHomeButton';
 
 const BASE_URL = 'http://127.0.0.1:8000';
 
@@ -46,6 +47,9 @@ function RiderReceivedOrder() {
     }, [rider_id]);
     return (
         <>
+            <div className="flex justify-between items-center">
+                <RiderHomeButton id={rider_id} />
+            </div>
             <div className='profile-container'>
                 {riderProfile && (
                     <div>

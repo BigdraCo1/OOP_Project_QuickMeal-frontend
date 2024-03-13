@@ -2,10 +2,11 @@ import React, { useState, useEffect } from 'react';
 import { Link, useParams } from 'react-router-dom';
 const BASE_URL = 'http://127.0.0.1:8000';
 import api from '../../api/api'
+import RiderHomeButton from '../RiderComponent/RiderHomeButton';
 
 function FinishedOrderDetail() {
 
-    const { order_id } = useParams();
+    const { rider_id,order_id } = useParams();
     const [orderDetail, setOrderDetail] = useState(null);
 
     async function fetchOrderDetail(order_id) {
@@ -23,20 +24,23 @@ function FinishedOrderDetail() {
 
     return (
         <>
-        <div>
-        <h1>Order detail</h1>
+            <div>
+                <h1>Order detail</h1>
+                <div className="flex justify-between items-center">
+                    <RiderHomeButton id={rider_id} />
+                </div>
                 {orderDetail && (
                     <div className="OrderDetail">
                         <p>Order ID: {order_id}</p>
                         <p>Customer: {orderDetail.Customer}</p>
                         <p>Rider: {orderDetail.Rider}</p>
                         <p>Restaurant: {orderDetail.Restaurant}</p>
-                        <p>Food: {orderDetail.Food.join(', ')}</p>
+                        <p>Food: {orderDetail.Food.map(food => <><br />{food}</>)}</p>
                         <p>Order State: {orderDetail.Order_State}</p>
                         <p>Payment: {orderDetail.Payment}</p>
                     </div>
                 )}
-        </div>
+            </div>
         </>
     );
 

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link, useParams } from 'react-router-dom';
 const BASE_URL = 'http://127.0.0.1:8000';
 import api from '../../api/api'
+import RiderHomeButton from '../RiderComponent/RiderHomeButton';
 
 function RequestOrderDetail() {
 
@@ -37,6 +38,9 @@ function RequestOrderDetail() {
     return (
         <>
             <div>
+                <div className="flex justify-between items-center">
+                    <RiderHomeButton id={rider_id} />
+                </div>
                 <h1>Order detail</h1>
                 {orderDetail && (
                     <div className="OrderDetail">
@@ -44,7 +48,7 @@ function RequestOrderDetail() {
                         <p>Customer: {orderDetail.Customer}</p>
                         <p>Rider: {orderDetail.Rider}</p>
                         <p>Restaurant: {orderDetail.Restaurant}</p>
-                        <p>Food: {orderDetail.Food.join(', ')}</p>
+                        <p>Food: {orderDetail.Food.map(food => <><br />{food}</>)}</p>
                         <p>Order State: {orderDetail.Order_State}</p>
                         <p>Payment: {orderDetail.Payment}</p>
                     </div>

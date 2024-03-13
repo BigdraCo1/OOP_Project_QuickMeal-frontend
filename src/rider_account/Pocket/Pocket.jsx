@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import api from '../../api/api'
-import RiderHomeButton from '../RiderComponent/RiderHomeBurron';
+import RiderHomeButton from '../RiderComponent/RiderHomeButton';
 import RiderProfileButton from '../RiderComponent/RiderProfileButton';
 
 const BASE_URL = 'http://127.0.0.1:8000';

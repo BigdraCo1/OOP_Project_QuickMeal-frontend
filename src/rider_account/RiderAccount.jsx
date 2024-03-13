@@ -3,6 +3,7 @@ import { Link, useParams } from 'react-router-dom';
 import api from '../api/api';
 import './RiderAccount.css';
 import RiderProfileButton from './RiderComponent/RiderProfileButton';
+import RiderHomeButton from './RiderComponent/RiderHomeButton';
 
 const BASE_URL = 'http://127.0.0.1:8000';
 
@@ -13,23 +14,24 @@ function RiderAccount() {
     return (
         <div>
             <div className="flex justify-between items-center">
-              <RiderProfileButton id={rider_id} />
+                <RiderProfileButton id={rider_id} />
+                <RiderHomeButton id={rider_id} />
             </div>
             <div className='button-container'>
 
-                <Link to={`/rider_account/${ rider_id }/request_order`}>
+                <Link to={`/rider_account/${rider_id}/request_order`}>
                     <button>
                         Request Order
                     </button>
                 </Link >
                 <br />
-                <Link to={`/rider_account/${ rider_id }/recieved_order`}>
+                <Link to={`/rider_account/${rider_id}/recieved_order`}>
                     <button>
                         Received Order
                     </button>
                 </Link>
                 <br />
-                <Link to={`/rider_account/${ rider_id }/finished_order`}>
+                <Link to={`/rider_account/${rider_id}/finished_order`}>
                     <button>
                         History Order
                     </button>

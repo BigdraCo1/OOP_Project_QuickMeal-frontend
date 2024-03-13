@@ -76,7 +76,7 @@ function RestaurantRequestOrderDetail() {
                         <p>Customer: {orderDetail.Customer}</p>
                         <p>Rider: {orderDetail.Rider}</p>
                         <p>Restaurant: {orderDetail.Restaurant}</p>
-                        <p>Food: {orderDetail.Food.join(', ')}</p>
+                        <p>Food: {orderDetail.Food.map(food => <><br />{food}</>)}</p>
                         <p>Order State: {orderDetail.Order_State}</p>
                         <p>Payment: {orderDetail.Payment}</p>
                     </div>
