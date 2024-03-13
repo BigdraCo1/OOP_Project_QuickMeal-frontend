@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import api from '../api/api';
 import ProfileButton from '../components/ProfileButton'
+import HomeButton from '../components/HomeButton';
 
 const BASE_URL = 'http://127.0.0.1:8000';
 
