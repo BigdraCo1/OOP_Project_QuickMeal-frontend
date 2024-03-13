@@ -25,7 +25,8 @@ function CustomerCurrentOrderDetail(){
 
   async function handleCancel(){
     try {
-      await api.post(`${BASE_URL}/cancel_by_customer/${id}/${orderId}`)
+      const response = await api.post(`${BASE_URL}/cancel_by_customer/${id}/${orderId}`)
+      alert(response.data.message)
     } catch (error){
       console.log("error",error)
     }
