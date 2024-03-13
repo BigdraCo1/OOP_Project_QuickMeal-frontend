@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
-import ResHomeButton from "./RestaurantComponents/ResHomeButton";
+import ResAccHomeButton from "./RestaurantAccComponents/ResAccHomeButton";
 import api from "../api/api";
 
 const BASE_URL = "http://127.0.0.1:8000";
@@ -36,7 +36,7 @@ function AddRestaurant() {
         <>
           <div className="padding">
             <div className="flex justify-between items-center">
-              <ResHomeButton id={id} />
+              <ResAccHomeButton id={id} />
             </div>
             <br />
             <br />

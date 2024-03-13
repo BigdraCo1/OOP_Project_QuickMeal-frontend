@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-function ResHomeButton({id}){
+function ResAccHomeButton({id}){
     return (
       <div>
         <Link to = {`/restaurant_account/${id}`}>
@@ -12,4 +12,4 @@ function ResHomeButton({id}){
     );
 };
   
-export default ResHomeButton;
+export default ResAccHomeButton;

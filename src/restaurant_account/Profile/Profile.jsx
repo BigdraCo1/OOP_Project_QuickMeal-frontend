@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './Profile.css'
 import { Link, useParams } from "react-router-dom";
 import api from '../../api/api'
-import ResHomeButton from '../RestaurantComponents/ResHomeButton';
+import ResAccHomeButton from '../RestaurantAccComponents/ResAccHomeButton';
 
 
 const BASE_URL = 'http://127.0.0.1:8000'
@@ -29,7 +29,7 @@ function RestaurantProfile(){
         {!isLoading && (
           <div className='flex flex-col'>
             <div className="flex justify-between items-center">
-                <ResHomeButton id={account_id} />
+                <ResAccHomeButton id={account_id} />
               </div>
             <h2 className='text-center text-3xl font-bold mb-4'>Profile</h2>
             <div className="grid grid-cols-2 gap-y-2">
