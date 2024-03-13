@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import axios from 'axios';
+import ResHomeButton from '../RestaurantComponent/ResHomeButton';
 import api from '../../../api/api'
 
 const BASE_URL = 'http://127.0.0.1:8000';
 
 function RestaurantRequestOrder() {
     const { restaurant_name } = useParams();
-    const [restaurantDetail, setRestaurantDetail] = useState(null); // กำหนดค่าเริ่มต้นเป็น null
+    const [restaurantDetail, setRestaurantDetail] = useState(null);
     const [requestOrderList, setRequestOrderList] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
     async function fetchRestaurant(restaurant_name) {
@@ -51,6 +52,9 @@ function RestaurantRequestOrder() {
 
     return (
         <>
+            <div className="flex justify-between items-center">
+                <ResHomeButton name={restaurant_name} />
+            </div>
             <div className='restaurant-container'>
                 {restaurantDetail && ( // เช็คว่ามีค่าข้อมูลร้านอาหารหรือไม่ก่อนที่จะแสดงผล
                     <>

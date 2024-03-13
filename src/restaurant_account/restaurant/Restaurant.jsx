@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import './Restaurant.css';
-import ResAccHomeButton from '../RestaurantAccComponents/ResAccHomeButton';
 import api from '../../api/api';
+import ResAccountHomeButton from './RestaurantComponent/ResAccountButton';
 
 const BASE_URL = 'http://127.0.0.1:8000';
 
@@ -37,14 +37,16 @@ function Restaurant() {
         setIsLoading(false);
     }, [restaurant_name]);
     
+    console.log(restaurantOwner);
     return (
         <>
             {isLoading && (<p className="border border-gray-200 p-10 rounded-md bg-white flex flex-col justify-center items-centertext-2xl font-bold mb-1">Loading..</p>)}
             {!isLoading && restaurantOwner &&
                 <div>
                     <div className="flex justify-between items-center">
-                        <ResAccHomeButton id={restaurantOwner.restaurant_owner} />
-                    </div>  
+                        
+                        <ResAccountHomeButton id={restaurantOwner.restaurant_owner}/>
+                    </div>
                     <div className='restaurant-container'>
                         <h2>Restaurant Information</h2>
                         {restaurantDetail && ( // เช็คว่ามีค่าข้อมูลร้านอาหารหรือไม่ก่อนที่จะแสดงผล

@@ -37,7 +37,7 @@ function RequestOrderDetail() {
     return (
         <>
             <div>
-                <h1>Finish order detail</h1>
+                <h1>Order detail</h1>
                 {orderDetail && (
                     <div className="OrderDetail">
                         <p>Order ID: {order_id}</p>

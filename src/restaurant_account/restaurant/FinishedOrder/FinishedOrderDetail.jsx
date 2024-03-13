@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useParams } from 'react-router-dom';
-import axios from 'axios';
+import ResHomeButton from '../RestaurantComponent/ResHomeButton';
 const BASE_URL = 'http://127.0.0.1:8000';
 import api from '../../../api/api';
 
@@ -40,10 +40,13 @@ function RestaurantFinishedOrderDetail() {
 
     return (
         <>
-        <div>
-        <h1>RequestedOrderDetail</h1>
+            <div>
+                <h1>RequestedOrderDetail</h1>
                 {orderDetail && (
-                    <div className="OrderDetail"> {/* ใช้ className เพื่อเรียกใช้งาน CSS */}
+                    <div className="OrderDetail">
+                        <div className="flex justify-between items-center">
+                            <ResHomeButton name={restaurant_name} />
+                        </div>
                         <p>Order ID: {order_id}</p>
                         <p>Customer: {orderDetail.Customer}</p>
                         <p>Rider: {orderDetail.Rider}</p>
@@ -53,7 +56,7 @@ function RestaurantFinishedOrderDetail() {
                         <p>Payment: {orderDetail.Payment}</p>
                     </div>
                 )}
-        </div>
+            </div>
         </>
     );
 

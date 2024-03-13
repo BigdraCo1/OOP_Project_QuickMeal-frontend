@@ -1,15 +1,15 @@
 import { Link } from "react-router-dom";
 
-function ResAccHomeButton({id}){
+function ResAccountHomeButton({id}){
     return (
       <div>
         <Link to = {`/restaurant_account/${id}`}>
           <button className="home-button">
-              Home
+              Account
           </button>
         </Link> 
       </div>
     );
 };
 
-export default ResAccHomeButton;
+export default ResAccountHomeButton;

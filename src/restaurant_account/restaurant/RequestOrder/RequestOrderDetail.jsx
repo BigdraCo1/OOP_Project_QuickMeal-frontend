@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useParams } from 'react-router-dom';
-import axios from 'axios';
-import './RequestOrderDetail.css'; // นำเข้าไฟล์ CSS
+import './RequestOrderDetail.css';
+import ResHomeButton from '../RestaurantComponent/ResHomeButton';
 const BASE_URL = 'http://127.0.0.1:8000';
 import api from '../../../api/api'
 
@@ -67,8 +67,11 @@ function RestaurantRequestOrderDetail() {
         <>
             <div>
                 <h1>RequestedOrderDetail</h1>
+                <div className="flex justify-between items-center">
+                    <ResHomeButton name={restaurant_name} />
+                </div>
                 {orderDetail && (
-                    <div className="OrderDetail"> {/* ใช้ className เพื่อเรียกใช้งาน CSS */}
+                    <div className="OrderDetail">
                         <p>Order ID: {order_id}</p>
                         <p>Customer: {orderDetail.Customer}</p>
                         <p>Rider: {orderDetail.Rider}</p>

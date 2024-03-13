@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { Link,useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
+import ResHomeButton from '../RestaurantComponent/ResHomeButton';
 import api from '../../../api/api';
 
 
@@ -53,7 +54,7 @@ function RestaurantRequestedOrderDetail() {
 
     function handleFoodSelect(event) {
         setSelectedFood(event.target.value);
-        setConfirmCancel(true); // ระบุว่ามีการเลือกอาหารแล้ว
+        setConfirmCancel(true);
     }
 
     async function handleCancel() {
@@ -70,6 +71,9 @@ function RestaurantRequestedOrderDetail() {
             <h1>RequestedOrderDetail</h1>
             {orderDetail && (
                 <div className="OrderDetail">
+                    <div className="flex justify-between items-center">
+                        <ResHomeButton name={restaurant_name} />
+                    </div>
                     <p>Order ID: {order_id}</p>
                     <p>Customer: {orderDetail.Customer}</p>
                     <p>Rider: {orderDetail.Rider}</p>
@@ -84,7 +88,7 @@ function RestaurantRequestedOrderDetail() {
                                     <li key={index}>
                                         <label>
                                             <input type="radio" value={food.food_name} onChange={handleFoodSelect} checked={selectedFood === food.food_name} />
-                                            {food.food_name} - ${food.food_price} ({countSameFood(food.food_name)})
+                                            {food.food_name} ({countSameFood(food.food_name)})
                                         </label>
                                     </li>
                                 );

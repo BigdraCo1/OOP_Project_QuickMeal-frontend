@@ -10,7 +10,7 @@ function FinishedOrderDetail() {
 
     async function fetchOrderDetail(order_id) {
         try {
-            const order_response = await api.get(`${BASE_URL}/show/order/detail//${order_id}`);
+            const order_response = await api.get(`${BASE_URL}/show/order/detail/${order_id}`);
             setOrderDetail(order_response.data);
         } catch (error) {
             console.log('error', error);
@@ -24,7 +24,7 @@ function FinishedOrderDetail() {
     return (
         <>
         <div>
-        <h1>Finish order detail</h1>
+        <h1>Order detail</h1>
                 {orderDetail && (
                     <div className="OrderDetail">
                         <p>Order ID: {order_id}</p>
