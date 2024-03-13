@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import api from '../api/api';
-import ProfileButton from '../components/ProfileButton'
-import HomeButton from '../components/HomeButton';
+import api from '../../api/api'
+import ResProfileButton from '../RestaurantComponents/ResProfileButton';
+import ResHomeButton from '../RestaurantComponents/ResHomeButton';
 
 const BASE_URL = 'http://127.0.0.1:8000';
 
-function Pocket() {
+function RestaurantPocket() {
     const { account_id } = useParams();
     const [pocket, setPocket] = useState({});
     const [payment, setPayment] = useState([]);
@@ -59,8 +59,8 @@ function Pocket() {
     return (
         <div className='flex mx-[10rem] px-[10rem] border-2 shadow-2xl 
         bg-slate-100 justify-start items-start h-screen'>
-            <HomeButton id={account_id}/>
-            <ProfileButton id={account_id}/>
+            <ResHomeButton id={account_id}/>
+            <ResProfileButton id={account_id}/>
             <div className='p-[1rem] h-screen w-full'>
                 <h1 className='text-[2rem] font-bold '>Pocket</h1>
                 <div className='text-[1.2rem] border-2 border-slate-300 rounded-md shadow-md my-[0.5rem] px-[1rem] py-[0.5rem]'>
@@ -85,4 +85,4 @@ function Pocket() {
     );
 }
 
-export default Pocket;
+export default RestaurantPocket;

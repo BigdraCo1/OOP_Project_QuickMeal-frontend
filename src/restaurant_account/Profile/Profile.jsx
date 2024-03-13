@@ -47,7 +47,7 @@ function RestaurantProfile(){
             </div>
             <div className='flex flex-col justify-center mt-6 space-x-4'>
               <div className="flex justify-center pl-[1rem]">
-                <Link to={`/${account_id}/pocket`}>
+                <Link to={`/restaurant_account/${account_id}/pocket`}>
                   <button className='bg-emerald-600 text-white px-4 py-2 rounded-md 
                   hover:bg-emerald-700 w-[12rem] m-[0.2rem]'>Pocket</button>
                 </Link>
