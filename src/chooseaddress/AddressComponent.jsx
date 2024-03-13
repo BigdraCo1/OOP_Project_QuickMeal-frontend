@@ -21,7 +21,7 @@ function AddressComponent({ address , id}) {
 
       async function DeleteAddress() {
         try {
-          const response = await api.delete(`${BASE_URL}/basket/address/${id}/${address}`)
+          const response = await api.delete(`${BASE_URL}/basket/delete/address/${id}/${address}`)
           alert(response.data)
           window.location.reload();
         } catch (error) {
@@ -30,12 +30,16 @@ function AddressComponent({ address , id}) {
       };
 
   return (
-    <div className="address">
+    <div className="address ">
         <Link to = {`/${id}/basket`}>
-          <button style={{margin:"10px"}}onClick={ChooseAddress}>Choose</button>
+          <button 
+          className='text-white font-medium px-[0.6rem] py-[0.4rem] bg-emerald-600 rounded-md'
+          style={{margin:"10px"}}onClick={ChooseAddress}>Choose</button>
         </Link>
         <h3>{address}</h3>
-        <button style={{margin:"10px"}}onClick={DeleteAddress}>Delete</button>
+        <button 
+        className='text-white font-medium px-[0.6rem] py-[0.4rem] bg-red-600 rounded-md'
+        style={{margin:"10px"}}onClick={DeleteAddress}>Delete</button>
     </div>
   );
 };

@@ -67,6 +67,21 @@ function Pocket() {
                     <div className='text-[1.2rem] font-medium border-2 border-slate-300 rounded-md shadow-md my-[0.5rem] px-[1rem] py-[0.5rem]'>
                         <p>Balance : {pocket.Balance}</p>
                     </div>
+
+                    <div className='flex bg-slate-300 my-[0.5rem] p-[0.5rem] rounded-md w-full'>
+                        <div className='inline w-9/12'>
+                            <textarea 
+                            className='w-full h-full border-2 border-slate-300 rounded-md p-[0.2rem] text-slate-800'
+                            id="money" name="money" rows="1" cols="20"></textarea><br/>
+                        </div>
+                        <div className='inline w-3/12'>
+                            <button 
+                            className='w-full h-full text-center p-[0.2rem] text-[1.05rem] font-medium border-2 border-emerald-600 
+                            bg-emerald-600 hover:bg-slate-100 text-slate-100 hover:text-emerald-600 rounded-md transition-all duration-300 ease-in-out'
+                            onClick={() => TopUp()}>TopUp</button>
+                        </div>
+                    </div>
+
                     <div className='text-[1.2rem] border-2 border-slate-300 rounded-md shadow-md px-[1rem] pb-[1rem]'>
                         <h2 className='py-[0.5rem] font-medium'>Payments</h2>
                         <ul className='bg-slate-600 border-2 border-slate-300 rounded-lg px-[0.4rem] py-[0rem]'>
@@ -81,7 +96,7 @@ function Pocket() {
                             ))}
                         </ul>
                     </div>
-                    <div className='bg-slate-300 p-[0.5rem] rounded-md absolute top-[6rem] right-[1rem]'>
+                    {/* <div className='bg-slate-300 p-[0.5rem] rounded-md absolute top-[6rem] right-[1rem]'>
                         <div>
                             <textarea 
                             className='border-2 border-slate-300 rounded-md p-[0.2rem] text-slate-800'
@@ -93,7 +108,7 @@ function Pocket() {
                             bg-emerald-600 hover:bg-slate-100 text-slate-100 hover:text-emerald-600 rounded-md transition-all duration-300 ease-in-out'
                             onClick={() => TopUp()}>TopUp</button>
                         </div>
-                    </div>
+                    </div> */}
                 </div>
             </div>
         </div>
