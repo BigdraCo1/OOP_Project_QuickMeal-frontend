@@ -3,10 +3,13 @@
     align-items: center;
     margin-bottom: 10px;
     background-color: #d5c6b1;
-    margin: 10px;
-    padding: 8px;
+    /* margin: 10px; */
+    /* padding: 8px; */
     border-radius: 8px;
-    width: fit-content
+    width: fit-content;
+
+    margin: 0.5rem 0rem;
+    padding: 0.3rem 0.6rem;
   }
 
   .midText {

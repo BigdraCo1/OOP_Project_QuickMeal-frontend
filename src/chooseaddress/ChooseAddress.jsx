@@ -46,29 +46,34 @@ function ChooseAddress(){
   }
 
     return (
-      <div className='mx-[8rem] py-[4rem] bg-slate-300 shadow-2xl h-screen'>
-        { isLoading && <div>.....Loading.....</div> }
-        { !isLoading &&
-        <div>
-          <BasketButton id={id}/>
-          <div className='midText'>
-            <h1 className='text-[2rem] text-emerald-600 font-bold'>Address</h1>
-          </div>
-          {address.map((item, index) => (
-            <div key = {index}>
-              <div className='midText'> <AddressComponent address={item} id = {id}/> </div>
+      <div className='flex justify-center items-start
+      bg-gradient-to-b from-green-500 to-lime-500 min-h-screen'>
+        <div className='flex justify-center py-[1rem] w-7/12 bg-slate-300 shadow-2xl h-screen overflow-y-auto'>
+          { isLoading && <div>.....Loading.....</div> }
+          { !isLoading &&
+          <div className='w-7/12'>
+            <BasketButton id={id}/>
+            <div className='midText bg-emerald-600 my-[0.5rem] rounded-md'>
+              <h1 className='text-[2rem] text-white font-bold'>Address</h1>
             </div>
-          ))}
-          <div className='midText p-[0.2rem] border-none'>
-            <textarea id="newAddress" name="newAddress" rows="2" cols="36"></textarea><br/>
-          </div>
-          <div className='midText'>
-            <button className='bg-emerald-500 hover:bg-emerald-700 text-slate-100 hover:text-slate-50
-            font-bold my-[1rem] py-[0.5rem] px-[6rem] rounded-md transition-all duration-300 ease-in-out'
-            onClick={() => addAddress()}>Add address</button>
-          </div>
-        </div> 
-        }
+            {address.map((item, index) => (
+              <div key = {index}>
+                <div className='midText'> <AddressComponent address={item} id = {id}/> </div>
+              </div>
+            ))}
+            <div className='midText p-[0.2rem] border-none'>
+              <textarea 
+              className='border-2 border-slate-600 rounded-md w-[360px] p-[0.5rem] my-[0.5rem]'
+              id="newAddress" name="newAddress" rows="2" cols="36"></textarea><br/>
+            </div>
+            <div className='midText'>
+              <button className='border-emerald-600 border-2 bg-emerald-600 hover:bg-slate-100 text-slate-100 hover:text-emerald-600
+              font-bold w-[360px] my-[0.5rem] py-[0.5rem] px-[0.5rem] rounded-md transition-all duration-300 ease-in-out'
+              onClick={() => addAddress()}>Add address</button>
+            </div>
+          </div> 
+          }
+        </div>
       </div>
     )
   };
