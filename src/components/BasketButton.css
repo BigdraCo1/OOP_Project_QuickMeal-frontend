@@ -1,7 +1,7 @@
 .basket-button {
   position: fixed;
-  /* top: 20px;  */
-  /* right: 150px;  */
+  top: 20px; 
+  right: 150px; 
   background-color: #ffffff; 
   border: none;
   color: rgb(0, 0, 0);
@@ -13,20 +13,8 @@
   margin: 4px 2px;
   cursor: pointer;
   border-radius: 8px;
-
-  font-size: 1.2rem;
-  font-weight: bold;
-  border: 2px solid #FFFFFF;
-  top: 1rem;
-  right: 8.7rem;
-  margin: 0.2rem 0.4rem;
-  padding: 0.8rem 1.2rem;
-  transition: all 0.3s ease-in-out;
 }
 
 .basket-button:hover{
-  background-color: #029C00;
-
-  color: #FFFFFF;
-  border: 2px solid #FFFFFF;
+  background-color: #cacbcc;
 }

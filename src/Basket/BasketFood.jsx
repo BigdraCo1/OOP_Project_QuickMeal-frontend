@@ -53,21 +53,15 @@ const BasketFood = ({foodID, lst ,id}) => {
 
   return (
         <div className="food-item">
-            <span className="food-name font-medium text-white bg-slate-600 rounded-md px-[0.6rem] py-[0.3rem]">{lst[2]}</span>
+            <span className="food-name">{lst[2]}</span>
             <div className="amount-control">
-                <button className="btn text-slate-800" onClick={handleDecrement}>-</button>
-                    <span className="amount className='font-medium text-slate-600 bg-white rounded-md px-[0.6rem] py-[0.3rem]">{newAmount}</span>
-                <button className="btn text-slate-800" onClick={handleIncrement}>+</button>
+                <button className="btn" onClick={handleDecrement}>-</button>
+                    <span className="amount">{newAmount}</span>
+                <button className="btn" onClick={handleIncrement}>+</button>
             </div>
-            <div
-            className='font-medium text-white bg-orange-400 rounded-md px-[0.6rem] py-[0.3rem]'
-            >{lst[4]}</div>
-            <button style={{margin:"10px"}} onClick={confirmChanges} 
-            className='font-medium text-white bg-slate-600 rounded-md px-[0.6rem] py-[0.3rem]'
-            >change quantity</button>
-            <button onClick={confirmDelete}
-            className='font-medium text-white bg-red-600 rounded-md px-[0.6rem] py-[0.3rem]'
-            >Delete</button>
+            <div>{lst[4]}</div>
+            <button style={{margin:"10px"}}onClick={confirmChanges}>change quantity</button>
+            <button onClick={confirmDelete}>Delete</button>
         </div>
   );
 };

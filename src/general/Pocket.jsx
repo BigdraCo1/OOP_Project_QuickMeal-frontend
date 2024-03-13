@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import api from '../api/api';
 import ProfileButton from '../components/ProfileButton'
-import HomeButton from '../components/HomeButton';
 
 const BASE_URL = 'http://127.0.0.1:8000';
 
@@ -57,44 +56,28 @@ function Pocket() {
 
     console.log(payment);
     return (
-        <div className='bg-gradient-to-b from-green-500 to-lime-500 min-h-screen'>
-            <div className='flex mx-[10rem] px-[10rem] shadow-2xl 
-                bg-slate-100 justify-start items-start h-screen'>
-                <HomeButton id={account_id}/>
-                <ProfileButton id={account_id}/>
-                <div className='p-[1rem] h-screen w-full'>
-                    <h1 className='text-white text-[2rem] font-bold bg-emerald-600 rounded-md border-2 px-[1rem] shadow-md'>Pocket</h1>
-                    <div className='text-[1.2rem] font-medium border-2 border-slate-300 rounded-md shadow-md my-[0.5rem] px-[1rem] py-[0.5rem]'>
-                        <p>Balance : {pocket.Balance}</p>
-                    </div>
-                    <div className='text-[1.2rem] border-2 border-slate-300 rounded-md shadow-md px-[1rem] pb-[1rem]'>
-                        <h2 className='py-[0.5rem] font-medium'>Payments</h2>
-                        <ul className='bg-slate-600 border-2 border-slate-300 rounded-lg px-[0.4rem] py-[0rem]'>
-                            {Object.keys(payment).map((paymentId) => (
-                                <li
-                                className='text-[1rem] border-2 border-slate-300 rounded-md p-[0.4rem] my-[0.4rem] bg-slate-100 text-slate-800 font-medium'
-                                key={paymentId}>
-                                    <p className='text-white bg-emerald-600 px-[0.4rem] py-[0.2rem] rounded-md'>Order ID : {payment[paymentId][0]}</p>
-                                    <p>Status : {payment[paymentId][1]}</p>
-                                    <p>Amount : {payment[paymentId][2]}</p>
-                                </li>
-                            ))}
-                        </ul>
-                    </div>
-                    <div className='bg-slate-300 p-[0.5rem] rounded-md absolute top-[6rem] right-[1rem]'>
-                        <div>
-                            <textarea 
-                            className='border-2 border-slate-300 rounded-md p-[0.2rem] text-slate-800'
-                            id="money" name="money" rows="1" cols="20"></textarea><br/>
-                        </div>
-                        <div>
-                            <button 
-                            className='w-full text-center p-[0.2rem] text-[1.05rem] font-medium border-2 border-emerald-600 
-                            bg-emerald-600 hover:bg-slate-100 text-slate-100 hover:text-emerald-600 rounded-md transition-all duration-300 ease-in-out'
-                            onClick={() => TopUp()}>TopUp</button>
-                        </div>
-                    </div>
+        <div className='flex mx-[10rem] px-[10rem] border-2 shadow-2xl 
+        bg-slate-100 justify-start items-start h-screen'>
+            <ProfileButton id={account_id}/>
+            <div className='p-[1rem] h-screen w-full'>
+                <h1 className='text-[2rem] font-bold '>Pocket</h1>
+                <div className='text-[1.2rem] border-2 border-slate-300 rounded-md shadow-md my-[0.5rem] px-[1rem] py-[0.5rem]'>
+                    <p>Balance : {pocket.Balance}</p>
                 </div>
+                <div className='text-[1.2rem] border-2 border-slate-300 rounded-md shadow-md px-[1rem] pb-[1rem]'>
+                    <h2 className='py-[0.5rem]'>Payments</h2>
+                    <ul className='border-2 border-slate-300 rounded-md p-[1rem] mb-[0.2rem]'>
+                        {Object.keys(payment).map((paymentId) => (
+                            <li key={paymentId}>
+                                <p>Order ID: {payment[paymentId][0]}</p>
+                                <p>Status: {payment[paymentId][1]}</p>
+                                <p>Amount: {payment[paymentId][2]}</p>
+                            </li>
+                        ))}
+                    </ul>
+                </div>
+                <div>  <textarea id="money" name="money" rows="1" cols="20"></textarea><br/>  </div>
+                <div>  <button onClick={() => TopUp()}>TopUp</button>  </div>
             </div>
         </div>
     );

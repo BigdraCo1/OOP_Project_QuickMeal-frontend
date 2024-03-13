@@ -54,44 +54,38 @@ function CustomerFoodDetail(){
   };
 
     return (
-      <div
-      className='bg-gradient-to-b from-green-500 to-lime-500 min-h-screen py-[1rem]'
-      >
-        { isLoading && <div>.....Loading.....</div> }
-        { !isLoading && <div className='midText'>
-          <HomeButton id = {id}/>
-          <BasketButton id = {id}/>
-          <div className='detailbox'>
-            <h2 className='text-[1.5rem] font-bold text-center border-2 border-slate-400 rounded-md w-[240px]'>{fooddetail.food_name}</h2>
-            <div className='text-[1.1rem] font-medium p-[0.5rem] mt-[0.5rem] border-2 border-slate-400 rounded-md w-[240px]'>
-              <h3>{fooddetail.food_type}</h3>
-              <h3>{fooddetail.food_price} ฿</h3>
+      <>
+      { isLoading && <div>.....Loading.....</div> }
+      { !isLoading && <div className='midText'>
+        <HomeButton id = {id}/>
+        <BasketButton id = {id}/>
+        <div className='detailbox'>
+        <h2 className='text-[1.5rem] font-bold'>{fooddetail.food_name}</h2>
+        <h3 className='text-[1.2rem]'>{fooddetail.food_type}</h3>
+        <h3 className='text-[1.2rem]'>{fooddetail.food_price} ฿</h3>
+        <div>
+          {Object.entries(fooddetail.food_size).map(([size, cost]) => (
+            <div key={size}>
+              <label>
+              <input type="radio" value={size} checked={selectedSize === size} onChange={handleSizeChange} />
+                {size}  +  {cost} ฿
+              </label>
             </div>
-            <div className='text-[1.1rem] font-medium px-[0.5rem] py-0 mt-[0.5rem] border-2 border-slate-400 rounded-md w-[240px]'>
-              <div>
-                {Object.entries(fooddetail.food_size).map(([size, cost]) => (
-                  <div key={size}>
-                    <label>
-                    <input type="radio" value={size} checked={selectedSize === size} onChange={handleSizeChange} />
-                      {size}  +  {cost} ฿
-                    </label>
-                  </div>
-                ))}
-              </div>
-              <div className="quantity">
-                <button onClick={() => handleQuantityChange(-1)}>-</button>
-                <input type="text" value={quantity} readOnly />
-                <button onClick={() => handleQuantityChange(1)}>+</button>
-              </div>
-            </div>
-            <button className='mt-[0.5rem] w-[240px] text-slate-700 text-[1.1rem] font-bold bg-slate-300 
-            border-2 border-slate-300 px-[1rem] py-[0.2rem] rounded-md shadow-md
-            hover:bg-green-600 hover:border-slate-400 hover:shadow-lg hover:text-slate-200
-            transition duration-300 ease-in-out transform hover:scale-105'
-            onClick={addToBasket}>Add to Basket</button>
-          </div>
-        </div>} 
-      </div>  
+          ))}
+        </div>
+        <div className="quantity">
+            <button onClick={() => handleQuantityChange(-1)}>-</button>
+            <input type="text" value={quantity} readOnly />
+            <button onClick={() => handleQuantityChange(1)}>+</button>
+        </div>
+        <button className='text-slate-700 text-[1.1rem] font-bold bg-slate-300 
+          border-2 border-slate-300 px-[1rem] py-[0.2rem] rounded-md shadow-md
+          hover:bg-slate-400 hover:border-slate-400 hover:shadow-lg hover:text-slate-200
+          transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-105'
+          onClick={addToBasket}>Add to Basket</button>
+      </div>
+      </div>} 
+    </>  
     ) 
   };
   

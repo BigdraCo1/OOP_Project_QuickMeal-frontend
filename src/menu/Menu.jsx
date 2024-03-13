@@ -39,9 +39,7 @@ function CustomerMenu(){
   useEffect(() => {ShowMenus(resId)}, []);
 
     return (
-      <div className='flex justify-center items-start p-[1rem]
-      bg-gradient-to-b from-green-500 to-lime-500 min-h-screen
-      '>
+      <div className='flex justify-center items-center p-[1rem]'>
         { isLoading && <div>.....Loading.....</div> }
         { !isLoading &&
         <div>

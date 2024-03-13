@@ -71,15 +71,12 @@ const LoginForm = () => {
   };
 
   return (
-    <div className='flex flex-col justify-center items-center bg-gradient-to-b from-green-500 to-lime-500 min-h-screen'>
-      <div className="text-[1.6rem] text-white font-bold w-[300px]">
-        <h4>LOGIN</h4>
-      </div>
+    <div className='flex justify-center items-center h-screen bg-emerald-900'>
       <form className='border border-gray-300 rounded-md p-6 
       flex flex-col items-center bg-white shadow-md' 
       onSubmit={handleSubmit}>
         <div className='mb-4 w-full'>
-          <label htmlFor="username" className='text-gray-700 text-[1.1rem] font-medium'>Username :</label>
+          <label htmlFor="username" className='text-gray-700'>Username :</label>
           <input
             type="text"
             name="username"
@@ -90,7 +87,7 @@ const LoginForm = () => {
           />
         </div>
         <div className='mb-4 w-full'>
-          <label htmlFor="password" className='text-gray-700 text-[1.1rem] font-medium'>Password :</label>
+          <label htmlFor="password" className='text-gray-700'>Password :</label>
           <input
             type="password"
             name="password"
@@ -105,7 +102,7 @@ const LoginForm = () => {
             type="submit" 
             className='bg-emerald-600 hover:bg-slate-100 border-[3px] border-emerald-600
             text-white hover:text-emerald-600 font-bold py-[0.4rem] px-[1.2rem] rounded 
-            transition-all duration-300 w-full'
+            transition-all duration-300'
           >Login
           </button>
         </div>

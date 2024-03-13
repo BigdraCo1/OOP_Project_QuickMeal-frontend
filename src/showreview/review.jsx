@@ -77,7 +77,7 @@ function CustomerReviews(){
   }
 
   return (
-    <div className='flex justify-center bg-gradient-to-b from-green-500 to-lime-500 min-h-screen'>
+    <div className='flex justify-center'>
     { isLoading && <div>.....Loading.....</div> }
     { !isLoading && 
     <div className='p-[1rem] bg-slate-300 shadow-xl rounded-md'>
