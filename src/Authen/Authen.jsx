@@ -71,7 +71,7 @@ const LoginForm = () => {
   };
 
   return (
-    <div className='flex justify-center items-center h-screen bg-emerald-900'>
+    <div className='flex justify-center items-center bg-gradient-to-b from-green-500 to-lime-500 min-h-screen'>
       <form className='border border-gray-300 rounded-md p-6 
       flex flex-col items-center bg-white shadow-md' 
       onSubmit={handleSubmit}>
