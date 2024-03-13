@@ -46,12 +46,14 @@ function Basket(){
             <h1 className='text-slate-100 bg-emerald-600 text-[2rem] rounded-md 
             shadow-xl font-bold px-[6rem] my-[0.5rem]'>Basket</h1>
           </div>
-          {(Object.keys(basket).length === 0) && 
-          <div className='rounded-lg border-2 border-slate-600 w-[300px] p-[1rem]'>
-              <div className='midText'> <h2>There's No Order In Your Basket Yet! </h2> </div>
-              <div className='midText'> <h2>Add Something!</h2> </div>
+          <div className='flex justify-center'>
+            {(Object.keys(basket).length === 0) && 
+            <div className='font-bold rounded-lg border-2 border-slate-600 w-[360px] p-[1rem]'>
+                <div className='midText'> <h2>There's No Order In Your Basket Yet! </h2> </div>
+                <div className='midText'> <h2>Add Something!</h2> </div>
+            </div>
+            }
           </div>
-          }
           {!(Object.keys(basket).length === 0) &&
           <div className='flex flex-col justify-center items-center'>
             <div className='border-2 border-slate-600 rounded-lg px-[0.5rem] mb-[0.5rem]'>
