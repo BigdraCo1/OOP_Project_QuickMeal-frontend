@@ -60,6 +60,7 @@ function Pocket() {
         <div className='bg-gradient-to-b from-green-500 to-lime-500 min-h-screen'>
             <div className='flex mx-[10rem] px-[10rem] shadow-2xl 
                 bg-slate-100 justify-start items-start h-screen'>
+                <HomeButton id={account_id}/>
                 <ProfileButton id={account_id}/>
                 <div className='p-[1rem] h-screen w-full'>
                     <h1 className='text-white text-[2rem] font-bold bg-emerald-600 rounded-md border-2 px-[1rem] shadow-md'>Pocket</h1>
