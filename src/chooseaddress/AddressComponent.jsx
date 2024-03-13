@@ -21,7 +21,7 @@ function AddressComponent({ address , id}) {
 
       async function DeleteAddress() {
         try {
-          const response = await api.delete(`${BASE_URL}/basket/address/${id}/${address}`)
+          const response = await api.delete(`${BASE_URL}/basket/delete/address/${id}/${address}`)
           alert(response.data)
           window.location.reload();
         } catch (error) {
