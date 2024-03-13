@@ -3,21 +3,29 @@
     border: 0px solid #000000;
     border-radius: 5px;
     padding: 20px;
-    width: 350px;
+    width: 360px;
     /* box-shadow: 5px 5px rgba(0, 0, 0, 0.1); */
     background-color: white;
-    transition: all 0.3s ease-in-out;
+    transition: all 0.2s ease-in-out;
   }
   
-  .restaurant-card h2 {
+  /* .restaurant-card h2 {
     margin-top: 0;
-  }
+  } */
   
-  .restaurant-card p {
+  /* .restaurant-card p {
     margin: 5px 0;
-  }
+  } */
 
   .restaurant-card:hover, .restaurant-card:focus, .restaurant-card:active{
     color: white;
     background-color: #474747;
+  }
+
+  .restaurant-card:hover h2, .restaurant-card:focus h2, .restaurant-card:active h2{
+    color: white;
+  }
+
+  .restaurant-card:hover div p, .restaurant-card:focus div p, .restaurant-card:active div p{
+    color: white;
   }

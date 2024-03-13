@@ -45,38 +45,42 @@ function CustomerRestaurants() {
   }, []);
 
   return (
-    <>
+    <div
+    // addictional tailwindcss
+    className="bg-gradient-to-b from-green-500 to-lime-500 min-h-screen p-[4rem]"
+    >
       {isLoading && <div className="text-center">Loading...</div>}
       {!isLoading && (
         <div className="container mx-auto px-4 py-8">
-          <div className="flex justify-between items-center mb-4">
+          <div className="flex justify-between items-center">
             <HomeButton id={id} />
             <BasketButton id={id} />
             <ProfileButton id={id} />
           </div>
-          <div className="fixedPosBar">
-          <div className="flex gap-2 relative shadow-md sm:rounded-lg">
-            <div className="relative mt-0">
-              <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
-                <img src={lensLogo} className="logo" alt="Star logo" />
-              </div>
-              <input
-                className="mt-1 px-3 py-2 border border-gray-300 shadow-sm bg-gray-50 focus:outline-none focus:border-green-200 text-gray-900 text-sm rounded-lg block w-80 pl-10 p-2.5 dark:border-gray-600 dark:placeholder-gray-400 dark:text-black"
-                type="text" placeholder="Search for restaurants..." value={key} onChange={handleChange} 
-                onKeyDown={(e) => {
-                  if (e.key === "Enter") {
-                    handleSubmit();
-                  }
-                }}
-              />
+          <div className="fixedPosBar bg-slate-200 px-[1rem] py-[0.5rem] rounded-md shadow-md">
+            <div className="flex gap-2 relative sm:rounded-lg">
+              <div className="relative mt-0">
+                <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                  <img src={lensLogo} className="logo" alt="Star logo" />
+                </div>
+                <input
+                    className="mt-1 px-3 py-2 border border-gray-300 shadow-sm bg-gray-50 focus:outline-none focus:border-green-200 text-gray-900 text-sm rounded-lg block w-80 pl-10 p-2.5 dark:border-gray-600 dark:placeholder-gray-400 dark:text-black"
+                    type="text" placeholder="Search for restaurants..." value={key} onChange={handleChange} 
+                    onKeyDown={(e) => {
+                      if (e.key === "Enter") {
+                        handleSubmit();
+                      }
+                    }}
+                />
+                </div>
+                <button className="h-12 min-w-[8rem] rounded-lg border-[3px] text-[1.1rem] font-medium border-emerald-600 bg-emerald-600 
+                text-emerald-50 shadow-lg hover:bg-slate-100 hover:text-emerald-600 focus:outline-none focus:ring focus:ring-emerald-600
+                transition-all duration-300 ease-in-out hover:scale-105 transform hover:shadow-xl"
+                  onClick={handleSubmit}>Search
+                </button>
             </div>
-            <button className="h-12 min-w-[8rem] rounded-lg border-2 border-emerald-600 bg-emerald-500 text-emerald-50 shadow-lg hover:bg-emerald-600 focus:outline-none focus:ring focus:ring-emerald-600"
-              onClick={handleSubmit}>
-                Search
-            </button>
           </div>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-16">
+          <div className="overscroll-contain mt-[1rem] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {restaurants.map((restaurant, index) => (
               <div key={index}>
                 <Link to={`/${id}/show/${restaurant._Restaurant__restaurant_id}/menu`}>
@@ -91,7 +95,7 @@ function CustomerRestaurants() {
           </div>
         </div>
       )}
-    </>
+    </div>
   );
 }
 

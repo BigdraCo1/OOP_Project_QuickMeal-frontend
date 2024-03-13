@@ -1,16 +1,15 @@
-import './HomeButton.css'
 import { Link } from "react-router-dom";
 
-function HomeButton({id}){
+function ResAccHomeButton({id}){
     return (
       <div>
-        <Link to = {`/${id}/restaurants`}>
+        <Link to = {`/restaurant_account/${id}`}>
           <button className="home-button">
               Home
           </button>
-        </Link>
+        </Link> 
       </div>
     );
 };
   
-  export default HomeButton;
+export default ResAccHomeButton;
