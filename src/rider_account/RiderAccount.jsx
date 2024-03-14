@@ -11,31 +11,46 @@ function RiderAccount() {
     const [riderProfile, setRiderProfile] = useState(null);
 
     return (
-        <div>
+        <div
+        className='flex justify-center h-screen'
+        >
             <div className="flex justify-between items-center">
               <RiderProfileButton id={rider_id} />
             </div>
-            <div className='button-container'>
 
+            <div
+            // className='button-container'
+            className='flex flex-col justify-center items-center h-full w-7/12 rounded-md'
+            >
+                <div className='w-full rounded-lg bg-slate-200 text-center p-[1rem] font-medium text-[1.2rem]'>
                 <Link to={`/rider_account/${ rider_id }/request_order`}>
                     <button>
                         Request Order
                     </button>
                 </Link >
+                </div>
+
                 <br />
+
+                <div className='w-full rounded-lg bg-slate-200 text-center p-[1rem] font-medium text-[1.2rem]'>
                 <Link to={`/rider_account/${ rider_id }/recieved_order`}>
                     <button>
                         Received Order
                     </button>
                 </Link>
+                </div>
+
                 <br />
+
+                <div className='w-full rounded-lg bg-slate-200 text-center p-[1rem] font-medium text-[1.2rem]'>
                 <Link to={`/rider_account/${ rider_id }/finished_order`}>
                     <button>
                         History Order
                     </button>
                 </Link>
-
+                </div>
             </div>
+
         </div>
     )
 }

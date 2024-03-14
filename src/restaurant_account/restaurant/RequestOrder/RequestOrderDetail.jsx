@@ -64,26 +64,35 @@ function RestaurantRequestOrderDetail() {
 
 
     return (
-        <>
-            <div>
-                <h1>RequestedOrderDetail</h1>
+        <div className='bg-gradient-to-b from-green-500 to-blue-500 min-h-screen'>
+        <div className='h-screen flex flex-col justify-start items-center'>
+            <div className='p-[1rem]'>
+                <div className=' rounded-md font-medium text-[1.2rem] bg-slate-300 px-[0.2rem] my-[0.5rem]'>
+                    <h1>RequestedOrderDetail</h1>  
+                </div>
                 <div className="flex justify-between items-center">
                     <ResHomeButton name={restaurant_name} />
                 </div>
                 {orderDetail && (
-                    <div className="OrderDetail">
-                        <p>Order ID: {order_id}</p>
-                        <p>Customer: {orderDetail.Customer}</p>
-                        <p>Rider: {orderDetail.Rider}</p>
-                        <p>Restaurant: {orderDetail.Restaurant}</p>
-                        <p>Food: {orderDetail.Food.join(', ')}</p>
-                        <p>Order State: {orderDetail.Order_State}</p>
-                        <p>Payment: {orderDetail.Payment}</p>
+                    <div 
+                    // className="OrderDetail"
+                    className='p-[1rem] font-medium rounded-md bg-white flex flex-col justify-center w-full'
+                    >
+                            <p>Order ID: {order_id}</p>
+                            <p>Customer: {orderDetail.Customer}</p>
+                            <p>Rider: {orderDetail.Rider}</p>
+                            <p>Restaurant: {orderDetail.Restaurant}</p>
+                            <p>Food: {orderDetail.Food.join(', ')}</p>
+                            <p>Order State: {orderDetail.Order_State}</p>
+                            <p>Payment: {orderDetail.Payment}</p>
                     </div>
                 )}
+                <div className='flex bg-slate-300 rounded-md mt-[0.5rem]'>
+                    <div>
                 {orderDetail && orderDetail.Order_State !== 'get_res' && (
                     <Link to={`/${restaurant_name}`}>
                         <button
+                        className='bg-green-600 px-[1.6rem] py-[0.5rem] m-[0.2rem] font-medium rounded-md text-white'
                             onClick={async () => {
                                 await fetchAccept(order_id);
                             }}
@@ -92,9 +101,11 @@ function RestaurantRequestOrderDetail() {
                         </button>
                     </Link>
                 )}
+                </div>
                 {orderDetail && (
                     <Link to={`/${restaurant_name}`}>
                         <button
+                        className='bg-red-600 px-[2rem] py-[0.5rem] m-[0.2rem] font-medium rounded-md text-white'
                             onClick={async () => {
                                 await fetchDeny(order_id);
                             }}
@@ -103,9 +114,10 @@ function RestaurantRequestOrderDetail() {
                         </button>
                     </Link>
                 )}
+                </div>
             </div>
-        </>
-
+        </div>
+        </div>
     );
 }
 

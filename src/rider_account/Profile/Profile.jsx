@@ -24,35 +24,57 @@ function RiderProfile(){
   useEffect(() => {ShowProfile()}, []);
 
     return (
-      <div className='border-2 bg-slate-200 mx-auto max-w-[60rem] px-[3rem] py-[2rem] shadow-2xl min-h-screen'>
-        {isLoading && <div className="text-center mt-8">Loading...</div>}
+      <div 
+      className='bg-slate-200 mx-auto max-w-[60rem] px-[2rem] py-[2rem] shadow-2xl min-h-screen'
+      // className='border-2 bg-slate-200 mx-auto max-w-[60rem] px-[3rem] py-[2rem] shadow-2xl min-h-screen'
+      >
+        {isLoading && <div className="text-center mt-[4rem]">Loading...</div>}
         {!isLoading && (
-          <div className='flex flex-col'>
-            <div className="flex justify-between items-center">
-                <RiderHomeButton id={account_id} />
+          <div 
+          className='flex flex-col p-[0.8rem] bg-slate-300 rounded-md shadow-md'
+          // className='flex flex-col'
+          >
+
+            <div>
+
+              <div className="flex justify-between items-center">
+                  <RiderHomeButton id={account_id} />
               </div>
-            <h2 className='text-center text-3xl font-bold mb-4'>Profile</h2>
-            <div className="grid grid-cols-2 gap-y-2">
-              <div className='text-right pr-4'>Username :</div>
-              <div className='text-left pl-1'>{profileData.Username}</div>
-              
-              <div className='text-right pr-4'>Fullname :</div>
-              <div className='text-left pl-1'>{profileData.Fullname}</div>
-              
-              <div className='text-right pr-4'>Email :</div>
-              <div className='text-left pl-1'>{profileData.Email}</div>
-              
-              <div className='text-right pr-4'>Phone :</div>
-              <div className='text-left pl-1'>{profileData.Phone}</div>
+
+              <h2 
+              // className='text-center text-3xl font-bold mb-4'
+              className='text-center text-3xl text-white font-bold 
+                py-[0.5rem] bg-emerald-600 rounded-md '
+              >
+                Profile
+              </h2>
+
+              <div className='my-[0.5rem]'>
+                  <div className="grid grid-cols-2 gap-x-[0.5rem] gap-y-[0.5rem] border-2 border-slate-600 mt-[0.5rem] py-[0.5rem] rounded-md">
+                    <div className='text-right pr-[0.2rem] text-[1.1rem] font-medium'>Username :</div>
+                    <div className='text-left pl-[0.2rem] text-[1.1rem] font-medium'>{profileData.Username}</div>
+                    <div className='text-right pr-[0.2rem] text-[1.1rem] font-medium'>Fullname :</div>
+                    <div className='text-left pl-[0.2rem] text-[1.1rem] font-medium'>{profileData.Fullname}</div>
+                    <div className='text-right pr-[0.2rem] text-[1.1rem] font-medium'>Email :</div>
+                    <div className='text-left pl-[0.2rem] text-[1.1rem] font-medium'>{profileData.Email}</div>
+                    <div className='text-right pr-[0.2rem] text-[1.1rem] font-medium'>Phone :</div>
+                    <div className='text-left pl-[0.2rem] text-[1.1rem] font-medium'>{profileData.Phone}</div>
+                  </div>
+                </div>
+
             </div>
-            <div className='flex flex-col justify-center mt-6 space-x-4'>
-              <div className="flex justify-center pl-[1rem]">
+
+            <div className='flex justify-center'>
                 <Link to={`/rider_account/${account_id}/pocket`}>
-                  <button className='bg-emerald-600 text-white px-4 py-2 rounded-md 
-                  hover:bg-emerald-700 w-[12rem] m-[0.2rem]'>Pocket</button>
+                  <button 
+                  className='bg-emerald-600 text-white px-4 py-2 rounded-md 
+                  hover:bg-emerald-700 my-[0.4rem] w-[10rem]'
+                  >
+                    Pocket
+                  </button>
                 </Link>
-              </div>
             </div>
+
           </div>
         )}
       </div>

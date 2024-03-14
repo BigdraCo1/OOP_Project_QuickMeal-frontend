@@ -117,10 +117,10 @@ const Register = () => {
 
     return (
         <div>{success ? (
-            <section>
-                <h1>Success!</h1>
-                <p>
-                    <Link to={`/login`}>Sign In</Link>
+            <section class="bg-green-100 px-[8rem] py-[4rem]">
+                <h1 class="text-green-900 text-3xl font-bold mb-4">Success!</h1>
+                <p class="text-green-600">
+                    <a href="/login" class="text-green-500 hover:text-green-600">Sign In</a>
                 </p>
             </section>
         ) : (
@@ -264,7 +264,8 @@ const Register = () => {
                         <div className='text-[1.0rem] flex'>
                         <label htmlFor="fullname" className="text-end w-[16rem] pr-[0.5rem]">
                             FullName :
-                            <FontAwesomeIcon icon={faTimes} className={ !email ? "hide" : "invalid"} />
+                            <FontAwesomeIcon icon={faCheck} className={validEmail ? "valid" : "hide"} />
+                            <FontAwesomeIcon icon={faTimes} className={validEmail || !email ? "hide" : "invalid"} />
                         </label>
                         <input
                             className="w-full border-2 border-slate-300 shadow rounded"

@@ -63,7 +63,13 @@ function Pocket() {
                 <HomeButton id={account_id}/>
                 <ProfileButton id={account_id}/>
                 <div className='p-[1rem] h-screen w-full'>
-                    <h1 className='text-white text-[2rem] font-bold bg-emerald-600 rounded-md border-2 px-[1rem] shadow-md'>Pocket</h1>
+
+                    <h1 
+                    className='text-white text-[2rem] font-bold bg-emerald-600 rounded-md border-2 px-[1rem] shadow-md'
+                    >
+                        Pocket
+                    </h1>
+                    
                     <div className='text-[1.2rem] font-medium border-2 border-slate-300 rounded-md shadow-md my-[0.5rem] px-[1rem] py-[0.5rem]'>
                         <p>Balance : {pocket.Balance}</p>
                     </div>
@@ -96,6 +102,7 @@ function Pocket() {
                             ))}
                         </ul>
                     </div>
+
                     {/* <div className='bg-slate-300 p-[0.5rem] rounded-md absolute top-[6rem] right-[1rem]'>
                         <div>
                             <textarea 
@@ -109,6 +116,7 @@ function Pocket() {
                             onClick={() => TopUp()}>TopUp</button>
                         </div>
                     </div> */}
+
                 </div>
             </div>
         </div>

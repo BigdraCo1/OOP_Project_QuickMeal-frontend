@@ -6,3 +6,9 @@
     margin-top: 20px;
     margin-bottom: 20px;
 }
+
+body {
+    background-image: linear-gradient(to bottom, #22c55e, #ececec);
+    height: 100%;
+    min-height: 100vh;
+}

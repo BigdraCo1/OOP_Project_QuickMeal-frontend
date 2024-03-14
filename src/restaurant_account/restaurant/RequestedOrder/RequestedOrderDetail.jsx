@@ -67,8 +67,11 @@ function RestaurantRequestedOrderDetail() {
 
     console.log(selectedFood);
     return (
-        <div>
-            <h1>RequestedOrderDetail</h1>
+        <div className='bg-gradient-to-b from-green-500 to-blue-500 min-h-screen'>
+        <div className='h-screen flex flex-col justify-start items-center'>
+            <div className='bg-slate-300 p-2 w-[220px] text-[1.2rem] font-medium rounded-md text-center mt-[1rem]'>
+                <h1>RequestedOrderDetail</h1>
+            </div>
             {orderDetail && (
                 <div className="OrderDetail">
                     <div className="flex justify-between items-center">
@@ -97,7 +100,7 @@ function RestaurantRequestedOrderDetail() {
                         })}
                     </ul>
                     {confirmCancel && (
-                        <div>
+                        <div className='bg-red-600 p-[0.2rem] rounded-md text-center mt-[0.5rem] text-white font-medium text-[1.2rem]'>
                             <Link to={`/${restaurant_name}/requested_order/`}>
                                 <button onClick={handleCancel}>Cancel</button>
                             </Link>
@@ -105,6 +108,7 @@ function RestaurantRequestedOrderDetail() {
                     )}
                 </div>
             )}
+        </div>
         </div>
     );
 

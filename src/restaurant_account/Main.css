@@ -1,35 +1,37 @@
 body {
-    background-color: #04b44c; /* เปลี่ยนสีพื้นหลัง body เป็นสีเขียวอ่อน */
+    background-image: linear-gradient(to bottom, #22c55e, #3b82f6);
+    height: 100%;
+    min-height: 100vh;
 }
 
-.button-container {
+/* .button-container {
     display: flex;
-    flex-direction: column; /* เปลี่ยนเป็นแนวตั้ง */
+    flex-direction: column;
     align-items: center;
-}
+} */
 
-.button-container button {
-    margin-bottom: 20px; /* เพิ่มระยะห่างระหว่างปุ่ม */
+/* .button-container button {
+    margin-bottom: 20px; 
     padding: 15px 40px;
-    border: 2px solid #040F0F; /* เพิ่มกรอบ */
+    border: 2px solid #040F0F;
     border-radius: 5px;
-    background-color: #ffffff; /* เปลี่ยนสีพื้นหลังเป็นเขียวอ่อน */
-    color: black; /* เปลี่ยนสีตัวอักษรเป็นสีขาว */
+    background-color: #ffffff;
+    color: black;
     font-size: 24px;
     cursor: pointer;
     transition: background-color 0.3s;
     width: 1000px;
     text-align: center;
-    display: block; /* เพิ่ม display: block เพื่อให้ปุ่มเป็นองค์ปุ่มเต็มรูปแบบ */
-}
+    display: block;
+} */
 
 .button-container button:hover {
-    background-color: #8b8384; /* เปลี่ยนสีพื้นหลังเมื่อโฮเวอร์เป็นเขียวเข้ม */
+    background-color: #4d4b91;
 }
 
-.profile-container {
-    background-color: #ffffff; /* เปลี่ยนสีพื้นหลังเป็นสีขาว */
-    border: 2px solid #040F0F; /* เพิ่มกรอบ */
+/* .profile-container {
+    background-color: #ffffff;
+    border: 2px solid #040F0F;
     border-radius: 5px;
     padding: 100px;
     margin: 20px;
@@ -39,20 +41,20 @@ body {
     align-items: center;
     display: flex;
     flex-direction: column;
-    margin: auto; /* จัดให้อยู่กึ่งกลางในแนวนอน */
-}
+    margin: auto;
+} */
 
-.profile-container h2 {
+/* .profile-container h2 {
     margin-bottom: 20px;
 }
 
 .profile-container p {
     margin-bottom: 10px;
-}
+} */
 
 
-.button {
-    background-color: #4CAF50; /* Green */
+/* .button {
+    background-color: #4CAF50;
     border: none;
     color: white;
     padding: 15px 32px;
@@ -63,16 +65,16 @@ body {
     margin: 4px 2px;
     transition-duration: 0.4s;
     cursor: pointer;
-}
+} */
 
-.button:hover {
+/* .button:hover {
     background-color: #45a049;
-}
+} */
 
 .restaurant-contain {
-    background-color: darkgreen;
-    padding: 20px;
-    margin-bottom: 10px;
+    background-color: rgb(12, 160, 12);
+    padding: 1rem;
+    margin-bottom: 0.5rem;
 }
 
 .delete-button {
@@ -81,6 +83,8 @@ body {
     border: none !important;
     padding: 5px 10px !important;
     cursor: pointer !important;
+    width: 100%;
+    height: 100%;
 }
 
 .delete-button:hover {

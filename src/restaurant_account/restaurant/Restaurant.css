@@ -1,3 +1,9 @@
+body {
+    background-image: linear-gradient(to bottom, #22c55e, #3b82f6);
+    height: 100%;
+    min-height: 100vh;
+}
+
 .restaurant-container {
     background-color: #ffffff; /* เปลี่ยนสีพื้นหลังเป็นสีขาว */
     border: 2px solid #040F0F; /* เพิ่มกรอบ */

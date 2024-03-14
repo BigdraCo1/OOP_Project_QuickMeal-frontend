@@ -39,11 +39,19 @@ function RestaurantFinishedOrderDetail() {
     }, [order_id]);
 
     return (
-        <>
-            <div>
-                <h1>RequestedOrderDetail</h1>
+        <div className='bg-gradient-to-b from-green-500 to-blue-500 min-h-screen'>
+        <div 
+        className='h-screen flex flex-col justify-start items-center'
+        >
+            <div className='p-[1rem] w-6/12'>
+                <div className='rounded-md font-medium text-[1.2rem] bg-slate-300 px-[0.2rem] my-[0.5rem]'>
+                    <h1>FinishedOrderDetail</h1>
+                </div>
                 {orderDetail && (
-                    <div className="OrderDetail">
+                    <div 
+                    // className="OrderDetail"
+                    className='p-[1rem] font-medium rounded-md bg-white flex flex-col justify-center w-full'
+                    >
                         <div className="flex justify-between items-center">
                             <ResHomeButton name={restaurant_name} />
                         </div>
@@ -57,7 +65,8 @@ function RestaurantFinishedOrderDetail() {
                     </div>
                 )}
             </div>
-        </>
+        </div>
+        </div>
     );
 
 }

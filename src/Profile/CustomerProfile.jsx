@@ -27,8 +27,14 @@ function CustomerProfile(){
           {isLoading && <div className="text-center mt-[4rem]">Loading...</div>}
           {!isLoading && (
             <div className='flex flex-col p-[0.8rem] bg-slate-300 rounded-md shadow-md'>
+
               <div>
-                <h2 className='text-center text-3xl text-white font-bold py-[0.5rem] bg-emerald-600 rounded-md '>Profile</h2>
+                
+                <h2 className='text-center text-3xl text-white font-bold 
+                py-[0.5rem] bg-emerald-600 rounded-md '>
+                  Profile
+                </h2>
+
                 <div className='my-[0.5rem]'>
                   <div className="grid grid-cols-2 gap-x-[0.5rem] gap-y-[0.5rem] border-2 border-slate-600 mt-[0.5rem] py-[0.5rem] rounded-md">
                     <div className='text-right pr-[0.2rem] text-[1.1rem] font-medium'>Username :</div>
@@ -41,7 +47,9 @@ function CustomerProfile(){
                     <div className='text-left pl-[0.2rem] text-[1.1rem] font-medium'>{profileData.Phone}</div>
                   </div>
                 </div>
+                
               </div>
+
               <div>
                 <div>
                   <Link to={`/${id}/pocket`}>
@@ -62,6 +70,7 @@ function CustomerProfile(){
                   </Link>
                 </div>
               </div>
+
             </div>
           )}
         </div>

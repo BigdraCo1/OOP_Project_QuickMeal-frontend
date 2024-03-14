@@ -39,52 +39,70 @@ function Restaurant() {
     
     console.log(restaurantOwner);
     return (
-        <>
-            {isLoading && (<p className="border border-gray-200 p-10 rounded-md bg-white flex flex-col justify-center items-centertext-2xl font-bold mb-1">Loading..</p>)}
+        <div className='bg-gradient-to-b from-green-500 to-blue-500 min-h-screen'>
+        <div className='flex justify-center'>
+            {isLoading && (<p className="border border-gray-200 p-[0.5rem] rounded-md bg-white flex flex-col justify-center items-center text-[1.6rem] font-bold mb-1">Loading..</p>)}
             {!isLoading && restaurantOwner &&
-                <div>
+                <div className='flex flex-col items-center w-7/12'>
                     <div className="flex justify-between items-center">
-                        
                         <ResAccountHomeButton id={restaurantOwner.restaurant_owner}/>
                     </div>
-                    <div className='restaurant-container'>
-                        <h2>Restaurant Information</h2>
+                    <div 
+                    // className='restaurant-container'
+                    className='w-9/12 p-[2rem] rounded-md bg-white flex flex-col justify-center 
+                    items-center text-[1.4rem] font-bold my-[1rem]'>
+                        <h2 className='text-white bg-red-600 w-full text-center py-[0.5rem] rounded-md'>Restaurant Information</h2>
                         {restaurantDetail && ( // เช็คว่ามีค่าข้อมูลร้านอาหารหรือไม่ก่อนที่จะแสดงผล
-                            <>
-                                <p>Restaurant Name: {restaurantDetail.Restaurant_Name}</p>
-                                <p>Location: {restaurantDetail.Restaurant_Location}</p>
-                                <p>Rate: {restaurantDetail.Rate}</p>
-                            </>
+                            <div className='grid grid-cols-2'>
+                                <p className='text-right pr-[0.5rem]'>Restaurant Name :</p>
+                                <p className='text-left'>{restaurantDetail.Restaurant_Name}</p>
+                                <p className='text-right pr-[0.5rem]'>Location :</p>
+                                <p className='text-left'>{restaurantDetail.Restaurant_Location}</p>
+                                <p className='text-right pr-[0.5rem]'>Rate :</p>
+                                <p className='text-left'>{restaurantDetail.Rate}</p>
+                            </div>
                         )}
                     </div>
-                    <div className='button-container'>
+                    <div 
+                    // className='button-container'
+                    className='flex flex-col w-9/12'
+                    >
+                        <div className='rounded-md text-center text-[1.2rem] font-bold bg-white py-[1rem]'>
                         <Link to={`/${restaurant_name}/request_order`}>
                             <button>
                                 Request Order
                             </button>
                         </Link>
+                        </div>
                         <br />
+                        <div className='rounded-md text-center text-[1.2rem] font-bold bg-white py-[1rem]'>
                         <Link to={`/${restaurant_name}/requested_order`}>
                             <button>
                                 Requested Order
                             </button>
                         </Link>
+                        </div>
                         <br />
+                        <div className='rounded-md text-center text-[1.2rem] font-bold bg-white py-[1rem]'>
                         <Link to={`/${restaurant_name}/menu`}>
                             <button>
                                 Menu
                             </button>
                         </Link>
+                        </div>
                         <br />
+                        <div className='rounded-md text-center text-[1.2rem] font-bold bg-white py-[1rem]'>
                         <Link to={`/${restaurant_name}/finished_order`}>
                             <button>
                                 History
                             </button>
                         </Link>
+                        </div>
                     </div>
                 </div>
             }
-        </>
+        </div>
+        </div>
     );
 }
 

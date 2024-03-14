@@ -3,6 +3,8 @@ import { Link, useParams } from 'react-router-dom';
 const BASE_URL = 'http://127.0.0.1:8000';
 import api from '../../api/api'
 
+import RiderHomeBurron from '../RiderComponent/RiderHomeBurron.jsx';
+
 function RequestOrderDetail() {
 
     const { rider_id, order_id } = useParams();
@@ -35,30 +37,49 @@ function RequestOrderDetail() {
     }
 
     return (
-        <>
-            <div>
-                <h1>Order detail</h1>
-                {orderDetail && (
-                    <div className="OrderDetail">
-                        <p>Order ID: {order_id}</p>
-                        <p>Customer: {orderDetail.Customer}</p>
-                        <p>Rider: {orderDetail.Rider}</p>
-                        <p>Restaurant: {orderDetail.Restaurant}</p>
-                        <p>Food: {orderDetail.Food.join(', ')}</p>
-                        <p>Order State: {orderDetail.Order_State}</p>
-                        <p>Payment: {orderDetail.Payment}</p>
+        <div>
+            <div className='h-screen flex flex-col justify-start items-center p-[1rem]'>
+                <div className='w-6/12'>
+                    <div>
+                        <RiderHomeBurron id={rider_id} />
                     </div>
-                )}
-                <Link to={`/rider_account/${rider_id}`}>
-                    <button
-                        onClick={async () => {
-                            await fetchAccept(order_id);
-                        }}>
-                        Accept
-                    </button>
-                </Link>
+                    <h1 
+                    className='bg-slate-300 w-full p-[0.5rem] text-center rounded-md font-bold text-[1.6rem]'
+                    >
+                        Order detail
+                    </h1>
+                    <div className='border-2 bg-slate-100 font-medium mt-[0.5rem] '>
+                        {orderDetail && (
+                            <div className='grid grid-cols-2'>
+                                <p className='text-right pr-[0.5rem]'>Order ID :</p>
+                                <p className='text-left'>{order_id}</p>
+                                <p className='text-right pr-[0.5rem]'>Customer :</p>
+                                <p className='text-left'>{orderDetail.Customer}</p>
+                                <p className='text-right pr-[0.5rem]'>Rider :</p>
+                                <p className='text-left'>{orderDetail.Rider}</p>
+                                <p className='text-right pr-[0.5rem]'>Restaurant :</p>
+                                <p className='text-left'>{orderDetail.Restaurant}</p>
+                                <p className='text-right pr-[0.5rem]'>Food :</p>
+                                <p className='text-left'>{orderDetail.Food.join(', ')}</p>
+                                <p className='text-right pr-[0.5rem]'>Order State :</p>
+                                <p className='text-left'>{orderDetail.Order_State}</p>
+                                <p className='text-right pr-[0.5rem]'>Payment :</p>
+                                <p className='text-left'>{orderDetail.Payment}</p>
+                            </div>
+                        )}
+                    </div>
+                    <Link to={`/rider_account/${rider_id}`}>
+                        <button
+                        className='bg-red-500 w-full text-[1.2rem] font-medium text-white rounded-md mt-[0.5rem]'
+                            onClick={async () => {
+                                await fetchAccept(order_id);
+                            }}>
+                            Accept
+                        </button>
+                    </Link>`
+                </div>
             </div>
-        </>
+        </div>
     );
 
 }

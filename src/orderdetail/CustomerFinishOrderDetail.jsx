@@ -26,25 +26,72 @@ function CustomerFinishOrderDetail(){
   
 
     return (
-      <>
+      <div className='bg-gradient-to-b from-green-500 to-lime-500 min-h-screen'>
+      <div
+      className='h-screen flex flex-col justify-start items-center'
+      // className='flex flex-col items-center h-screen'
+      >
+        <div className='w-1/2'>
         { isLoading && <div>.....Loading.....</div> }
         { !isLoading &&
-        <div>
+        <div
+        className='mt-[1rem] p-[1rem] font-medium rounded-md bg-white flex flex-col justify-center w-full'
+        >
             <HomeButton id={id}/>
             <ProfileButton id={id}/>
-            <h1 className='midText'>Order Detail</h1>
-            <h2 className='midText'>Order ID : {detail.Order_ID}</h2>
-            <h2 className='midText'>Rider : {detail.Rider}</h2>
-            <h2 className='midText'>Restaurant : {detail.Restaurant}</h2>
-            <h2 className='midText'>State : {detail.Order_State}</h2>
-            <h2 className='midText'>Payment : {detail.Payment}</h2>
-            <h2 className='midText'>Food : </h2>
+
+            <div className='text-center rounded-md font-medium text-[1.2rem] bg-red-600 text-white px-[0.5rem] my-[0.5rem]'>
+                <h1>Order Detail</h1>
+            </div>
+
+            {/* <h1 className='midText'>Order Detail</h1> */}
+
+            <div className='grid grid-cols-2'>
+            
+            <p 
+            // className='midText'
+            className='text-right pr-[0.5rem]'
+            >Order ID :</p>
+            <p className='text-left'>{detail.Order_ID}</p>
+            <p 
+            // className='midText'
+            className='text-right pr-[0.5rem]'
+            >Rider : {detail.Rider}</p>
+            <p className='text-left'>{detail.Order_ID}</p>
+            <p 
+            // className='midText'
+            className='text-right pr-[0.5rem]'
+            >Restaurant : {detail.Restaurant}</p>
+            <p className='text-left'>{detail.Order_ID}</p>
+            <p  
+            // className='midText'
+            className='text-right pr-[0.5rem]'
+            >State : {detail.Order_State}</p>
+            <p className='text-left'>{detail.Order_ID}</p>
+            <p 
+            // className='midText'
+            className='text-right pr-[0.5rem]'
+            >Payment : {detail.Payment}</p>
+            <p className='text-left'>{detail.Order_ID}</p>
+            <p 
+            // className='midText'
+            className='text-right pr-[0.5rem]'
+            >Food : </p>
+            <p>
             {detail.Food.map((item) => (
-                <h3 className='midText'>{item}</h3>
+                <p 
+                // className='midText'
+                className='text-left'
+                >{item}</p>
             ))}
+            </p>
+
+            </div>
         </div> 
           }
-      </>
+          </div>
+      </div>
+      </div>
     )
   };
   

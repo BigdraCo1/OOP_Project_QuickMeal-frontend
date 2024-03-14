@@ -3,8 +3,11 @@ import { Link, useParams } from 'react-router-dom';
 const BASE_URL = 'http://127.0.0.1:8000';
 import api from '../../api/api'
 
+import RiderHomeBurron from '../RiderComponent/RiderHomeBurron.jsx';
+
 function FinishedOrderDetail() {
 
+    const { rider_id } = useParams();
     const { order_id } = useParams();
     const [orderDetail, setOrderDetail] = useState(null);
 
@@ -22,22 +25,36 @@ function FinishedOrderDetail() {
     }, [order_id]);
 
     return (
-        <>
         <div>
-        <h1>Order detail</h1>
-                {orderDetail && (
-                    <div className="OrderDetail">
-                        <p>Order ID: {order_id}</p>
-                        <p>Customer: {orderDetail.Customer}</p>
-                        <p>Rider: {orderDetail.Rider}</p>
-                        <p>Restaurant: {orderDetail.Restaurant}</p>
-                        <p>Food: {orderDetail.Food.join(', ')}</p>
-                        <p>Order State: {orderDetail.Order_State}</p>
-                        <p>Payment: {orderDetail.Payment}</p>
+            <div className='h-screen flex flex-col justify-start items-center'>
+                <div className='p-[1rem] w-6/12'>
+                    <div className='rounded-md font-medium text-[1.2rem] bg-slate-300 px-[0.2rem] my-[0.5rem]'>
+                        <h1>FinishedOrderDetail</h1>
                     </div>
-                )}
+                    <div>
+                        <RiderHomeBurron id={rider_id} />
+                    </div>
+
+                    {orderDetail && (
+                        <div 
+                        // className="OrderDetail"
+                        className='p-[1rem] font-medium rounded-md bg-white flex flex-col justify-center w-full'
+                        >
+                            {/* <div className="flex justify-between items-center">
+                                <ResHomeButton name={restaurant_name} />
+                            </div> */}
+                            <p>Order ID: {order_id}</p>
+                            <p>Customer: {orderDetail.Customer}</p>
+                            <p>Rider: {orderDetail.Rider}</p>
+                            <p>Restaurant: {orderDetail.Restaurant}</p>
+                            <p>Food: {orderDetail.Food.join(', ')}</p>
+                            <p>Order State: {orderDetail.Order_State}</p>
+                            <p>Payment: {orderDetail.Payment}</p>
+                        </div>
+                    )}
+                </div>
+            </div>
         </div>
-        </>
     );
 
 }

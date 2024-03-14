@@ -43,7 +43,7 @@ function Menu() {
         , [])
 
     return (
-        <>
+        <div className='bg-gradient-to-b from-green-500 to-blue-500 min-h-screen'>
       <section className="grid place-items-center bg-emerald-900 p-16 min-h-screen">
         {isLoading && (
           <div class="flex items-center justify-center w-full h-[100vh] text-gray-900 dark:text-gray-100 dark:bg-gray-950">
@@ -120,7 +120,7 @@ function Menu() {
           </>
         )}
       </section>
-    </>
+    </div>
     )
 }
 
