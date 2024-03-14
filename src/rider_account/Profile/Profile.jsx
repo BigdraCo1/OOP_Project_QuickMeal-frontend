@@ -4,7 +4,6 @@ import { Link, useParams } from "react-router-dom";
 import api from '../../api/api';
 import RiderHomeButton from '../RiderComponent/RiderHomeButton';
 
-
 const BASE_URL = 'http://127.0.0.1:8000'
 
 function RiderProfile(){

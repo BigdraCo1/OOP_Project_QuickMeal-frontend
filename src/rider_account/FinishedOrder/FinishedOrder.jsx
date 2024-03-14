@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import api from '../../api/api';
-import RiderHomeButton from '../RiderComponent/RiderHomeButton';
+import RiderHomeButton from '../RiderComponent/RiderHomeButton.jsx';
 
 // import RiderHomeBurron from '../RiderComponent/RiderHomeBurron.jsx';
 

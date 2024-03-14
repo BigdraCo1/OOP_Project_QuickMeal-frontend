@@ -23,8 +23,6 @@ function CustomerFinishOrderDetail(){
   }
   useEffect(() => {ShowOrder()}, []);
 
-  
-
     return (
       <div className='bg-gradient-to-b from-green-500 to-lime-500 min-h-screen'>
       <div
@@ -56,23 +54,23 @@ function CustomerFinishOrderDetail(){
             <p 
             // className='midText'
             className='text-right pr-[0.5rem]'
-            >Rider : {detail.Rider}</p>
-            <p className='text-left'>{detail.Order_ID}</p>
+            >Rider :</p>
+            <p className='text-left'>{detail.Rider}</p>
             <p 
             // className='midText'
             className='text-right pr-[0.5rem]'
-            >Restaurant : {detail.Restaurant}</p>
-            <p className='text-left'>{detail.Order_ID}</p>
+            >Restaurant :</p>
+            <p className='text-left'>{detail.Restaurant}</p>
             <p  
             // className='midText'
             className='text-right pr-[0.5rem]'
-            >State : {detail.Order_State}</p>
-            <p className='text-left'>{detail.Order_ID}</p>
+            >State :</p>
+            <p className='text-left'>{detail.Order_State}</p>
             <p 
             // className='midText'
             className='text-right pr-[0.5rem]'
-            >Payment : {detail.Payment}</p>
-            <p className='text-left'>{detail.Order_ID}</p>
+            >Payment :</p>
+            <p className='text-left'>{detail.Payment}</p>
             <p 
             // className='midText'
             className='text-right pr-[0.5rem]'
