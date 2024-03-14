@@ -59,7 +59,7 @@ function RiderRequestOrder() {
                         <p>Fullname: {riderProfile.Fullname}</p>
                         <p>Email: {riderProfile.Email}</p>
                         <p>Phone: {riderProfile.Phone}</p>
-                        <Link to={`/${rider_id}/pocket`}>
+                        <Link to={`/rider_account/${rider_id}/pocket`}>
                             <button className="button">
                                 Pocket
                             </button>

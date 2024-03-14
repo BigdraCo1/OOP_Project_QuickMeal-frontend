@@ -46,19 +46,6 @@ function RecievedOrderDetail() {
             console.log('error', error);
         }
     }
-
-    async function cancel_order(order_id) {
-        try {
-            const receiver_response = await api.put(`${BASE_URL}/rider/rider/${rider_id}/deny/${order_id}`);
-            if (receiver_response.data) {
-                alert('Delivere Success');
-            }
-        }
-        catch (error) {
-            console.log('error', error);
-        }
-    }
-
     return (
         <>
             <div>
@@ -85,16 +72,7 @@ function RecievedOrderDetail() {
                         Receive Order
                     </button>
                 )}
-                {orderDetail && orderDetail.Order_State !== 'delivering' && (
-                    <Link to={`/rider_account/${rider_id}`}>
-                        <button
-                            onClick={async () => {
-                                await cancel_order(order_id);
-                            }}>
-                            Cancel Order
-                        </button>
-                    </Link>
-                )}
+            
                 {orderDetail && orderDetail.Order_State === 'delivering' && (
                     <Link to={`/rider_account/${rider_id}`}>
                         <button
