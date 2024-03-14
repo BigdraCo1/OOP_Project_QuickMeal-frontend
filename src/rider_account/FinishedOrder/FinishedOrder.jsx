@@ -3,7 +3,7 @@ import { Link, useParams } from 'react-router-dom';
 import api from '../../api/api';
 import RiderHomeButton from '../RiderComponent/RiderHomeButton';
 
-import RiderHomeBurron from '../RiderComponent/RiderHomeBurron.jsx';
+// import RiderHomeBurron from '../RiderComponent/RiderHomeBurron.jsx';
 
 const BASE_URL = 'http://127.0.0.1:8000';
 
@@ -58,9 +58,9 @@ function RiderFinishedOrder() {
                             <h2>Profile Information</h2>
                         </div>
 
-                        <div>
+                        {/* <div>
                             <RiderHomeBurron id={rider_id} />
-                        </div>
+                        </div> */}
 
                         {/* <p>Username: {riderProfile.Username}</p>
                         <p>Fullname: {riderProfile.Fullname}</p>
