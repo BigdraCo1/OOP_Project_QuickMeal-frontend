@@ -2,13 +2,14 @@ import React, { useState, useEffect } from 'react';
 import { Link, useParams } from 'react-router-dom';
 const BASE_URL = 'http://127.0.0.1:8000';
 import api from '../../api/api'
+import RiderHomeButton from '../RiderComponent/RiderHomeButton';
 
 import RiderHomeBurron from '../RiderComponent/RiderHomeBurron.jsx';
 
 function FinishedOrderDetail() {
 
-    const { rider_id } = useParams();
-    const { order_id } = useParams();
+    // const { rider_id } = useParams();
+    const { rider_id,order_id } = useParams();
     const [orderDetail, setOrderDetail] = useState(null);
 
     async function fetchOrderDetail(order_id) {
@@ -32,7 +33,7 @@ function FinishedOrderDetail() {
                         <h1>FinishedOrderDetail</h1>
                     </div>
                     <div>
-                        <RiderHomeBurron id={rider_id} />
+                        <RiderHomeButton id={rider_id} />
                     </div>
 
                     {orderDetail && (

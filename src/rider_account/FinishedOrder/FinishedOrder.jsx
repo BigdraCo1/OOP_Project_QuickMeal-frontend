@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import api from '../../api/api';
+import RiderHomeButton from '../RiderComponent/RiderHomeButton';
 
 import RiderHomeBurron from '../RiderComponent/RiderHomeBurron.jsx';
 
@@ -41,6 +42,9 @@ function RiderFinishedOrder() {
     console.log(riderFinishedOrder);
     return (
         <div className='flex flex-col items-center h-screen'>
+            <div className="flex justify-between items-center">
+                <RiderHomeButton id={rider_id} />
+            </div>
             <div 
             // className='profile-container'
             className='border-[0.2rem] p-[0.5rem] my-[0.5rem] rounded-lg border-slate-600 w-7/12'
@@ -75,7 +79,7 @@ function RiderFinishedOrder() {
                         </div>
 
                         <div className='flex justify-center'>
-                            <Link to={`/${rider_id}/pocket`}>
+                            <Link to={`/rider_account/${rider_id}/pocket`}>
                                 <button className="button text-[1.2rem] text-medium">
                                     Pocket
                                 </button>

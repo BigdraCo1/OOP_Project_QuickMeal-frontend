@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link, useParams } from 'react-router-dom';
 const BASE_URL = 'http://127.0.0.1:8000';
 import api from '../../api/api'
+import RiderHomeButton from '../RiderComponent/RiderHomeButton';
 
 import RiderHomeBurron from '../RiderComponent/RiderHomeBurron.jsx';
 
@@ -47,19 +48,6 @@ function RecievedOrderDetail() {
             console.log('error', error);
         }
     }
-
-    async function cancel_order(order_id) {
-        try {
-            const receiver_response = await api.put(`${BASE_URL}/rider/rider/${rider_id}/deny/${order_id}`);
-            if (receiver_response.data) {
-                alert('Delivere Success');
-            }
-        }
-        catch (error) {
-            console.log('error', error);
-        }
-    }
-
     return (
         <div
         className='h-screen flex flex-col justify-start items-center p-[1rem]'
@@ -69,7 +57,7 @@ function RecievedOrderDetail() {
             >
 
                 <div>
-                    <RiderHomeBurron id={rider_id} />
+                    <RiderHomeButton id={rider_id} />
                 </div>
 
                 <h1

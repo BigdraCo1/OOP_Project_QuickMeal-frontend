@@ -3,6 +3,7 @@ import { Link, useParams } from 'react-router-dom';
 import api from '../api/api';
 import './RiderAccount.css';
 import RiderProfileButton from './RiderComponent/RiderProfileButton';
+import RiderHomeButton from './RiderComponent/RiderHomeButton';
 
 const BASE_URL = 'http://127.0.0.1:8000';
 
@@ -15,7 +16,8 @@ function RiderAccount() {
         className='flex justify-center h-screen'
         >
             <div className="flex justify-between items-center">
-              <RiderProfileButton id={rider_id} />
+                <RiderProfileButton id={rider_id} />
+                <RiderHomeButton id={rider_id} />
             </div>
 
             <div

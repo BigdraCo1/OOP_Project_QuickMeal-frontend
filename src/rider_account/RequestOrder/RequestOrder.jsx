@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import api from '../../api/api';
+import RiderHomeButton from '../RiderComponent/RiderHomeButton';
 
 import RiderHomeBurron from '../RiderComponent/RiderHomeBurron.jsx';
 
@@ -57,7 +58,7 @@ function RiderRequestOrder() {
                     <div className='bg-slate-100 p-[0.5rem] rounded-md'>
 
                         <div>
-                            <RiderHomeBurron id={rider_id} />
+                            <RiderHomeButton id={rider_id} />
                         </div>
 
                         <div 
