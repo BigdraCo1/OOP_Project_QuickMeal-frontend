@@ -74,17 +74,17 @@ const LoginForm = () => {
 
   return (
     <div className='flex flex-col justify-center items-center bg-gradient-to-b from-green-500 to-lime-500 min-h-screen'>
-      <div className="flex w-4/12 justify-center items-center m-[0.5rem]">
+      <div className="flex w-4/12 justify-center items-center m-[0.5rem] mb-[1rem]">
         <div>
           <img src={LogoQuickMeal} alt="Logo QuickMeal" className="w-[100px] h-[100px] rounded-full shadow-md" />
         </div>
         <div>
-          <h2 className="font-bold text-[1.6rem] mx-[1rem] text-white">Welcome to QuickMael</h2>
+          <h2 className="font-bold text-[2rem] mx-[1rem] text-white">QuickMeal</h2>
         </div>
       </div>
-      <div className="text-[1.6rem] text-white font-bold w-[300px]">
+      {/* <div className="text-[1.6rem] text-white font-bold w-[300px]">
         <h4>LOGIN</h4>
-      </div>
+      </div> */}
       <form className='border border-gray-300 rounded-md p-6 
       flex flex-col items-center bg-white shadow-md' 
       onSubmit={handleSubmit}>
