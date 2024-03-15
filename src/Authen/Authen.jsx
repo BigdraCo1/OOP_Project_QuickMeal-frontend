@@ -3,6 +3,8 @@ import Cookies from "js-cookie";
 import axios from "axios";
 import qs from "qs";
 
+import LogoQuickMeal from '/logo_quickmeal.jpg'
+
 const api = axios.create({
   baseURL: "http://127.0.0.1:8000",
 });
@@ -72,6 +74,14 @@ const LoginForm = () => {
 
   return (
     <div className='flex flex-col justify-center items-center bg-gradient-to-b from-green-500 to-lime-500 min-h-screen'>
+      <div className="flex w-4/12 justify-center items-center m-[0.5rem]">
+        <div>
+          <img src={LogoQuickMeal} alt="Logo QuickMeal" className="w-[100px] h-[100px] rounded-full shadow-md" />
+        </div>
+        <div>
+          <h2 className="font-bold text-[1.6rem] mx-[1rem] text-white">Welcome to QuickMael</h2>
+        </div>
+      </div>
       <div className="text-[1.6rem] text-white font-bold w-[300px]">
         <h4>LOGIN</h4>
       </div>
