@@ -22,8 +22,15 @@ function RiderAccount() {
 
             <div
             // className='button-container'
-            className='flex flex-col justify-center items-center h-full w-7/12 rounded-md'
+            className='p-[1rem] flex flex-col justify-center items-center h-full w-5/12 rounded-md'
             >
+
+                <div className='w-full'>
+                    <h1
+                    className='text-3xl font-bold text-center bg-slate-500 rounded-lg p-[1rem] my-[1rem] text-white w-full'
+                    >Welcome to Rider HomePage</h1>
+                </div>
+
                 <div className='w-full rounded-lg bg-slate-200 text-center p-[1rem] font-medium text-[1.2rem]'>
                 <Link to={`/rider_account/${ rider_id }/request_order`}>
                     <button>
