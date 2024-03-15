@@ -116,6 +116,7 @@ const Register = () => {
     }
 
     return (
+        <div className="bg-gradient-to-b from-green-500 to-lime-500">
         <div>{success ? (
             <section class="bg-green-100 px-[8rem] py-[4rem]">
                 <h1 class="text-green-900 text-3xl font-bold mb-4">Success!</h1>
@@ -330,6 +331,7 @@ const Register = () => {
                 </section>
             </div>
         )}
+    </div>
     </div>
     )
 }
