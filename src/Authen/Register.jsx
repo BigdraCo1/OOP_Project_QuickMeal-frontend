@@ -308,7 +308,7 @@ const Register = () => {
                         <div className="text-[0.9rem] pl-[13rem] my-[0.2rem]">
                             <p id="uidnote" className={ role && !validRole ? "instructions" : "offscreen"}>
                                 <FontAwesomeIcon icon={faInfoCircle} />
-                                Just role<br />
+                                customer,rider or restaurant<br />
                             </p>
                         </div>
                         <div className="flex justify-start">
