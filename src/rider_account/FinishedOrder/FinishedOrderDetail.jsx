@@ -29,8 +29,8 @@ function FinishedOrderDetail() {
         <div>
             <div className='h-screen flex flex-col justify-start items-center'>
                 <div className='p-[1rem] w-6/12'>
-                    <div className='rounded-md font-medium text-[1.2rem] bg-slate-300 px-[0.2rem] my-[0.5rem]'>
-                        <h1>FinishedOrderDetail</h1>
+                    <div className='rounded-md font-bold text-[1.6rem] p-[1rem] text-center text-white bg-slate-500 px-[0.2rem] my-[0.5rem]'>
+                        <h1>Finished Order Detail</h1>
                     </div>
                     <div>
                         <RiderHomeButton id={rider_id} />

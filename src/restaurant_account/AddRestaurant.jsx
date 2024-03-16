@@ -33,15 +33,18 @@ function AddRestaurant() {
       {isLoading ? (
         <div>Loading...</div>
       ) : (
-        <>
-          <div className="padding">
+        <div className="flex justify-center">
+          <div className="padding p-[1rem] rounded-lg bg-slate-300 w-6/12">
             <div className="flex justify-between items-center">
               <ResAccHomeButton id={id} />
             </div>
-            <br />
-            <br />
-            <br />
-            <br />
+
+            <div>
+              <h1 className="font-extrabold text-center text-4xl">
+                Add Restaurant
+              </h1>
+            </div>
+
             <div className="mb-4">
               <label htmlFor="name" className="block text-gray-700 font-bold mb-2">Name:</label>
               <input
@@ -65,7 +68,7 @@ function AddRestaurant() {
               />
             </div>
             <Link to={`/restaurant_account/${id}`}>
-              <button className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded" onClick={handleSubmit}>
+              <button className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded mr-[1rem]" onClick={handleSubmit}>
                 Add
               </button>
               <button className="bg-red-500 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded" >
@@ -73,7 +76,7 @@ function AddRestaurant() {
               </button>
             </Link>
           </div>
-        </>
+        </div>
       )}
     </div>
 
